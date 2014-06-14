@@ -5,16 +5,16 @@ package com.wordpress.tonytam.model.cards;
  */
 public class PlayingDeck extends Deck {
     // build a new playing deck of cards
-    PlayingDeck init (playingcard prototypeCard) {
+    PlayingDeck init (PlayingCard prototypeCard) {
         String suit;
-        String [] suits = playingcard.validSuits();
+        String [] suits = PlayingCard.validSuits();
         Class c = prototypeCard.getClass();
         for (int i = 0; i < suits.length;  i++) {
             suit = suits[i];
-            for (int rank = 1; rank <= playingcard.maxRank(); rank++) {
-                playingcard card = null;
+            for (int rank = 1; rank <= PlayingCard.maxRank(); rank++) {
+                PlayingCard card = null;
                 try {
-                     card = (playingcard) c.newInstance();
+                     card = (PlayingCard) c.newInstance();
                 } catch ( IllegalAccessException e) {
                     // Whatever dude
                 } catch ( InstantiationException e ) {

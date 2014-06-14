@@ -3,7 +3,7 @@ package com.wordpress.tonytam.model.cards;
 /**
  * Created by tonytam on 6/1/14.
  */
-public class playingcard {
+public class PlayingCard {
     public String suit;
     public int rank;
     public String strRank;
@@ -39,7 +39,7 @@ public class playingcard {
     }
 
     static public int maxRank() {
-        return (playingcard.rankStrings()).length;
+        return (PlayingCard.rankStrings()).length;
     }
 
     public String description() {

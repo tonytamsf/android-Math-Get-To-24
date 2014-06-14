@@ -29,7 +29,7 @@ public class Deck <T> {
         if (this.cards.size() > 0) {
             int index = rand.nextInt() % this.cards.size();
             randomCard = (T) this.cards.get(index);
-            //Log.d("playingcard", randomCard.description());
+            //Log.d("PlayingCard", randomCard.description());
             this.cards.remove(index);
         }
 

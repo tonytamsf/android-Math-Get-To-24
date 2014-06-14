@@ -3,7 +3,7 @@ package com.wordpress.tonytam.model.cards;
 /**
  * Created by tonytam on 6/4/14.
  */
-public class PlayingCardNoFace extends playingcard {
+public class PlayingCardNoFace extends PlayingCard {
     public String [] rankStrings = {
             "1",
             "2",
