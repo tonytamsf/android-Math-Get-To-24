@@ -104,16 +104,19 @@ public class Math24 extends Activity {
         this.player2Score = (TextView) findViewById(R.id.player2Score);
 
         this.numberDrawables = new int[36];
-        this.numberDrawables[0] = R.drawable.num_1;
-        this.numberDrawables[1] = R.drawable.num_2;
-        this.numberDrawables[2] = R.drawable.num_3;
-        this.numberDrawables[3] = R.drawable.num_4;
-        this.numberDrawables[4] = R.drawable.num_5;
-        this.numberDrawables[5] = R.drawable.num_6;
-        this.numberDrawables[6] = R.drawable.num_7;
-        this.numberDrawables[7] = R.drawable.num_8;
-        this.numberDrawables[8] = R.drawable.num_9;
-        this.numberDrawables[9] = R.drawable.num_10;
+        this.numberDrawables[1] = R.drawable.num_1;
+        this.numberDrawables[2] = R.drawable.num_2;
+        this.numberDrawables[3] = R.drawable.num_3;
+        this.numberDrawables[4] = R.drawable.num_4;
+        this.numberDrawables[5] = R.drawable.num_5;
+        this.numberDrawables[6] = R.drawable.num_6;
+        this.numberDrawables[7] = R.drawable.num_7;
+        this.numberDrawables[8] = R.drawable.num_8;
+        this.numberDrawables[9] = R.drawable.num_9;
+        this.numberDrawables[10] = R.drawable.num_10;
+        this.numberDrawables[11] = R.drawable.num_10;
+        this.numberDrawables[12] = R.drawable.num_10;
+        this.numberDrawables[13] = R.drawable.num_10;
 
 
         refreshGameUI();
