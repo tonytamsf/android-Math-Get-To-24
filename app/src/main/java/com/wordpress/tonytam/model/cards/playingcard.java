@@ -39,10 +39,12 @@ public class PlayingCard {
     }
 
     static public int maxRank() {
+
         return (PlayingCard.rankStrings()).length;
     }
 
     public String description() {
+
         return this.suit + " " + this.rank;
     }
 }

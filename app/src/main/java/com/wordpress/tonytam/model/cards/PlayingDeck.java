@@ -4,8 +4,13 @@ package com.wordpress.tonytam.model.cards;
  * Created by tonytam on 6/12/14.
  */
 public class PlayingDeck extends Deck {
+
+    public PlayingDeck (PlayingCard prototypeCard) {
+        super();
+        init(prototypeCard);
+    }
     // build a new playing deck of cards
-    PlayingDeck init (PlayingCard prototypeCard) {
+    public PlayingDeck init (PlayingCard prototypeCard) {
         String suit;
         String [] suits = PlayingCard.validSuits();
         Class c = prototypeCard.getClass();
@@ -21,7 +26,7 @@ public class PlayingDeck extends Deck {
                     // Whatever dude
                 }
                 card.rank = rank;
-                card.strRank = card.rankStrings()[rank];
+                card.strRank = card.rankStrings()[rank - 1];
                 card.suit = suit;
                 this.addCard(card);
             }

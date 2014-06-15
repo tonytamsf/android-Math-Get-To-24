@@ -22,15 +22,15 @@ public class Deck <T> {
     public void dealNewDeck() {
 
     }
-    public T drawRandomCard () {
-        T randomCard = null;
+    public PlayingCard drawRandomCard () {
+        PlayingCard randomCard = null;
         Random rand = new Random();
 
         if (this.cards.size() > 0) {
-            int index = rand.nextInt() % this.cards.size();
-            randomCard = (T) this.cards.get(index);
+            int index = java.lang.Math.abs(rand.nextInt() % this.cards.size());
+            randomCard =  (PlayingCard) this.cards.get(index);
             //Log.d("PlayingCard", randomCard.description());
-            this.cards.remove(index);
+            //this.cards.remove(index);
         }
 
         return randomCard;

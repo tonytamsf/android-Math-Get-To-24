@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 /**
@@ -47,6 +50,16 @@ public class Math24 extends Activity {
 
     private Math24Game game;
 
+    public TextView
+            player1Timer,
+            player2Timer,
+            player1Score,
+            player2Score;
+
+    public int [] numberDrawables;
+
+    Button numNW, numNE, numSE, numSW;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +92,45 @@ public class Math24 extends Activity {
             game = new Math24Game();
         }
         game.startGame();
+
+        this.player1Timer = (TextView) findViewById(R.id.player1Timer);
+        this.player2Timer =  (TextView) findViewById(R.id.player2Timer);
+
+        this.numNW = (Button) findViewById(R.id.numNW);
+        this.numNE = (Button) findViewById(R.id.numNE);
+        this.numSE = (Button) findViewById(R.id.numSE);
+        this.numSW = (Button) findViewById(R.id.numSW);
+        this.player1Score = (TextView) findViewById(R.id.player1Score);
+        this.player2Score = (TextView) findViewById(R.id.player2Score);
+
+        this.numberDrawables = new int[36];
+        this.numberDrawables[0] = R.drawable.num_1;
+        this.numberDrawables[1] = R.drawable.num_2;
+        this.numberDrawables[2] = R.drawable.num_3;
+        this.numberDrawables[3] = R.drawable.num_4;
+        this.numberDrawables[4] = R.drawable.num_5;
+        this.numberDrawables[5] = R.drawable.num_6;
+        this.numberDrawables[6] = R.drawable.num_7;
+        this.numberDrawables[7] = R.drawable.num_8;
+        this.numberDrawables[8] = R.drawable.num_9;
+        this.numberDrawables[9] = R.drawable.num_10;
+
+
+        refreshGameUI();
     }
 
+
+    public void refreshGameUI ( ) {
+        this.numNW.setBackgroundResource(this.numberDrawables[game.hand[0].rank]);
+        this.numNE.setBackgroundResource(this.numberDrawables[game.hand[1].rank]);
+        this.numSW.setBackgroundResource(this.numberDrawables[game.hand[2].rank]);
+        this.numSE.setBackgroundResource(this.numberDrawables[game.hand[3].rank]);
+
+        this.player1Timer.setText( String.valueOf( game.currentGameTime ));
+        this.player2Timer.setText( String.valueOf( game.currentGameTime ));
+        this.player1Score.setText( String.valueOf( game.player1Score ));
+        this.player2Score.setText( String.valueOf( game.player2Score ));
+    }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -88,7 +138,7 @@ public class Math24 extends Activity {
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(100);
+        //delayedHide(100);
     }
 
 
