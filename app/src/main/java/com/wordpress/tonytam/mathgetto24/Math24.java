@@ -117,8 +117,6 @@ public class Math24 extends Activity {
         this.numberDrawables[11] = R.drawable.num_10;
         this.numberDrawables[12] = R.drawable.num_10;
         this.numberDrawables[13] = R.drawable.num_10;
-
-
         refreshGameUI();
     }
 

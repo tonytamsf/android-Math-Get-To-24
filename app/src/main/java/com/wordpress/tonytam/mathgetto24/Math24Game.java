@@ -63,6 +63,7 @@ public class Math24Game {
         this.hand = new PlayingCard[4];
         this.dealHand();
 
+        // TODO handle operators in a method array
         /*
 
         // The valid operators
@@ -102,11 +103,9 @@ public class Math24Game {
         ];
 
 
-        // Deal a new deck of cards
 
         // Keep track of the labels used to display the status/answers to both players
         this.labelAnswers = [[NSArray alloc] initWithObjects:this.labelAnswer, this.labelAnswer2, nil];
-
 
         // Start off with no answer controllers
         [self showAnswerControllers:FALSE];
