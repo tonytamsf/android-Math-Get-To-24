@@ -23,8 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/.idea/workspace.xml" afterPath="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -52,7 +52,7 @@
     <favorites_list name="android-MathGetTo24" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.72384936">
+    <splitter split-orientation="horizontal" split-proportion="0.31907612">
       <split-first>
         <leaf>
           <file leaf-file-name="PlayingDeck.java" pinned="false" current="false" current-in-tab="false">
@@ -65,7 +65,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="activity_math24.xml" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="activity_math24.xml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/res/layout/activity_math24.xml">
               <provider editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4125">
@@ -91,11 +91,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Math24Game.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Math24Game.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2173913" vertical-offset="875" max-vertical-offset="1815">
-                  <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="1355" max-vertical-offset="1815">
+                  <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -131,11 +131,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Math24.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="Math24.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.40092167" vertical-offset="1986" max-vertical-offset="2475">
-                  <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.18181819" vertical-offset="0" max-vertical-offset="2520">
+                  <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -833,8 +833,8 @@
         <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/res/layout/activity_math24.xml" />
         <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingCard.java" />
         <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingDeck.java" />
-        <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
         <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
+        <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
       </list>
     </option>
   </component>
@@ -842,10 +842,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="439" />
-    <option name="y" value="22" />
-    <option name="width" value="988" />
-    <option name="height" value="874" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1089,9 +1087,10 @@
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="android-tablet" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.Math24">
     <configuration default="false" name="Math24" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
@@ -1333,7 +1332,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="439" y="22" width="988" height="874" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1343,20 +1342,20 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33905014" sideWeight="0.39429176" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31885856" sideWeight="0.3941345" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496318" sideWeight="0.41535434" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17866005" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33905014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33905014" sideWeight="0.60570824" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31885856" sideWeight="0.6051502" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24207188" sideWeight="0.5846457" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16380544" sideWeight="0.5846457" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17866005" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.55813956" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1747,17 +1746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/res/layout/activity_math24.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3435">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="840">
@@ -1787,21 +1775,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40092167" vertical-offset="1986" max-vertical-offset="2475">
-          <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2173913" vertical-offset="875" max-vertical-offset="1815">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1355" max-vertical-offset="1815">
+          <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/res/layout/activity_math24.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3435">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18181819" vertical-offset="0" max-vertical-offset="2520">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

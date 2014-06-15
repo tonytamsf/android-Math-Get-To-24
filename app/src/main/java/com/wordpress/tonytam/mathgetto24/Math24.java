@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
+// TODO swipe to re-deal card
+// http://bit.ly/android-code-swipe-gesture-detection
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
