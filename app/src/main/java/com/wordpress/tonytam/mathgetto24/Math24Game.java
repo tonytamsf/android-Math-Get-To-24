@@ -8,8 +8,10 @@ import com.wordpress.tonytam.model.cards.PlayingCardMedium24;
 import com.wordpress.tonytam.model.cards.PlayingCardNoFace;
 import com.wordpress.tonytam.model.cards.PlayingDeck;
 import com.wordpress.tonytam.model.cards.PlayingCard;
+import com.wordpress.tonytam.util.Permute;
 
 import java.lang.reflect.Array;
+import java.util.Iterator;
 
 
 /**
@@ -23,13 +25,13 @@ public class Math24Game {
             _hardDeck,
             _mediumDeck;
 
+    public PlayingCard hand[];
+
     public int currentGameTime;
 
     public int
             player1Score,
             player2Score;
-
-    public PlayingCard []hand;
 
     Math24Game () {
     }
@@ -40,6 +42,13 @@ public class Math24Game {
             hand[i] = this.deck.drawRandomCard();
             Log.d("Math24Game: card ", hand[i].description());
         }
+        this.calcuateAnswer();
+    }
+
+    public void calcuateAnswer () {
+        Permute permute = new Permute(this.hand);
+
+        System.out.println (permute.toString());
     }
     public void startGame() {
 

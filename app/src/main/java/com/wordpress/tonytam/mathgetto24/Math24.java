@@ -1,15 +1,18 @@
 package com.wordpress.tonytam.mathgetto24;
 
 import com.wordpress.tonytam.mathgetto24.util.SystemUiHider;
+import com.wordpress.tonytam.util.*;
 
 import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.GridLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -22,7 +25,7 @@ import android.widget.TextView;
  *
  * @see SystemUiHider
  */
-public class Math24 extends Activity {
+public class Math24 extends Activity implements SwipeInterface {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -80,11 +83,13 @@ public class Math24 extends Activity {
         // http://developer.android.com/training/system-ui/status.html#41
         // http://developer.android.com/training/system-ui/immersive.html
         View decorView = getWindow().getDecorView();
-// Hide the status bar.
+
+        // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE ;
         decorView.setSystemUiVisibility(uiOptions);
-// Remember that you should never show the action bar if the
-// status bar is hidden, so hide that too if necessary.
+
+        // Remember that you should never show the action bar if the
+        // status bar is hidden, so hide that too if necessary.
         ActionBar actionBar = getActionBar();
         actionBar.hide();
 
@@ -103,6 +108,7 @@ public class Math24 extends Activity {
         this.numNE = (Button) findViewById(R.id.numNE);
         this.numSE = (Button) findViewById(R.id.numSE);
         this.numSW = (Button) findViewById(R.id.numSW);
+
         this.player1Score = (TextView) findViewById(R.id.player1Score);
         this.player2Score = (TextView) findViewById(R.id.player2Score);
 
@@ -120,6 +126,12 @@ public class Math24 extends Activity {
         this.numberDrawables[11] = R.drawable.num_10;
         this.numberDrawables[12] = R.drawable.num_10;
         this.numberDrawables[13] = R.drawable.num_10;
+
+        // Swipe
+        ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
+        RelativeLayout swipe_layout = (RelativeLayout) findViewById(R.id.overallLayout);
+        swipe_layout.setOnTouchListener(swipe);
+
         refreshGameUI();
     }
 
@@ -176,5 +188,31 @@ public class Math24 extends Activity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    @Override
+    public void bottom2top(View v) {
+        Log.d("Math24", "bottom2top");
+    }
+
+    @Override
+    public void left2right(View v) {
+        this.game.dealHand();
+        this.refreshGameUI();
+        Log.d("Math24", "left2right");
+    }
+
+    @Override
+    public void right2left(View v) {
+        this.game.dealHand();
+        this.refreshGameUI();
+        Log.d("Math24", "right2left");
+
+    }
+
+    @Override
+    public void top2bottom(View v) {
+        Log.d("Math24", "top2bottom");
+
     }
 }

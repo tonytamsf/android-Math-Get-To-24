@@ -43,6 +43,11 @@ public class PlayingCard {
         return (PlayingCard.rankStrings()).length;
     }
 
+    @Override
+    public String toString() {
+        return this.description();
+    }
+
     public String description() {
 
         return this.suit + " " + this.rank;
