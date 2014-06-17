@@ -3,6 +3,7 @@ package com.wordpress.tonytam.mathgetto24;
 import android.util.Log;
 import android.widget.ImageButton;
 
+import com.wordpress.tonytam.mathgetto24.AnswerPackage;
 import com.wordpress.tonytam.model.cards.PlayingCardEasy24;
 import com.wordpress.tonytam.model.cards.PlayingCardMedium24;
 import com.wordpress.tonytam.model.cards.PlayingCardNoFace;
@@ -11,7 +12,11 @@ import com.wordpress.tonytam.model.cards.PlayingCard;
 import com.wordpress.tonytam.util.Permute;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 
 /**
@@ -33,7 +38,19 @@ public class Math24Game {
             player1Score,
             player2Score;
 
+    public Method selectors[];
+
     Math24Game () {
+        Class bigDecimalClass = BigDecimal.class;
+        selectors = new Method[4];
+        try {
+            selectors[0] = bigDecimalClass.getMethod("add", BigDecimal.class);
+            selectors[1] = bigDecimalClass.getMethod("subtract", BigDecimal.class);
+            selectors[2] = bigDecimalClass.getMethod("multiply", BigDecimal.class);
+            selectors[3] = bigDecimalClass.getMethod("divide", BigDecimal.class);
+        } catch (NoSuchMethodException e) {
+            Log.e("Math24Game", e.toString());
+        }
     }
 
     public void dealHand() {
@@ -42,14 +59,60 @@ public class Math24Game {
             hand[i] = this.deck.drawRandomCard();
             Log.d("Math24Game: card ", hand[i].description());
         }
-        this.calcuateAnswer();
+        this.calculateAnswer();
     }
 
-    public void calcuateAnswer () {
+    public void calculateAnswer () {
         Permute permute = new Permute(this.hand);
-
-        System.out.println (permute.toString());
+        for (Iterator i = permute; i.hasNext(); ) {
+            PlayingCard [] a = (PlayingCard[]) i.next();
+            Log.d("Math24Game", toString(a));
+        }
     }
+
+    /*
+     * Apply all the possible operators on the 4 cards, keeping them in the same order
+     * Solve for these combination
+     * ((a op b) op c) op d
+     * (a op b) op (c op d)
+     * a op (b op c) op d
+     */
+
+    public AnswerPackage calculateHand (PlayingCard hand) {
+        Boolean found = false;
+        BigDecimal rightAnswer = new BigDecimal(24.0);
+        AnswerPackage storeAnswerPackage = null;
+
+        for (int j = 0; j <= 3; ++j) {
+            for (int k = 0; k <= 3; ++k) {
+                for (int l = 0; l <= 3; ++l) {
+                    Method currentOperators[] = {
+                            this.selectors[j],
+                            this.selectors[k],
+                            this.selectors[l]
+                    };
+                }
+            }
+        }
+
+        if (found) {
+            return storeAnswerPackage;
+        } else {
+            return null;
+        }
+    }
+
+    public String toString(PlayingCard []ar) {
+        final int n = Array.getLength(ar);
+        final StringBuffer sb = new StringBuffer("[");
+        for (int j = 0; j < n; j++) {
+            sb.append(Array.get(ar, j).toString());
+            if (j < n - 1) sb.append(",");
+        }
+        sb.append("]");
+        return new String(sb);
+    }
+
     public void startGame() {
 
         this.currentGameTime = 600;
