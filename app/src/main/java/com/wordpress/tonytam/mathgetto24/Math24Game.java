@@ -39,6 +39,12 @@ public class Math24Game {
             player2Score;
 
     public Method selectors[];
+    public String operatorChars[] = {
+            "+",
+            "-",
+            "×",
+            "÷",
+    };
 
     Math24Game () {
         Class bigDecimalClass = BigDecimal.class;
@@ -78,7 +84,7 @@ public class Math24Game {
      * a op (b op c) op d
      */
 
-    public AnswerPackage calculateHand (PlayingCard hand) {
+    public AnswerPackage calculateHand (PlayingCard cards[]) {
         Boolean found = false;
         BigDecimal rightAnswer = new BigDecimal(24.0);
         AnswerPackage storeAnswerPackage = null;
@@ -91,15 +97,44 @@ public class Math24Game {
                             this.selectors[k],
                             this.selectors[l]
                     };
+
+                    String currentOperatorChars[] = {
+                            this.operatorChars[j],
+                            this.operatorChars[k],
+                            this.operatorChars[l]
+                    };
+                    if (found) {
+                        break;
+                    }
+                    storeAnswerPackage = calculateSimple(
+                            cards,
+                            currentOperators,
+                            currentOperatorChars);
+                    /*
+                    if ([storeAnswerPackage.answer compare:rightAnswer]==NSOrderedSame){
+                        DLog( @ "answer %@", storeAnswerPackage.stringAnswer);
+
+                        found = TRUE;
+                        break;
+                    }
+                    */
                 }
             }
-        }
 
-        if (found) {
-            return storeAnswerPackage;
-        } else {
-            return null;
+            if (found) {
+                return storeAnswerPackage;
+            } else {
+                return null;
+            }
         }
+        return null;
+    }
+
+    public AnswerPackage calculateSimple (PlayingCard cards[],
+                                          Method operators[],
+                                          String operatorStrs[]) {
+        AnswerPackage storeAnswerPackage = null;
+        return storeAnswerPackage;
     }
 
     public String toString(PlayingCard []ar) {
@@ -138,18 +173,6 @@ public class Math24Game {
         // TODO handle operators in a method array
         /*
 
-        // The valid operators
-        this.plusSel  = @selector(decimalNumberByAdding:);
-        this.minusSel = @selector(decimalNumberBySubtracting:);
-        this.mulSel   = @selector(decimalNumberByMultiplyingBy:);
-        this.divSel   = @selector(decimalNumberByDividingBy:);
-
-        // We will need to loop through the operators/selectors
-        this.selectors = malloc(sizeof(SEL) * 4);
-        this.selectors[0] = this.plusSel;
-        this.selectors[1] = this.minusSel;
-        this.selectors[2] = this.mulSel;
-        this.selectors[3] = this.divSel;
 
         this.answerOperators = malloc(sizeof(SEL) * 3);
         this.operatorStrings = [[NSMutableArray alloc] init];
@@ -157,11 +180,7 @@ public class Math24Game {
         this.answerArray = [[NSMutableArray alloc] init];
 
         // just because it's hard to map SEL, we have the string representations
-        this.operatorChars = [NSArray arrayWithObjects:
-        @"+",
-        @"-",
-        @"×",
-        @"÷",
+
                 nil];
 
 
