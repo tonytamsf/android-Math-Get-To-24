@@ -12,6 +12,7 @@ import com.wordpress.tonytam.model.cards.PlayingCard;
 import com.wordpress.tonytam.util.Permute;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -65,15 +66,32 @@ public class Math24Game {
             hand[i] = this.deck.drawRandomCard();
             Log.d("Math24Game: card ", hand[i].description());
         }
-        this.calculateAnswer();
+        AnswerPackage answer = this.calculateAnswer();
+        if (answer == null) {
+            // re-deal
+            // TODO avoid infinite loop if there just isn't an answer
+            // Put the cards back into the hand
+            dealHand();
+        }
     }
 
-    public void calculateAnswer () {
+    public AnswerPackage calculateAnswer () {
         Permute permute = new Permute(this.hand);
+        AnswerPackage answer = null;
         for (Iterator i = permute; i.hasNext(); ) {
             PlayingCard [] a = (PlayingCard[]) i.next();
-            Log.d("Math24Game", toString(a));
+            Log.d("calculateAnswer", toString(a));
+            answer = calculateHand(a);
+            if (answer != null) {
+                break;
+            }
         }
+        if (answer != null) {
+            Log.d("calculateAnswer", answer.stringAnswer + "=" + answer.answer.toString());
+        } else {
+            Log.d("calculateAnswer", "NO ANSWER");
+        }
+        return answer;
     }
 
     /*
@@ -110,6 +128,11 @@ public class Math24Game {
                             cards,
                             currentOperators,
                             currentOperatorChars);
+                    if (storeAnswerPackage != null &&
+                        storeAnswerPackage.answer.equals(rightAnswer)) {
+                        found = true;
+                        break;
+                    }
                     /*
                     if ([storeAnswerPackage.answer compare:rightAnswer]==NSOrderedSame){
                         DLog( @ "answer %@", storeAnswerPackage.stringAnswer);
@@ -120,21 +143,55 @@ public class Math24Game {
                     */
                 }
             }
-
-            if (found) {
-                return storeAnswerPackage;
-            } else {
-                return null;
-            }
         }
-        return null;
+        if (found) {
+            return storeAnswerPackage;
+        } else {
+            return null;
+        }
     }
 
+    // ((a op b) op c) op d
     public AnswerPackage calculateSimple (PlayingCard cards[],
                                           Method operators[],
                                           String operatorStrs[]) {
-        AnswerPackage storeAnswerPackage = null;
-        return storeAnswerPackage;
+        BigDecimal subtotal ;
+        AnswerPackage answer = new AnswerPackage();
+        Method selector0 = operators[0];
+        Method selector1 = operators[1];
+        Method selector2 = operators[2];
+
+        PlayingCard card0 = cards[0];
+        PlayingCard card1 = cards[1];
+        PlayingCard card2 = cards[2];
+        PlayingCard card3 = cards[3];
+
+        try {
+            subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), new BigDecimal(card1.rank));
+
+            subtotal = (BigDecimal) selector1.invoke(subtotal, new BigDecimal(card2.rank));
+
+            subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card3.rank));
+        } catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            // e.printStackTrace();
+            return null;
+        }
+
+        answer.answer = subtotal;
+        answer.stringFormat = "((%d %s %d) %s %d) %s %d";
+        answer.stringAnswer = (new String()).format(answer.stringFormat,
+                card0.rank, operatorStrs[0],
+                card1.rank, operatorStrs[1],
+                card2.rank, operatorStrs[2],
+                card3.rank);
+
+        //Log.i("calculateSimple", answer.stringAnswer);
+        //Log.i("calculateSimple", answer.answer.toString());
+
+        return answer;
     }
 
     public String toString(PlayingCard []ar) {

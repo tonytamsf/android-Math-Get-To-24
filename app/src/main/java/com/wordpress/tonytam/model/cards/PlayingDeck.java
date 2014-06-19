@@ -16,7 +16,7 @@ public class PlayingDeck extends Deck {
         Class c = prototypeCard.getClass();
         for (int i = 0; i < suits.length;  i++) {
             suit = suits[i];
-            for (int rank = 1; rank <= PlayingCard.maxRank(); rank++) {
+            for (int rank = 1; rank <= prototypeCard.maxRank(); rank++) {
                 PlayingCard card = null;
                 try {
                      card = (PlayingCard) c.newInstance();

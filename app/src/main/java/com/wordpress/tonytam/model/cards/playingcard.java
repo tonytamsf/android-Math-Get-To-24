@@ -18,7 +18,7 @@ public class PlayingCard {
         return anArrayOfStrings;
     }
 
-    static public String[] rankStrings() {
+     public String[] rankStrings() {
         String[] anArrayOfStrings = {
                 "A",
                 "2",
@@ -38,9 +38,9 @@ public class PlayingCard {
         
     }
 
-    static public int maxRank() {
+     public int maxRank() {
 
-        return (PlayingCard.rankStrings()).length;
+        return (this.rankStrings()).length;
     }
 
     @Override
