@@ -1,4 +1,5 @@
 package com.wordpress.tonytam.model.cards;
+
 /**
  * Created by tonytam on 6/1/14.
  */
