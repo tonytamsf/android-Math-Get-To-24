@@ -94,6 +94,30 @@ public class Math24Game {
         return answer;
     }
 
+    // Using the cards in the given sequence and operators in the sequence
+    // calculate whether there is an answer.  This can be used
+    // to verify the human players answer
+    //
+    // RETURN the answerPackage or nil if 24 is not found
+    //
+    public AnswerPackage calculateHand (PlayingCard cards[],
+                                        Method operators[],
+                                        String operatorStrs[]) {
+        Boolean found = false;
+        BigDecimal rightAnswer = new BigDecimal(24.0);
+        AnswerPackage storeAnswerPackage = null;
+
+        storeAnswerPackage = calculateSimple(
+                cards,
+                operators,
+                operatorStrs);
+        if (storeAnswerPackage != null &&
+                storeAnswerPackage.answer.equals(rightAnswer)) {
+            found = true;
+            return storeAnswerPackage;
+        }
+        return null;
+    }
     /*
      * Apply all the possible operators on the 4 cards, keeping them in the same order
      * Solve for these combination
@@ -121,17 +145,15 @@ public class Math24Game {
                             this.operatorChars[k],
                             this.operatorChars[l]
                     };
-                    if (found) {
-                        break;
-                    }
-                    storeAnswerPackage = calculateSimple(
+
+                    storeAnswerPackage = calculateHand(
                             cards,
                             currentOperators,
                             currentOperatorChars);
                     if (storeAnswerPackage != null &&
                         storeAnswerPackage.answer.equals(rightAnswer)) {
                         found = true;
-                        break;
+                        return storeAnswerPackage;
                     }
                     /*
                     if ([storeAnswerPackage.answer compare:rightAnswer]==NSOrderedSame){
@@ -144,11 +166,7 @@ public class Math24Game {
                 }
             }
         }
-        if (found) {
-            return storeAnswerPackage;
-        } else {
-            return null;
-        }
+        return null;
     }
 
     // ((a op b) op c) op d
@@ -194,6 +212,49 @@ public class Math24Game {
         return answer;
     }
 
+    // a op ((b op c) op d)
+    public AnswerPackage calculateNested(PlayingCard cards[],
+                                         Method operators[],
+                                         String operatorStrs[]) {
+        BigDecimal subtotal;
+        AnswerPackage answer = new AnswerPackage();
+        Method selector0 = operators[0];
+        Method selector1 = operators[1];
+        Method selector2 = operators[2];
+
+        PlayingCard card0 = cards[0];
+        PlayingCard card1 = cards[1];
+        PlayingCard card2 = cards[2];
+        PlayingCard card3 = cards[3];
+
+        try {
+            subtotal = (BigDecimal) selector1.invoke(new BigDecimal(card1.rank), new BigDecimal(card2.rank));
+
+            subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card3.rank));
+
+            subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), subtotal);
+        } catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            // e.printStackTrace();
+            return null;
+        }
+
+        answer.answer = subtotal;
+        answer.stringFormat = "%d %s ((%d %s %d) %s %d)";
+        answer.stringAnswer = (new String()).format(answer.stringFormat,
+                card0.rank, operatorStrs[0],
+                card1.rank, operatorStrs[1],
+                card2.rank, operatorStrs[2],
+                card3.rank);
+
+        //Log.i("calculateSimple", answer.stringAnswer);
+        //Log.i("calculateSimple", answer.answer.toString());
+
+        return answer;
+    }
+
     public String toString(PlayingCard []ar) {
         final int n = Array.getLength(ar);
         final StringBuffer sb = new StringBuffer("[");
@@ -212,7 +273,7 @@ public class Math24Game {
         this.player2Score = 0;
 
         if (this._hardDeck == null) {
-            this._hardDeck = new PlayingDeck   (new PlayingCardNoFace());
+            this._hardDeck = new PlayingDeck (new PlayingCardNoFace());
         }
 
         if (this._easyDeck == null) {
