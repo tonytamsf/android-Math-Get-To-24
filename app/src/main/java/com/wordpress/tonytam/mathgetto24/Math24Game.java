@@ -1,9 +1,7 @@
 package com.wordpress.tonytam.mathgetto24;
 
 import android.util.Log;
-import android.widget.ImageButton;
 
-import com.wordpress.tonytam.mathgetto24.AnswerPackage;
 import com.wordpress.tonytam.model.cards.PlayingCardEasy24;
 import com.wordpress.tonytam.model.cards.PlayingCardMedium24;
 import com.wordpress.tonytam.model.cards.PlayingCardNoFace;
@@ -15,9 +13,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 
 /**
@@ -283,7 +279,7 @@ public class Math24Game {
         }
 
         answer.answer = subtotal;
-        answer.stringFormat = "((%d %s %d) %s %d) %s %d";
+        answer.stringFormat = "(%d %s %d) %s (%d %s %d)";
         answer.stringAnswer = (new String()).format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
@@ -326,7 +322,7 @@ public class Math24Game {
         }
 
         answer.answer = subtotal;
-        answer.stringFormat = "((%d %s %d) %s %d) %s %d";
+        answer.stringFormat = "(%d %s %d) %s %d %s %d";
         answer.stringAnswer = (new String()).format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
@@ -412,7 +408,7 @@ public class Math24Game {
         }
 
         answer.answer = subtotal;
-        answer.stringFormat = "%d %s ((%d %s %d) %s %d)";
+        answer.stringFormat = "%d %s (%d %s %d) %s %d";
         answer.stringAnswer = (new String()).format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
