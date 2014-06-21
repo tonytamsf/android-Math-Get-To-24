@@ -107,7 +107,7 @@ public class Math24Game {
         BigDecimal rightAnswer = new BigDecimal(24.0);
         AnswerPackage storeAnswerPackage = null;
 
-        storeAnswerPackage = calculateSimple(
+        storeAnswerPackage = calculateSimple (
                 cards,
                 operators,
                 operatorStrs);
@@ -116,6 +116,47 @@ public class Math24Game {
             found = true;
             return storeAnswerPackage;
         }
+
+        storeAnswerPackage = calculateNested (
+                cards,
+                operators,
+                operatorStrs);
+        if (storeAnswerPackage != null &&
+                storeAnswerPackage.answer.equals(rightAnswer)) {
+            found = true;
+            return storeAnswerPackage;
+        }
+
+        storeAnswerPackage = calculateGrouping (
+                cards,
+                operators,
+                operatorStrs);
+        if (storeAnswerPackage != null &&
+                storeAnswerPackage.answer.equals(rightAnswer)) {
+            found = true;
+            return storeAnswerPackage;
+        }
+
+        storeAnswerPackage = calculateGroupingOfTwo (
+                cards,
+                operators,
+                operatorStrs);
+        if (storeAnswerPackage != null &&
+                storeAnswerPackage.answer.equals(rightAnswer)) {
+            found = true;
+            return storeAnswerPackage;
+        }
+
+        storeAnswerPackage = calculateGroupingSecond (
+                cards,
+                operators,
+                operatorStrs);
+        if (storeAnswerPackage != null &&
+                storeAnswerPackage.answer.equals(rightAnswer)) {
+            found = true;
+            return storeAnswerPackage;
+        }
+        
         return null;
     }
     /*
@@ -212,6 +253,92 @@ public class Math24Game {
         return answer;
     }
 
+    // (a op b) op (c op d)
+    public AnswerPackage calculateGrouping(PlayingCard cards[],
+                                           Method operators[],
+                                           String operatorStrs[]) {
+        BigDecimal subtotal, subtotal1;
+        AnswerPackage answer = new AnswerPackage();
+        Method selector0 = operators[0];
+        Method selector1 = operators[1];
+        Method selector2 = operators[2];
+
+        PlayingCard card0 = cards[0];
+        PlayingCard card1 = cards[1];
+        PlayingCard card2 = cards[2];
+        PlayingCard card3 = cards[3];
+
+        try {
+            subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), new BigDecimal(card1.rank));
+
+            subtotal1 = (BigDecimal) selector2.invoke(new BigDecimal(card2.rank), new BigDecimal(card3.rank));
+
+            subtotal = (BigDecimal) selector1.invoke(subtotal, subtotal1);
+        } catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            // e.printStackTrace();
+            return null;
+        }
+
+        answer.answer = subtotal;
+        answer.stringFormat = "((%d %s %d) %s %d) %s %d";
+        answer.stringAnswer = (new String()).format(answer.stringFormat,
+                card0.rank, operatorStrs[0],
+                card1.rank, operatorStrs[1],
+                card2.rank, operatorStrs[2],
+                card3.rank);
+
+        //Log.i("calculateSimple", answer.stringAnswer);
+        //Log.i("calculateSimple", answer.answer.toString());
+
+        return answer;
+    }
+
+    // (a op b) op c op d
+    public AnswerPackage calculateGroupingOfTwo  (PlayingCard cards[],
+                                         Method operators[],
+                                         String operatorStrs[]) {
+        BigDecimal subtotal, subtotal1;
+        AnswerPackage answer = new AnswerPackage();
+        Method selector0 = operators[0];
+        Method selector1 = operators[1];
+        Method selector2 = operators[2];
+
+        PlayingCard card0 = cards[0];
+        PlayingCard card1 = cards[1];
+        PlayingCard card2 = cards[2];
+        PlayingCard card3 = cards[3];
+
+        try {
+            subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), new BigDecimal(card1.rank));
+
+            subtotal = (BigDecimal) selector1.invoke(subtotal, new BigDecimal(card2.rank));
+
+            subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card3.rank));
+        } catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            // e.printStackTrace();
+            return null;
+        }
+
+        answer.answer = subtotal;
+        answer.stringFormat = "((%d %s %d) %s %d) %s %d";
+        answer.stringAnswer = (new String()).format(answer.stringFormat,
+                card0.rank, operatorStrs[0],
+                card1.rank, operatorStrs[1],
+                card2.rank, operatorStrs[2],
+                card3.rank);
+
+        //Log.i("calculateSimple", answer.stringAnswer);
+        //Log.i("calculateSimple", answer.answer.toString());
+
+        return answer;
+    }
+
     // a op ((b op c) op d)
     public AnswerPackage calculateNested(PlayingCard cards[],
                                          Method operators[],
@@ -233,6 +360,49 @@ public class Math24Game {
             subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card3.rank));
 
             subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), subtotal);
+        } catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            // e.printStackTrace();
+            return null;
+        }
+
+        answer.answer = subtotal;
+        answer.stringFormat = "%d %s ((%d %s %d) %s %d)";
+        answer.stringAnswer = (new String()).format(answer.stringFormat,
+                card0.rank, operatorStrs[0],
+                card1.rank, operatorStrs[1],
+                card2.rank, operatorStrs[2],
+                card3.rank);
+
+        //Log.i("calculateSimple", answer.stringAnswer);
+        //Log.i("calculateSimple", answer.answer.toString());
+
+        return answer;
+    }
+
+    // a op (b op c) op d
+    public AnswerPackage calculateGroupingSecond (PlayingCard cards[],
+                                         Method operators[],
+                                         String operatorStrs[]) {
+        BigDecimal subtotal;
+        AnswerPackage answer = new AnswerPackage();
+        Method selector0 = operators[0];
+        Method selector1 = operators[1];
+        Method selector2 = operators[2];
+
+        PlayingCard card0 = cards[0];
+        PlayingCard card1 = cards[1];
+        PlayingCard card2 = cards[2];
+        PlayingCard card3 = cards[3];
+
+        try {
+            subtotal = (BigDecimal) selector1.invoke(new BigDecimal(card1.rank), new BigDecimal(card2.rank));
+
+            subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), subtotal);
+
+            subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card0.rank));
         } catch (InvocationTargetException e) {
             // e.printStackTrace();
             return null;
