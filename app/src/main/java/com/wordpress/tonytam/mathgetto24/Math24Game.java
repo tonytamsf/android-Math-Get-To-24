@@ -398,7 +398,7 @@ public class Math24Game {
 
             subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), subtotal);
 
-            subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card0.rank));
+            subtotal = (BigDecimal) selector2.invoke(subtotal, new BigDecimal(card3.rank));
         } catch (InvocationTargetException e) {
             // e.printStackTrace();
             return null;
