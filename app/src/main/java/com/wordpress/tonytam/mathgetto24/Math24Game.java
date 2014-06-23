@@ -162,7 +162,6 @@ public class Math24Game {
      * (a op b) op (c op d)
      * a op (b op c) op d
      */
-
     public AnswerPackage calculateHand (PlayingCard cards[]) {
         Boolean found = false;
         BigDecimal rightAnswer = new BigDecimal(24.0);
@@ -449,7 +448,7 @@ public class Math24Game {
         if (this._mediumDeck == null) {
             this._mediumDeck = new PlayingDeck (new PlayingCardMedium24());
         }
-        this.deck = this._easyDeck;
+        this.deck = this._hardDeck;
 
         this.hand = new PlayingCard[4];
         this.dealHand();

@@ -5,13 +5,17 @@ import com.wordpress.tonytam.util.*;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.AsyncTask;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -74,6 +78,13 @@ public class Math24 extends Activity implements SwipeInterface {
 
         final View contentView = findViewById (R.id.fullscreen_content1);
 
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
@@ -109,6 +120,18 @@ public class Math24 extends Activity implements SwipeInterface {
         this.numSE = (Button) findViewById(R.id.numSE);
         this.numSW = (Button) findViewById(R.id.numSW);
 
+        this.numNW.setHeight(width / 3);
+        this.numNW.setWidth(width / 3);
+
+        this.numNE.setWidth(width / 3);
+        this.numNE.setHeight(width / 3);
+
+        this.numSW.setWidth(width / 3);
+        this.numSW.setHeight(width / 3);
+
+        this.numSE.setHeight(width / 3);
+        this.numSE.setWidth(width / 3);
+
         this.player1Score = (TextView) findViewById(R.id.player1Score);
         this.player2Score = (TextView) findViewById(R.id.player2Score);
 
@@ -136,6 +159,19 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
 
+    public void hideCards () {
+        this.numNW.setVisibility(View.INVISIBLE);
+        this.numSW.setVisibility(View.INVISIBLE);
+        this.numNE.setVisibility(View.INVISIBLE);
+        this.numSE.setVisibility(View.INVISIBLE);
+    }
+
+    public void showCards () {
+        this.numNW.setVisibility(View.VISIBLE);
+        this.numSW.setVisibility(View.VISIBLE);
+        this.numNE.setVisibility(View.VISIBLE);
+        this.numSE.setVisibility(View.VISIBLE);
+    }
     public void refreshGameUI ( ) {
         this.numNW.setBackgroundResource(this.numberDrawables[game.hand[0].rank]);
         this.numNE.setBackgroundResource(this.numberDrawables[game.hand[1].rank]);
@@ -197,19 +233,53 @@ public class Math24 extends Activity implements SwipeInterface {
 
     @Override
     public void left2right(View v) {
-        this.game.dealHand();
-        this.refreshGameUI();
-        Log.d("Math24", "left2right");
+
+        dealHand();
+
     }
 
     @Override
     public void right2left(View v) {
-        this.game.dealHand();
-        this.refreshGameUI();
-        Log.d("Math24", "right2left");
+        // TODO: this should be in a separate thread or the UI will be frozen
+        dealHand();
 
     }
 
+    public void dealHand () {
+        final ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressBar);
+        mProgress.setMax(100);
+        mProgress.setVisibility(View.VISIBLE);
+        //this.numSE.animate().translationX(0).withLayer();
+
+        // the local Thread used for count-down
+        class DealTask extends AsyncTask<Math24, Integer, Long> {
+            int i = 0;
+
+            protected void onPreExecute() {
+                i = 0;
+                Math24.this.hideCards();
+            }
+            protected Long doInBackground(Math24... o) {
+                Math24 mathGame = (Math24) o[0];
+                mathGame.game.dealHand();
+                return new Long(1);
+            }
+
+            protected void onProgressUpdate(Integer... progress) {
+                mProgress.setProgress(i++);
+                Log.d("DealTask:onProgressUpdate", progress.toString());
+            }
+
+            protected void onPostExecute(Long result) {
+                Math24.this.refreshGameUI();
+                mProgress.setVisibility(View.INVISIBLE);
+                Math24.this.showCards();
+
+            }
+        }
+
+        new DealTask().execute(this);
+    }
     @Override
     public void top2bottom(View v) {
         Log.d("Math24", "top2bottom");
