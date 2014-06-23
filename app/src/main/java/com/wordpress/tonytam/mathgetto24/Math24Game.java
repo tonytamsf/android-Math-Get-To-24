@@ -28,6 +28,10 @@ public class Math24Game {
             _mediumDeck;
 
     public PlayingCard hand[];
+    public PlayingCard nextHand[];
+
+    AnswerPackage answer;
+    AnswerPackage nextAnswer;
 
     public int currentGameTime;
 
@@ -56,19 +60,48 @@ public class Math24Game {
         }
     }
 
-    public void dealHand() {
+    public PlayingCard [] dealHand() {
+        if (nextHand[0] == null) {
+            for (int numHands = 0; numHands <= 50; numHands++) {
+                for (int i = 0; i <= 3; i++) {
+                    this.hand[i] = Math24Game.this.deck.drawRandomCard();
+                    Log.d("Math24Game: card ", this.hand[i].description());
+                }
 
-        for (int i = 0; i <= 3; i++) {
-            hand[i] = this.deck.drawRandomCard();
-            Log.d("Math24Game: card ", hand[i].description());
+                nextAnswer = this.calculateAnswer();
+                if (nextAnswer != null) {
+                    // TODO: Put the cards back into the hand
+                    break;
+                }
+            }
+        } else {
+            hand = nextHand;
+            answer = nextAnswer;
+            Log.d("dealHand", "Shortcut deal");
         }
-        AnswerPackage answer = this.calculateAnswer();
-        if (answer == null) {
-            // re-deal
-            // TODO avoid infinite loop if there just isn't an answer
-            // Put the cards back into the hand
-            dealHand();
+
+        class CalculateAnswer extends Thread {
+
+            public void run() {
+                for (int numHands = 0; numHands <= 50; numHands++) {
+                    for (int i = 0; i <= 3; i++) {
+                        Math24Game.this.nextHand[i] = Math24Game.this.deck.drawRandomCard();
+                        Log.d("Math24Game: card ", Math24Game.this.nextHand[i].description());
+                    }
+
+                    nextAnswer = Math24Game.this.calculateAnswer();
+                    if (nextAnswer != null) {
+                        // TODO: Put the cards back into the hand
+                        break;
+                    }
+                }
+                if (nextAnswer == null) {
+                    // TODO: we got a problem, no answer for any cards
+                }
+            }
         }
+        new CalculateAnswer().start();
+        return hand;
     }
 
     public AnswerPackage calculateAnswer () {
@@ -451,6 +484,10 @@ public class Math24Game {
         this.deck = this._hardDeck;
 
         this.hand = new PlayingCard[4];
+        this.nextHand = new PlayingCard[4];
+        nextAnswer = new AnswerPackage();
+        answer = new AnswerPackage();
+
         this.dealHand();
 
         // TODO handle operators in a method array
