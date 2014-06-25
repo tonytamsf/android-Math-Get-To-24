@@ -30,6 +30,7 @@ import android.widget.TextView;
  * @see SystemUiHider
  */
 public class Math24 extends Activity implements SwipeInterface {
+    private static String TAG = "Math24";
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -158,6 +159,13 @@ public class Math24 extends Activity implements SwipeInterface {
         refreshGameUI();
     }
 
+    public void player1GotAnswer (View view) {
+        Log.d(TAG, "player1GotAnswer");
+    }
+
+    public void player2GotAnswer(View view) {
+        Log.d(TAG, "player2GotAnswer");
+    }
 
     public void hideCards () {
         this.numNW.setVisibility(View.INVISIBLE);

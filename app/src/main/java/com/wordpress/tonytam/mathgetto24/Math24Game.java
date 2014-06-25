@@ -166,6 +166,16 @@ public class Math24Game {
             return storeAnswerPackage;
         }
 
+        storeAnswerPackage = calculateGroupingThree (
+                cards,
+                operators,
+                operatorStrs);
+        if (storeAnswerPackage != null &&
+                storeAnswerPackage.answer.equals(rightAnswer)) {
+            found = true;
+            return storeAnswerPackage;
+        }
+
         storeAnswerPackage = calculateGroupingOfTwo (
                 cards,
                 operators,
@@ -323,6 +333,50 @@ public class Math24Game {
 
         return answer;
     }
+
+    // a op (b op (c op d))
+    public AnswerPackage calculateGroupingThree(PlayingCard cards[],
+                                           Method operators[],
+                                           String operatorStrs[]) {
+        BigDecimal subtotal;
+        AnswerPackage answer = new AnswerPackage();
+        Method selector0 = operators[0];
+        Method selector1 = operators[1];
+        Method selector2 = operators[2];
+
+        PlayingCard card0 = cards[0];
+        PlayingCard card1 = cards[1];
+        PlayingCard card2 = cards[2];
+        PlayingCard card3 = cards[3];
+
+        try {
+            subtotal = (BigDecimal) selector2.invoke(new BigDecimal(card2.rank), new BigDecimal(card3.rank));
+
+            subtotal = (BigDecimal) selector1.invoke(new BigDecimal(card1.rank), subtotal);
+
+            subtotal = (BigDecimal) selector0.invoke(new BigDecimal(card0.rank), subtotal);
+        } catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            // e.printStackTrace();
+            return null;
+        }
+
+        answer.answer = subtotal;
+        answer.stringFormat = "%d %s ((%d %s (%d %s %d))";
+        answer.stringAnswer = (new String()).format(answer.stringFormat,
+                card0.rank, operatorStrs[0],
+                card1.rank, operatorStrs[1],
+                card2.rank, operatorStrs[2],
+                card3.rank);
+
+        //Log.i("calculateSimple", answer.stringAnswer);
+        //Log.i("calculateSimple", answer.answer.toString());
+
+        return answer;
+    }
+
 
     // (a op b) op c op d
     public AnswerPackage calculateGroupingOfTwo  (PlayingCard cards[],
