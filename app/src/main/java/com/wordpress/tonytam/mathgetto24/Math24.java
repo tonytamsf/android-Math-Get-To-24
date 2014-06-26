@@ -160,10 +160,12 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     public void player1GotAnswer (View view) {
+
         Log.d(TAG, "player1GotAnswer");
     }
 
     public void player2GotAnswer(View view) {
+
         Log.d(TAG, "player2GotAnswer");
     }
 
@@ -255,8 +257,10 @@ public class Math24 extends Activity implements SwipeInterface {
 
     public void dealHand () {
         final ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressBar);
-        mProgress.setMax(100);
-        mProgress.setVisibility(View.VISIBLE);
+
+        // mProgress.setMax(100);
+        // mProgress.setVisibility(View.VISIBLE);
+
         //this.numSE.animate().translationX(0).withLayer();
 
         // the local Thread used for count-down
@@ -274,13 +278,16 @@ public class Math24 extends Activity implements SwipeInterface {
             }
 
             protected void onProgressUpdate(Integer... progress) {
-                mProgress.setProgress(i++);
+
+                // mProgress.setProgress(i++);
                 Log.d("DealTask:onProgressUpdate", progress.toString());
             }
 
             protected void onPostExecute(Long result) {
                 Math24.this.refreshGameUI();
-                mProgress.setVisibility(View.INVISIBLE);
+
+                // mProgress.setVisibility(View.INVISIBLE);
+
                 Math24.this.showCards();
 
             }
