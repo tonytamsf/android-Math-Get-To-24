@@ -169,19 +169,21 @@ public class Math24 extends Activity implements SwipeInterface {
         Log.d(TAG, "player2GotAnswer");
     }
 
-    public void hideCards () {
-        this.numNW.setVisibility(View.INVISIBLE);
-        this.numSW.setVisibility(View.INVISIBLE);
-        this.numNE.setVisibility(View.INVISIBLE);
-        this.numSE.setVisibility(View.INVISIBLE);
+    /*
+     * Show or hide cards
+     * @param visibility View.INVISIBLE | View.VISIBLE
+     */
+    public void setCardVisbility(int visibility) {
+        this.numNW.setVisibility(visibility);
+        this.numSW.setVisibility(visibility);
+        this.numNE.setVisibility(visibility);
+        this.numSE.setVisibility(visibility);
     }
 
-    public void showCards () {
-        this.numNW.setVisibility(View.VISIBLE);
-        this.numSW.setVisibility(View.VISIBLE);
-        this.numNE.setVisibility(View.VISIBLE);
-        this.numSE.setVisibility(View.VISIBLE);
-    }
+
+    /*
+     * Call this when the data model changes
+     */
     public void refreshGameUI ( ) {
         this.numNW.setBackgroundResource(this.numberDrawables[game.hand[0].rank]);
         this.numNE.setBackgroundResource(this.numberDrawables[game.hand[1].rank]);
@@ -193,6 +195,7 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player1Score.setText( String.valueOf( game.player1Score ));
         this.player2Score.setText( String.valueOf( game.player2Score ));
     }
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -269,7 +272,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
             protected void onPreExecute() {
                 i = 0;
-                Math24.this.hideCards();
+                // TODO Math24.this.hideCards();
             }
             protected Long doInBackground(Math24... o) {
                 Math24 mathGame = (Math24) o[0];
@@ -288,13 +291,15 @@ public class Math24 extends Activity implements SwipeInterface {
 
                 // mProgress.setVisibility(View.INVISIBLE);
 
-                Math24.this.showCards();
+                //Math24.this.showCards();
 
             }
         }
 
         new DealTask().execute(this);
     }
+
+
     @Override
     public void top2bottom(View v) {
         Log.d("Math24", "top2bottom");

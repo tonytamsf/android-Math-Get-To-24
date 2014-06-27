@@ -3,17 +3,18 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/Developer/gradle-1.12" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24" />
-            <option value="$USER_HOME$/Dropbox/Developer/git/android-Math-Get-To-24/app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
       </GradleProjectSettings>
     </option>
-    <option name="offlineWork" value="true" />
   </component>
 </project>
 

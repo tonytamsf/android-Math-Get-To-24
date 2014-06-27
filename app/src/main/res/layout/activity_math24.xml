@@ -81,7 +81,8 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
                 android:layout_margin="5dp"
-                android:id="@+id/numberLayout">
+                android:id="@+id/numberLayout"
+                android:layout_toLeftOf="@+id/operatorLayout">
 
                 <Button
                     android:layout_width="wrap_content"
@@ -90,7 +91,8 @@
                     android:layout_row="1"
                     android:layout_column="4"
                     android:background="@drawable/num_10"
-                    android:layout_margin="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp" />
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -111,7 +113,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:background="@drawable/num_1"
-                    android:layout_margin="5dp" />
+                    android:layout_marginBottom="5dp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -120,7 +122,8 @@
                     android:layout_row="2"
                     android:layout_column="4"
                     android:background="@drawable/num_7"
-                    android:layout_margin="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -129,7 +132,8 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:background="@drawable/num_3"
-                    android:layout_margin="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp" />
             </GridLayout>
 
             <FrameLayout
@@ -138,7 +142,7 @@
                 android:id="@+id/player2Area"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
 
@@ -154,8 +158,9 @@
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_marginLeft="20dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,7 +174,9 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="123"
-                        android:id="@+id/player2Timer" />
+                        android:id="@+id/player2Timer"
+                        android:textColor="#ffc045c4"
+                        android:gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -184,7 +191,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Player 2"
-                        android:id="@+id/player2Name" />
+                        android:id="@+id/player2Label" />
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -193,7 +200,9 @@
                         android:text="0"
                         android:id="@+id/player2Score"
                         android:layout_gravity="center_horizontal"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#ffc045c4"
+                        android:gravity="center" />
                 </LinearLayout>
             </FrameLayout>
 
@@ -204,7 +213,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/player1Area"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
 
@@ -223,43 +232,46 @@
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="123"
-                        android:id="@+id/player1Timer"
+                        android:text="Time"
+                        android:id="@+id/player1TimerLabel"
                         android:layout_gravity="right"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Time"
-                        android:id="@+id/textView7"
+                        android:text="123"
+                        android:id="@+id/player1Timer"
                         android:editable="false"
                         android:maxLines="1"
-                        android:layout_gravity="right"
+                        android:layout_gravity="center_horizontal|right"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true" />
+                        android:layout_alignParentTop="true"
+                        android:textColor="#ffc045c4"
+                        android:gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Player 1"
-                        android:id="@+id/textView" />
+                        android:id="@+id/player1Label" />
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -268,7 +280,9 @@
                         android:text="0"
                         android:id="@+id/player1Score"
                         android:layout_gravity="center_horizontal"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#ffc045c4"
+                        android:gravity="center" />
                 </LinearLayout>
             </FrameLayout>
 
@@ -322,6 +336,51 @@
                 android:layout_toLeftOf="@+id/gameLevelRadioGroup"
                 android:background="@drawable/sound"
                 android:layout_alignBottom="@+id/gameLevelRadioGroup" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/operatorLayout"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/operatorPlus"
+                    android:background="@drawable/plus"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="top" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/operatorMinus"
+                    android:background="@drawable/minus"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/operatorMultiply"
+                    android:background="@drawable/multiply"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/operatorDivide"
+                    android:background="@drawable/divide"
+                    android:focusableInTouchMode="true"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
 
         </RelativeLayout>
     </LinearLayout>

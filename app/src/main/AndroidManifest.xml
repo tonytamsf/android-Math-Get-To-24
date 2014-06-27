@@ -12,8 +12,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
         <activity
+            android:screenOrientation="landscape"
             android:name="com.wordpress.tonytam.mathgetto24.Math24"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name" >
