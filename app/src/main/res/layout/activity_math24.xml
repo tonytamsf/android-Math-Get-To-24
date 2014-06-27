@@ -43,7 +43,8 @@
                 android:layout_alignParentRight="false"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="false"
-                android:layout_marginLeft="-75dp">
+                android:layout_marginLeft="-75dp"
+                >
 
                 <Button
                     android:layout_width="60dp"
@@ -160,14 +161,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Time"
-                        android:id="@+id/player2TimerLabel" />
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/player1TimeLayout">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -176,7 +171,19 @@
                         android:text="123"
                         android:id="@+id/player2Timer"
                         android:textColor="#ffc045c4"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:rotation="180"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Time"
+                        android:id="@+id/player2TimerLabel"
+                        android:rotation="180"
+                        />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -187,13 +194,6 @@
                     android:layout_gravity="right|center_vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Player 2"
-                        android:id="@+id/player2Label" />
-
-                    <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -202,7 +202,20 @@
                         android:layout_gravity="center_horizontal"
                         android:textAlignment="center"
                         android:textColor="#ffc045c4"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:rotation="180"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Player 2"
+                        android:id="@+id/player2Label"
+                        android:rotation="180"
+
+                        />
                 </LinearLayout>
             </FrameLayout>
 
