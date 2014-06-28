@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -66,7 +67,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
     private Math24Game game;
 
-    public Button [] operators;
+    public Button[] operators;
     public Button [] cards;
 
     public TextView
@@ -84,6 +85,7 @@ public class Math24 extends Activity implements SwipeInterface {
             operatorMinus,
             operatorMultiply;
 
+    View mainView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +93,7 @@ public class Math24 extends Activity implements SwipeInterface {
         setContentView(R.layout.activity_math24);
 
         final View contentView = findViewById(R.id.fullscreen_content1);
+        this.mainView = contentView;
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -184,6 +187,7 @@ public class Math24 extends Activity implements SwipeInterface {
         };
         this.answerCardArray = new ArrayList<Button>();
 
+        this.disableOperators(false);
 
         // Swipe
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
@@ -205,6 +209,8 @@ public class Math24 extends Activity implements SwipeInterface {
 
     public void cardsTouched(View view) {
         this.answerCardArray.add((Button) view);
+        this.disableOperators(false);
+        this.disableCards(true);
 
         Log.d(TAG, "cardsTouched " + this.answerCardArray.toString());
     }
@@ -240,17 +246,35 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     void disableOperators (Boolean bDisabled) {
-        for (Button button : this.operators) {
-            button.setEnabled(!bDisabled);
-            button.setAlpha(0.2f);
+        for (Button b : this.operators) {
+            Log.d(TAG, "disableOperators " + b);
+            b.setEnabled(!bDisabled);
+            b.setAlpha(0.0f);
+            b.setClickable(false);
+            b.setVisibility(View.INVISIBLE);
         }
+        this.mainView.invalidate();
+
     }
 
     void disableCards (Boolean bDisabled) {
         for (Button card : this.cards) {
-            card.setEnabled(!bDisabled);
-            card.setAlpha(0.2f);
+            //card.setEnabled(! bDisabled);
+
+            if (bDisabled == false && this.answerCardArray.contains(card)) {
+                continue;
+            }
+            if (bDisabled == true && this.answerCardArray.contains(card)) {
+                Log.d(TAG, "found card " + card.toString());
+
+                card.setAlpha(0.2f);
+            } else {
+                Log.d(TAG, "not found card " + card.toString());
+
+                card.setAlpha(bDisabled == true ? 0.6f : 1.0f);
+            }
         }
+        this.mainView.invalidate();
     }
     /*
      * Show or hide cards
