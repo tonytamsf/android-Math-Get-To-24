@@ -1,7 +1,7 @@
 package com.wordpress.tonytam.util;
 
 /**
-Created by tonytam on 6/15/14.
+ @author by tonytam on 6/15/14.
 
  Credit: http://stackoverflow.com/questions/937313/android-basic-gesture-detection
 

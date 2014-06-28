@@ -1,11 +1,9 @@
 package com.wordpress.tonytam.model.cards;
 
-import android.util.Log;
-
 import java.util.*;
 
 /**
- * Created by tonytam on 6/4/14.
+ * @author tonytam
  */
 public class Deck <T> {
     private ArrayList cards ;

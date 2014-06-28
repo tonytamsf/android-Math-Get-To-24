@@ -17,7 +17,7 @@ import java.util.Iterator;
 
 
 /**
- * Created by tonytam on 6/4/14.
+ * @author by tonytam on 6/4/14.
  */
 public class Math24Game {
     public PlayingDeck deck;
@@ -132,9 +132,8 @@ public class Math24Game {
     public AnswerPackage calculateHand (PlayingCard cards[],
                                         Method operators[],
                                         String operatorStrs[]) {
-        Boolean found = false;
         BigDecimal rightAnswer = new BigDecimal(24.0);
-        AnswerPackage storeAnswerPackage = null;
+        AnswerPackage storeAnswerPackage;
 
         storeAnswerPackage = calculateSimple (
                 cards,
@@ -142,7 +141,6 @@ public class Math24Game {
                 operatorStrs);
         if (storeAnswerPackage != null &&
                 storeAnswerPackage.answer.equals(rightAnswer)) {
-            found = true;
             return storeAnswerPackage;
         }
 
@@ -152,7 +150,6 @@ public class Math24Game {
                 operatorStrs);
         if (storeAnswerPackage != null &&
                 storeAnswerPackage.answer.equals(rightAnswer)) {
-            found = true;
             return storeAnswerPackage;
         }
 
@@ -162,7 +159,6 @@ public class Math24Game {
                 operatorStrs);
         if (storeAnswerPackage != null &&
                 storeAnswerPackage.answer.equals(rightAnswer)) {
-            found = true;
             return storeAnswerPackage;
         }
 
@@ -172,7 +168,6 @@ public class Math24Game {
                 operatorStrs);
         if (storeAnswerPackage != null &&
                 storeAnswerPackage.answer.equals(rightAnswer)) {
-            found = true;
             return storeAnswerPackage;
         }
 
@@ -182,7 +177,6 @@ public class Math24Game {
                 operatorStrs);
         if (storeAnswerPackage != null &&
                 storeAnswerPackage.answer.equals(rightAnswer)) {
-            found = true;
             return storeAnswerPackage;
         }
 
@@ -192,7 +186,6 @@ public class Math24Game {
                 operatorStrs);
         if (storeAnswerPackage != null &&
                 storeAnswerPackage.answer.equals(rightAnswer)) {
-            found = true;
             return storeAnswerPackage;
         }
         
@@ -206,9 +199,8 @@ public class Math24Game {
      * a op (b op c) op d
      */
     public AnswerPackage calculateHand (PlayingCard cards[]) {
-        Boolean found = false;
         BigDecimal rightAnswer = new BigDecimal(24.0);
-        AnswerPackage storeAnswerPackage = null;
+        AnswerPackage storeAnswerPackage;
 
         for (int j = 0; j <= 3; ++j) {
             for (int k = 0; k <= 3; ++k) {
@@ -231,7 +223,6 @@ public class Math24Game {
                             currentOperatorChars);
                     if (storeAnswerPackage != null &&
                         storeAnswerPackage.answer.equals(rightAnswer)) {
-                        found = true;
                         return storeAnswerPackage;
                     }
                     /*
@@ -279,7 +270,7 @@ public class Math24Game {
 
         answer.answer = subtotal;
         answer.stringFormat = "((%d %s %d) %s %d) %s %d";
-        answer.stringAnswer = (new String()).format(answer.stringFormat,
+        answer.stringAnswer = String.format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
                 card2.rank, operatorStrs[2],
@@ -322,7 +313,7 @@ public class Math24Game {
 
         answer.answer = subtotal;
         answer.stringFormat = "(%d %s %d) %s (%d %s %d)";
-        answer.stringAnswer = (new String()).format(answer.stringFormat,
+        answer.stringAnswer = String.format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
                 card2.rank, operatorStrs[2],
@@ -365,7 +356,7 @@ public class Math24Game {
 
         answer.answer = subtotal;
         answer.stringFormat = "%d %s ((%d %s (%d %s %d))";
-        answer.stringAnswer = (new String()).format(answer.stringFormat,
+        answer.stringAnswer = String.format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
                 card2.rank, operatorStrs[2],
@@ -382,7 +373,7 @@ public class Math24Game {
     public AnswerPackage calculateGroupingOfTwo  (PlayingCard cards[],
                                          Method operators[],
                                          String operatorStrs[]) {
-        BigDecimal subtotal, subtotal1;
+        BigDecimal subtotal;
         AnswerPackage answer = new AnswerPackage();
         Method selector0 = operators[0];
         Method selector1 = operators[1];
@@ -409,7 +400,7 @@ public class Math24Game {
 
         answer.answer = subtotal;
         answer.stringFormat = "(%d %s %d) %s %d %s %d";
-        answer.stringAnswer = (new String()).format(answer.stringFormat,
+        answer.stringAnswer = String.format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
                 card2.rank, operatorStrs[2],
@@ -452,7 +443,7 @@ public class Math24Game {
 
         answer.answer = subtotal;
         answer.stringFormat = "%d %s ((%d %s %d) %s %d)";
-        answer.stringAnswer = (new String()).format(answer.stringFormat,
+        answer.stringAnswer = String.format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
                 card2.rank, operatorStrs[2],
@@ -495,7 +486,7 @@ public class Math24Game {
 
         answer.answer = subtotal;
         answer.stringFormat = "%d %s (%d %s %d) %s %d";
-        answer.stringAnswer = (new String()).format(answer.stringFormat,
+        answer.stringAnswer = String.format(answer.stringFormat,
                 card0.rank, operatorStrs[0],
                 card1.rank, operatorStrs[1],
                 card2.rank, operatorStrs[2],

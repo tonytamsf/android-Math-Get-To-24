@@ -14,7 +14,6 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -45,12 +44,6 @@ public class Math24 extends Activity implements SwipeInterface {
      * user interaction before hiding the system UI.
      */
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
-
-    /**
-     * If set, will toggle the system UI visibility upon interaction. Otherwise,
-     * will show the system UI visibility upon interaction.
-     */
-    private static final boolean TOGGLE_ON_CLICK = true;
 
     /**
      * The flags to pass to {@link SystemUiHider#getInstance}.
@@ -100,7 +93,6 @@ public class Math24 extends Activity implements SwipeInterface {
 
         display.getSize(size);
         int width = size.x;
-        int height = size.y;
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -119,7 +111,9 @@ public class Math24 extends Activity implements SwipeInterface {
         // Remember that you should never show the action bar if the
         // status bar is hidden, so hide that too if necessary.
         ActionBar actionBar = getActionBar();
-        actionBar.hide();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
@@ -259,17 +253,17 @@ public class Math24 extends Activity implements SwipeInterface {
         for (Button card : this.cards) {
             //card.setEnabled(! bDisabled);
 
-            if (bDisabled == false && this.answerCardArray.contains(card)) {
+            if (! bDisabled && this.answerCardArray.contains(card)) {
                 continue;
             }
-            if (bDisabled == true && this.answerCardArray.contains(card)) {
+            if ( bDisabled  && this.answerCardArray.contains(card)) {
                 Log.d(TAG, "found card " + card.toString());
 
                 card.setAlpha(0.2f);
             } else {
                 Log.d(TAG, "not found card " + card.toString());
 
-                card.setAlpha(bDisabled == true ? 0.6f : 1.0f);
+                card.setAlpha(bDisabled ? 0.6f : 1.0f);
             }
         }
         this.mainView.invalidate();
@@ -357,7 +351,6 @@ public class Math24 extends Activity implements SwipeInterface {
 
     @Override
     public void right2left(View v) {
-        // TODO: this should be in a separate thread or the UI will be frozen
         dealHand();
 
     }
@@ -379,9 +372,9 @@ public class Math24 extends Activity implements SwipeInterface {
                 Math24.this.setCardVisbility(View.INVISIBLE);
             }
             protected Long doInBackground(Math24... o) {
-                Math24 mathGame = (Math24) o[0];
+                Math24 mathGame = o[0];
                 mathGame.game.dealHand();
-                return new Long(1);
+                return 1L;
             }
 
             protected void onProgressUpdate(Integer... progress) {

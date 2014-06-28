@@ -1,23 +1,24 @@
 package com.wordpress.tonytam.model.cards;
 
 /**
- * Created by tonytam on 6/4/14.
+ * @author tonytam
  */
 public class PlayingCardNoFace extends PlayingCard {
+    private String[] anArrayOfStrings = {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+    };
     @Override
      public String[] rankStrings() {
-        String[] anArrayOfStrings = {
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10"
-        };
+
         return anArrayOfStrings;
     }
 }
