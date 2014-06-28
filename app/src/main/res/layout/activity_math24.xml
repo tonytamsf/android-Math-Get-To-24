@@ -93,7 +93,8 @@
                     android:layout_column="4"
                     android:background="@drawable/num_10"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:onClick="cardsTouched" />
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -114,7 +115,8 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:background="@drawable/num_1"
-                    android:layout_marginBottom="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:onClick="cardsTouched" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -124,7 +126,8 @@
                     android:layout_column="4"
                     android:background="@drawable/num_7"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:onClick="cardsTouched" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -134,7 +137,8 @@
                     android:layout_column="1"
                     android:background="@drawable/num_3"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginRight="5dp"
+                    android:onClick="cardsTouched" />
             </GridLayout>
 
             <FrameLayout
@@ -366,7 +370,8 @@
                     android:id="@+id/operatorPlus"
                     android:background="@drawable/plus"
                     android:layout_marginBottom="10dp"
-                    android:layout_gravity="top" />
+                    android:layout_gravity="top"
+                    android:onClick="operatorsTouched" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -374,7 +379,8 @@
                     android:id="@+id/operatorMinus"
                     android:background="@drawable/minus"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    android:onClick="operatorsTouched" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -382,7 +388,8 @@
                     android:id="@+id/operatorMultiply"
                     android:background="@drawable/multiply"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginBottom="10dp"
+                    android:onClick="operatorsTouched" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -392,7 +399,8 @@
                     android:focusableInTouchMode="true"
                     android:adjustViewBounds="true"
                     android:layout_gravity="bottom"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    android:onClick="operatorsTouched" />
             </LinearLayout>
 
         </RelativeLayout>
