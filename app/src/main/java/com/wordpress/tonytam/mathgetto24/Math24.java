@@ -67,7 +67,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
     private Math24Game game;
 
-    public Button[] operators;
+    public ImageButton[] operators;
     public Button [] cards;
 
     public TextView
@@ -80,7 +80,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
     Button numNW, numNE, numSE, numSW;
 
-    Button  operatorPlus,
+    ImageButton  operatorPlus,
             operatorDivide,
             operatorMinus,
             operatorMultiply;
@@ -167,12 +167,12 @@ public class Math24 extends Activity implements SwipeInterface {
         this.numberDrawables[12] = R.drawable.num_10;
         this.numberDrawables[13] = R.drawable.num_10;
 
-        this.operatorPlus = (Button) findViewById(R.id.operatorPlus);
-        this.operatorMinus = (Button)  findViewById(R.id.operatorMinus);
-        this.operatorMultiply = (Button)  findViewById(R.id.operatorMultiply);
-        this.operatorDivide = (Button)  findViewById(R.id.operatorDivide);
+        this.operatorPlus = (ImageButton) findViewById(R.id.operatorPlus);
+        this.operatorMinus = (ImageButton)  findViewById(R.id.operatorMinus);
+        this.operatorMultiply = (ImageButton)  findViewById(R.id.operatorMultiply);
+        this.operatorDivide = (ImageButton)  findViewById(R.id.operatorDivide);
 
-        this.operators = new Button [] {
+        this.operators = new ImageButton [] {
                 this.operatorPlus,
                 this.operatorMinus,
                 this.operatorMultiply,
@@ -187,7 +187,7 @@ public class Math24 extends Activity implements SwipeInterface {
         };
         this.answerCardArray = new ArrayList<Button>();
 
-        this.disableOperators(false);
+        this.disableOperators(true);
 
         // Swipe
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
@@ -246,12 +246,10 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     void disableOperators (Boolean bDisabled) {
-        for (Button b : this.operators) {
+        for (ImageButton b : this.operators) {
             Log.d(TAG, "disableOperators " + b);
             b.setEnabled(!bDisabled);
-            b.setAlpha(0.0f);
-            b.setClickable(false);
-            b.setVisibility(View.INVISIBLE);
+            b.setAlpha(bDisabled ? 0.2f : 1.0f);
         }
         this.mainView.invalidate();
 

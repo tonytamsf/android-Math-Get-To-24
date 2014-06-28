@@ -6,6 +6,7 @@
     android:background="#0099cc"
     tools:context="com.wordpress.tonytam.mathgetto24.Math24" >
 
+
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
@@ -17,7 +18,7 @@
         android:textStyle="bold"
         android:textSize="50sp"
         android:gravity="center"
-        android:text="dummy" />
+         />
 
     <LinearLayout
         android:orientation="vertical"
@@ -32,46 +33,7 @@
             android:id="@+id/overallLayout"
             android:clickable="true">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="false"
-                android:layout_alignParentLeft="false"
-                android:id="@+id/operatorLayout"
-                android:layout_alignParentEnd="false"
-                android:layout_alignParentRight="false"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="false"
-                android:layout_marginLeft="-75dp"
-                >
 
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/operatorPlus"
-                    android:background="@drawable/plus" />
-
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/operatorMinus"
-                    android:background="@drawable/minus"
-                    android:layout_marginBottom="20dp" />
-
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/operatorMultiply"
-                    android:background="@drawable/multiply"
-                    android:layout_marginBottom="20dp" />
-
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/operatorDivide"
-                    android:background="@drawable/divide" />
-            </LinearLayout>
 
             <GridLayout
                 android:layout_width="wrap_content"
@@ -83,7 +45,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_margin="5dp"
                 android:id="@+id/numberLayout"
-                android:layout_toLeftOf="@+id/operatorLayout">
+                android:layout_toLeftOf="@+id/numberLayout">
 
                 <Button
                     android:layout_width="wrap_content"
@@ -315,21 +277,21 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Easy (1)"
+                    android:text="@string/level_easy"
                     android:id="@+id/radioButton3"
                     android:clickable="true" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Med (2)"
+                    android:text="@string/level_medium"
                     android:id="@+id/radioButton"
                     android:clickable="true" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hard (3)"
+                    android:text="@string/level_hard"
                     android:id="@+id/radioButton2"
                     android:clickable="true" />
             </RadioGroup>
