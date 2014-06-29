@@ -324,6 +324,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:onClick="operatorsTouched"
+                    android:tag="+"
                     />
 
                 <ImageButton
@@ -333,7 +334,9 @@
                     android:background="@drawable/minus"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
-                    android:onClick="operatorsTouched" />
+                    android:onClick="operatorsTouched"
+                    android:tag="-"
+                    />
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -342,7 +345,9 @@
                     android:background="@drawable/multiply"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:onClick="operatorsTouched" />
+                    android:onClick="operatorsTouched"
+                    android:tag="×"
+                    />
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -352,7 +357,9 @@
                     android:adjustViewBounds="true"
                     android:layout_gravity="bottom"
                     android:layout_marginTop="10dp"
-                    android:onClick="operatorsTouched" />
+                    android:onClick="operatorsTouched"
+                    android:tag="÷"
+                    />
             </LinearLayout>
 
         </RelativeLayout>

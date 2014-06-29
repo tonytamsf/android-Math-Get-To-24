@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 // TODO swipe to re-deal card
@@ -55,8 +56,18 @@ public class Math24 extends Activity implements SwipeInterface {
      */
     private SystemUiHider mSystemUiHider;
 
-    private Button [] answerOperators;
+    private ArrayList<String> answerOperatorStrings;
+
+    /**
+     * List of cards selected
+     * TODO: really shouldn't be the list of buttons
+     */
     ArrayList<Button> answerCardArray;
+
+    /**
+     * This will have cards and operators
+     */
+    ArrayList<Object> answerArray;
 
     private Math24Game game;
 
@@ -180,6 +191,8 @@ public class Math24 extends Activity implements SwipeInterface {
                 this.numNE
         };
         this.answerCardArray = new ArrayList<Button>();
+        this.answerArray = new ArrayList<Object>();
+        this.answerOperatorStrings = new ArrayList<String>();
 
         this.disableOperators(true);
 
@@ -210,6 +223,8 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     public void operatorsTouched(View view) {
+        this.answerArray.add(view);
+        this.answerOperatorStrings.add((String) view.getTag());
 /*
         //
         [self.answerArray addObject:[NSString stringWithFormat:@
@@ -245,7 +260,6 @@ public class Math24 extends Activity implements SwipeInterface {
             b.setEnabled(!bDisabled);
             b.setAlpha(bDisabled ? 0.2f : 1.0f);
         }
-        this.mainView.invalidate();
 
     }
 
@@ -266,15 +280,14 @@ public class Math24 extends Activity implements SwipeInterface {
                 card.setAlpha(bDisabled ? 0.6f : 1.0f);
             }
         }
-        this.mainView.invalidate();
     }
     /*
      * Show or hide cards
      * @param visibility View.INVISIBLE | View.VISIBLE
      */
-    public void setCardVisbility(int visibility) {
+    public void setCardVisbility(Boolean visible) {
         for (Button card : this.cards) {
-            card.setVisibility(visibility);
+            card.setAlpha(visible ? 1.0f : 0.4f);
         }
     }
 
@@ -369,7 +382,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
             protected void onPreExecute() {
                 i = 0;
-                Math24.this.setCardVisbility(View.INVISIBLE);
+                Math24.this.setCardVisbility(false);
             }
             protected Long doInBackground(Math24... o) {
                 Math24 mathGame = o[0];
@@ -388,7 +401,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
                 // mProgress.setVisibility(View.INVISIBLE);
 
-                Math24.this.setCardVisbility(View.VISIBLE);
+                Math24.this.setCardVisbility(true);
 
             }
         }
