@@ -104,7 +104,7 @@
                 <ImageButton
                     android:layout_width="80dp"
                     android:layout_height="72dp"
-                    android:id="@+id/player2Button"
+                    android:id="@+id/player1Got24"
                     android:background="@drawable/go_button"
                     android:layout_gravity="center"
                     android:onClick="player2GotAnswer"
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="center_vertical"
-                    android:id="@+id/player1TimeLayout">
+                    android:id="@+id/player2TimeLayout">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/linearLayout"
+                    android:id="@+id/player2ScoreLayout"
                     android:layout_gravity="right|center_vertical">
 
                     <TextView
@@ -170,7 +170,18 @@
                         android:rotation="180"
 
                         />
+
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/how_do_you_24"
+                    android:id="@+id/labelAnswer2"
+                    android:layout_gravity="right|bottom"
+                    android:rotation="180"
+                    />
+
             </FrameLayout>
 
             <FrameLayout
@@ -187,7 +198,7 @@
                 <ImageButton
                     android:layout_width="80dp"
                     android:layout_height="72dp"
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/player1Got24"
                     android:background="@drawable/go_button"
                     android:layout_gravity="center"
                     android:layout_alignParentLeft="true"
@@ -231,7 +242,8 @@
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/player1ScoreLayout">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -250,7 +262,15 @@
                         android:textAlignment="center"
                         android:textColor="#ffc045c4"
                         android:gravity="center" />
+
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:text="@string/how_do_you_24"
+                    android:id="@+id/labelAnswer1" />
+
             </FrameLayout>
 
             <ProgressBar
@@ -278,21 +298,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_easy"
-                    android:id="@+id/radioButton3"
-                    android:clickable="true" />
+                    android:id="@+id/easyLevel"
+                    android:clickable="true"
+                    android:checked="false" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_medium"
-                    android:id="@+id/radioButton"
+                    android:id="@+id/mediumLevel"
                     android:clickable="true" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_hard"
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/hardLevel"
                     android:clickable="true" />
             </RadioGroup>
 
