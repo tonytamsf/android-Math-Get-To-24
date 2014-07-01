@@ -498,6 +498,17 @@ public class Math24Game {
         return answer;
     }
 
+    public Math24Game returnHand () {
+        for (PlayingCard card : hand) {
+            deck.addCard(card);
+
+        }
+
+        for (int i = 0; i < hand.length; i++) {
+            hand[i] = null;
+        }
+        return this;
+    }
     public String toString(PlayingCard []ar) {
         final int n = Array.getLength(ar);
         final StringBuffer sb = new StringBuffer("[");

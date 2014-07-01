@@ -14,6 +14,7 @@ public class Deck <T> {
 
     public void addCard (T card) {
         cards.add(card);
+
     }
 
     // TODO: without this, cards are empty

@@ -1,6 +1,7 @@
 package com.wordpress.tonytam.mathgetto24;
 
 import com.wordpress.tonytam.mathgetto24.util.SystemUiHider;
+import com.wordpress.tonytam.model.cards.PlayingCard;
 import com.wordpress.tonytam.util.*;
 
 import android.app.ActionBar;
@@ -61,6 +62,7 @@ public class Math24 extends Activity implements SwipeInterface {
     private ArrayList<String> answerOperatorStrings;
     private ArrayList<String> answerOperators;
 
+    private int numAnswerOperators = 0;
     /**
      * List of cards selected
      * TODO: really shouldn't be the list of buttons
@@ -71,6 +73,11 @@ public class Math24 extends Activity implements SwipeInterface {
      * This will have cards and operators
      */
     ArrayList<Object> answerArray;
+
+    /**
+     * Which player press the button
+     */
+    private int answerPlayer = 0;
 
     private Math24Game game;
 
@@ -95,15 +102,21 @@ public class Math24 extends Activity implements SwipeInterface {
     Button numNW, numNE, numSE, numSW;
 
     RadioButton easyLevel, mediumLevel, hardLevel;
-    ImageButton soundToggle;
 
     ImageButton operatorPlus,
             operatorDivide,
             operatorMinus,
-            operatorMultiply;
+            operatorMultiply,
+            soundToggle,
+            player2Got24,
+            player1Got24;
 
     View mainView;
 
+    private class CardHand {
+        public PlayingCard card;
+        public View view;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -235,6 +248,9 @@ public class Math24 extends Activity implements SwipeInterface {
         this.hardLevel = (RadioButton) findViewById(R.id.hardLevel);
         this.soundToggle = (ImageButton) findViewById(R.id.soundToggleButton);
 
+        this.player1Got24 = (ImageButton) findViewById(R.id.player1Got24);
+        this.player2Got24 = (ImageButton) findViewById(R.id.player2Got24);
+
         // Swipe
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
         RelativeLayout swipe_layout = (RelativeLayout) findViewById(R.id.overallLayout);
@@ -244,10 +260,13 @@ public class Math24 extends Activity implements SwipeInterface {
     public void player1GotAnswer(View view) {
 
         Log.d(TAG, "player1GotAnswer");
+        this.answerPlayer = 0;
         showAnswerControllers(true);
     }
 
     public void player2GotAnswer(View view) {
+
+        this.answerPlayer = 1;
 
         Log.d(TAG, "player2GotAnswer");
         showAnswerControllers(true);
@@ -311,9 +330,10 @@ public class Math24 extends Activity implements SwipeInterface {
                 card.setAlpha(0.2f);
             } else {
                 Log.d(TAG, "not found card " + card.toString());
-
                 card.setAlpha(bDisabled ? 0.6f : 1.0f);
             }
+            card.setEnabled(!bDisabled);
+
         }
     }
 
@@ -336,6 +356,12 @@ public class Math24 extends Activity implements SwipeInterface {
         this.numNE.setBackgroundResource(this.numberDrawables[game.hand[1].rank]);
         this.numSW.setBackgroundResource(this.numberDrawables[game.hand[2].rank]);
         this.numSE.setBackgroundResource(this.numberDrawables[game.hand[3].rank]);
+
+        this.numNW.setTag(game.hand[0].rank);
+        this.numNE.setTag(game.hand[1].rank);
+        this.numSW.setTag(game.hand[2].rank);
+        this.numSE.setTag(game.hand[3].rank);
+
 
         this.player1Timer.setText(String.valueOf(game.currentGameTime));
         this.player2Timer.setText(String.valueOf(game.currentGameTime));
@@ -445,6 +471,32 @@ public class Math24 extends Activity implements SwipeInterface {
         }
 
         new DealTask().execute(this);
+
+        this.answerPlayer = -1;
+        this.showAnswerControllers(false);
+        game.currentGameTime = 600;
+        game.returnHand();
+        answerArray.clear();
+        answerCardArray.clear();
+        answerOperators.clear();
+        answerOperatorStrings.clear();
+        numAnswerOperators = 0;
+
+        /*
+
+
+    self.labelMiddleInfo.hidden = TRUE;
+
+    if (![self.timer isValid]) {
+        // Start the countdown
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                      target:self
+                                                    selector:@selector(countdown)
+                                                    userInfo:nil
+                                                     repeats:YES];
+        //[AudioUtil playSound:@"relaxing-short" :@"wav"];
+    }
+         */
     }
 
 
@@ -483,23 +535,12 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player2ScoreLabel.setVisibility(viewInvisible);
         this.labelAnswer1.setVisibility(viewVisible);
         this.labelAnswer2.setVisibility(viewVisible);
+        this.player1Got24.setVisibility(viewInvisible);
+        this.player2Got24.setVisibility(viewInvisible);
+
 
 /*
-        // Show the area where the answers are shown
-        self.labelAnswer.hidden = !show;
-        self.labelAnswer2.hidden = !show;
 
-        self.player1Button.hidden = show;
-        self.player2Button.hidden = show;
-
-        self.labelTime.hidden = show;
-        self.labelTime1.hidden = show;
-        self.labelTimeStatic.hidden = show;
-        self.labelTimeStatic1.hidden = show;
-        self.player2NameLabel.hidden = show;
-        self.player1NameLabel.hidden = show;
-        self.player1Score.hidden = show;
-        self.player2Score.hidden = show;
         self.labelBackground1.hidden = show;
         self.labelBackground2.hidden = show;
 
