@@ -126,8 +126,6 @@ public class Math24 extends Activity implements SwipeInterface {
         final View contentView = findViewById(R.id.fullscreen_content1);
         this.mainView = contentView;
 
-
-
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
@@ -149,7 +147,6 @@ public class Math24 extends Activity implements SwipeInterface {
             actionBar.hide();
         }
 
-
         this.setupViews().
                 disableOperators(true).
                 showAnswerControllers(false).
@@ -168,6 +165,7 @@ public class Math24 extends Activity implements SwipeInterface {
         game.startGame();
         return this;
     }
+
     Math24 setupViews () {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -251,6 +249,11 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player1Got24 = (ImageButton) findViewById(R.id.player1Got24);
         this.player2Got24 = (ImageButton) findViewById(R.id.player2Got24);
 
+        this.operatorPlus.setTag(0, Math24Game.PLUS_OPERATOR);
+        this.operatorMinus.setTag(0, Math24Game.MINUS_OPERATOR);
+        this.operatorMultiply.setTag(0, Math24Game.MULTIPLY_OPERATOR);
+        this.operatorDivide.setTag(0, Math24Game.DIVIDE_OPERATOR);
+
         // Swipe
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
         RelativeLayout swipe_layout = (RelativeLayout) findViewById(R.id.overallLayout);
@@ -285,6 +288,9 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerArray.add(view);
         this.answerOperatorStrings.add((String) view.getTag());
         this.answerOperators.add((String) view.getTag());
+
+        // TODO fix this, change int to Integer
+        this.labelAnswer1.setText(Math24Game.methodOf((Integer) view.getTag()));
 /*
         // Show the players where we are
         //
@@ -341,7 +347,7 @@ public class Math24 extends Activity implements SwipeInterface {
      * Show or hide cards
      * @param visibility View.INVISIBLE | View.VISIBLE
      */
-    public void setCardVisbility(Boolean visible) {
+    public void setCardVisibility(Boolean visible) {
         for (Button card : this.cards) {
             card.setAlpha(visible ? 1.0f : 0.4f);
         }
@@ -361,7 +367,6 @@ public class Math24 extends Activity implements SwipeInterface {
         this.numNE.setTag(game.hand[1].rank);
         this.numSW.setTag(game.hand[2].rank);
         this.numSE.setTag(game.hand[3].rank);
-
 
         this.player1Timer.setText(String.valueOf(game.currentGameTime));
         this.player2Timer.setText(String.valueOf(game.currentGameTime));
@@ -445,7 +450,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
             protected void onPreExecute() {
                 i = 0;
-                Math24.this.setCardVisbility(false);
+                Math24.this.setCardVisibility(false);
             }
 
             protected Long doInBackground(Math24... o) {
@@ -465,7 +470,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
                 // mProgress.setVisibility(View.INVISIBLE);
 
-                Math24.this.setCardVisbility(true);
+                Math24.this.setCardVisibility(true);
 
             }
         }

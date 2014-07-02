@@ -27,6 +27,11 @@ public class Math24Game {
             _hardDeck,
             _mediumDeck;
 
+    static public int PLUS_OPERATOR = 0;
+    static public int MINUS_OPERATOR = 1;
+    static public int MULTIPLY_OPERATOR = 2;
+    static public int DIVIDE_OPERATOR = 3;
+
     public PlayingCard hand[];
     public PlayingCard nextHand[];
 
@@ -39,7 +44,7 @@ public class Math24Game {
             player1Score,
             player2Score;
 
-    public Method selectors[];
+    public Method operators[];
     public String operatorChars[] = {
             "+",
             "-",
@@ -49,17 +54,26 @@ public class Math24Game {
 
     Math24Game () {
         Class bigDecimalClass = BigDecimal.class;
-        selectors = new Method[4];
+        operators = new Method[4];
         try {
-            selectors[0] = bigDecimalClass.getMethod("add", BigDecimal.class);
-            selectors[1] = bigDecimalClass.getMethod("subtract", BigDecimal.class);
-            selectors[2] = bigDecimalClass.getMethod("multiply", BigDecimal.class);
-            selectors[3] = bigDecimalClass.getMethod("divide", BigDecimal.class);
+            operators[0] = bigDecimalClass.getMethod("add", BigDecimal.class);
+            operators[1] = bigDecimalClass.getMethod("subtract", BigDecimal.class);
+            operators[2] = bigDecimalClass.getMethod("multiply", BigDecimal.class);
+            operators[3] = bigDecimalClass.getMethod("divide", BigDecimal.class);
         } catch (NoSuchMethodException e) {
             Log.e("Math24Game", e.toString());
         }
     }
 
+    static public String operatorString(int op) {
+        // TODO verify this?
+
+        return operatorChars[op];
+    }
+
+    static public Method methodOf (int op ) {
+        return operators[op];
+    }
     public PlayingCard [] dealHand() {
         if (nextHand[0] == null) {
             for (int numHands = 0; numHands <= 50; numHands++) {
@@ -206,9 +220,9 @@ public class Math24Game {
             for (int k = 0; k <= 3; ++k) {
                 for (int l = 0; l <= 3; ++l) {
                     Method currentOperators[] = {
-                            this.selectors[j],
-                            this.selectors[k],
-                            this.selectors[l]
+                            this.operators[j],
+                            this.operators[k],
+                            this.operators[l]
                     };
 
                     String currentOperatorChars[] = {
