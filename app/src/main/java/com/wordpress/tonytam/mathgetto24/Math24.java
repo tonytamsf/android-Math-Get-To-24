@@ -249,10 +249,10 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player1Got24 = (ImageButton) findViewById(R.id.player1Got24);
         this.player2Got24 = (ImageButton) findViewById(R.id.player2Got24);
 
-        this.operatorPlus.setTag(0, Math24Game.PLUS_OPERATOR);
-        this.operatorMinus.setTag(0, Math24Game.MINUS_OPERATOR);
-        this.operatorMultiply.setTag(0, Math24Game.MULTIPLY_OPERATOR);
-        this.operatorDivide.setTag(0, Math24Game.DIVIDE_OPERATOR);
+        this.operatorPlus.setTag(R.integer.operator_id, (Integer) Math24Game.PLUS_OPERATOR);
+        this.operatorMinus.setTag(R.integer.operator_id, (Integer)  Math24Game.MINUS_OPERATOR);
+        this.operatorMultiply.setTag(R.integer.operator_id, (Integer)  Math24Game.MULTIPLY_OPERATOR);
+        this.operatorDivide.setTag(R.integer.operator_id, (Integer)  Math24Game.DIVIDE_OPERATOR);
 
         // Swipe
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
@@ -289,8 +289,7 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerOperatorStrings.add((String) view.getTag());
         this.answerOperators.add((String) view.getTag());
 
-        // TODO fix this, change int to Integer
-        this.labelAnswer1.setText(Math24Game.methodOf((Integer) view.getTag()));
+        this.labelAnswer1.setText(Math24Game.operatorString((Integer) view.getTag(R.integer.operator_id)));
 /*
         // Show the players where we are
         //

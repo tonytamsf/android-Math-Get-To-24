@@ -44,8 +44,8 @@ public class Math24Game {
             player1Score,
             player2Score;
 
-    public Method operators[];
-    public String operatorChars[] = {
+    static public Method operators[];
+    static public String operatorChars[] = {
             "+",
             "-",
             "×",
