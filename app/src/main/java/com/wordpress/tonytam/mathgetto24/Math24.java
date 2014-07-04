@@ -20,10 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 
 // TODO swipe to re-deal card
@@ -67,7 +65,7 @@ public class Math24 extends Activity implements SwipeInterface {
      * List of cards selected
      * TODO: really shouldn't be the list of buttons
      */
-    ArrayList<Button> answerCardArray;
+    ArrayList<CardHand> answerCardArray;
 
     /**
      * This will have cards and operators
@@ -117,6 +115,9 @@ public class Math24 extends Activity implements SwipeInterface {
         public PlayingCard card;
         public View view;
     }
+
+    ArrayList<CardHand> cardHandArrayList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -236,10 +237,11 @@ public class Math24 extends Activity implements SwipeInterface {
                 this.numNW,
                 this.numNE
         };
-        this.answerCardArray = new ArrayList<Button>();
+        this.answerCardArray = new ArrayList<CardHand>();
         this.answerArray = new ArrayList<Object>();
         this.answerOperatorStrings = new ArrayList<String>();
         this.answerOperators = new ArrayList<String>();
+        this.cardHandArrayList = new ArrayList<CardHand>(4);
 
         this.easyLevel = (RadioButton) findViewById(R.id.easyLevel);
         this.mediumLevel = (RadioButton) findViewById(R.id.mediumLevel);
@@ -249,10 +251,14 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player1Got24 = (ImageButton) findViewById(R.id.player1Got24);
         this.player2Got24 = (ImageButton) findViewById(R.id.player2Got24);
 
-        this.operatorPlus.setTag(R.integer.operator_id, (Integer) Math24Game.PLUS_OPERATOR);
-        this.operatorMinus.setTag(R.integer.operator_id, (Integer)  Math24Game.MINUS_OPERATOR);
-        this.operatorMultiply.setTag(R.integer.operator_id, (Integer)  Math24Game.MULTIPLY_OPERATOR);
-        this.operatorDivide.setTag(R.integer.operator_id, (Integer)  Math24Game.DIVIDE_OPERATOR);
+        /**
+         * Tagging it for later when the user touches a card or operator
+         */
+        this.operatorPlus.setTag(R.integer.operator_tag, (Integer) Math24Game.PLUS_OPERATOR);
+        this.operatorMinus.setTag(R.integer.operator_tag, (Integer)  Math24Game.MINUS_OPERATOR);
+        this.operatorMultiply.setTag(R.integer.operator_tag, (Integer)  Math24Game.MULTIPLY_OPERATOR);
+        this.operatorDivide.setTag(R.integer.operator_tag, (Integer)  Math24Game.DIVIDE_OPERATOR);
+
 
         // Swipe
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
@@ -260,6 +266,7 @@ public class Math24 extends Activity implements SwipeInterface {
         swipe_layout.setOnTouchListener(swipe);
         return this;
     }
+
     public void player1GotAnswer(View view) {
 
         Log.d(TAG, "player1GotAnswer");
@@ -277,11 +284,75 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     public void cardsTouched(View view) {
-        this.answerCardArray.add((Button) view);
+        CardHand cardHand = (CardHand) view.getTag(R.integer.card_tag);
+
+        this.answerCardArray.add(cardHand);
+
         this.disableOperators(false);
         this.disableCards(true);
 
+        this.labelAnswer1.setText(
+                this.labelAnswer1.getText() +
+                        String.valueOf(cardHand.card.rank)
+        );
         Log.d(TAG, "cardsTouched " + this.answerCardArray.toString());
+        /*
+    NSDecimalNumber *rightAnswer = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:24];
+
+    CardHand * cardHandArrayList = [self.hand objectAtIndex:sender.tag];
+
+    [sender setUserInteractionEnabled:FALSE];
+    sender.alpha = 0.2;
+
+    [self.answerArray addObject:sender];
+    [self.answerCardArray addObject:cardHandArrayList];
+
+    // Keep the players informed about what has been selected, both players need to know
+    for (int i = 0; i < 2; i++) {
+        UILabel *labelAnswer = [self.labelAnswers objectAtIndex:i];
+        if ([labelAnswer.text compare:@"(How can you get to 24?)"] == NSOrderedSame) {
+            labelAnswer.text = @"";
+        }
+        labelAnswer.text = [NSString stringWithFormat:@"%@ %d",
+                                  (NSString *)labelAnswer.text,
+                                  (int)cardHandArrayList.card.rank];
+    }
+
+    // We have 4 cards and 3 operators, we are done
+    if ([self.answerArray count] == 7) {
+        NSString * finalText = [[NSString alloc] init];
+
+        AnswerPackage *answer = [self calculateHand:self.answerCardArray
+                                  usingOperators:self.answerOperators
+                               withOperatorChars:self.operatorStrings];
+        if (answer != nil && [answer.answer compare:rightAnswer] == NSOrderedSame) {
+
+            // TODO: Internationalize these strings
+            DLog(@"Player got it right: %@", answer.stringAnswer);
+            finalText = [NSString stringWithFormat:@"Yay, You Got 24!!\n %@", answer.stringAnswer];
+            [self rightAnswer:self.answerPlayer];
+        } else {
+            finalText = [NSString stringWithFormat:@"Sorry, Get To 24 with: \n%@", self.storeAnswerPackage.stringAnswer];
+            [self wrongAnswer:self.answerPlayer];
+        }
+
+        if (self.answerPlayer == 0) {
+            [self.labelMiddleInfo setTransform:CGAffineTransformMakeRotation(-M_PI)];
+        } else {
+            [self.labelMiddleInfo setTransform:CGAffineTransformMakeRotation(0)];
+        }
+        self.labelMiddleInfo.text = finalText;
+        self.labelMiddleInfo.hidden = FALSE;
+        return;
+    }
+
+    // Disable cards, enable operators
+    [self disableCards:TRUE];
+    [self disableOperators:FALSE];
+}
+
+
+         */
     }
 
     public void operatorsTouched(View view) {
@@ -289,7 +360,10 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerOperatorStrings.add((String) view.getTag());
         this.answerOperators.add((String) view.getTag());
 
-        this.labelAnswer1.setText(Math24Game.operatorString((Integer) view.getTag(R.integer.operator_id)));
+        this.labelAnswer1.setText(
+                this.labelAnswer1.getText() +
+                Math24Game.operatorString((Integer) view.getTag(R.integer.operator_tag))
+        );
 /*
         // Show the players where we are
         //
@@ -324,12 +398,12 @@ public class Math24 extends Activity implements SwipeInterface {
 
     void disableCards(Boolean bDisabled) {
         for (Button card : this.cards) {
-            //card.setEnabled(! bDisabled);
+            CardHand cardHand = (CardHand) card.getTag(R.integer.card_tag);
 
-            if (!bDisabled && this.answerCardArray.contains(card)) {
+            if (!bDisabled && this.answerCardArray.contains(cardHand)) {
                 continue;
             }
-            if (bDisabled && this.answerCardArray.contains(card)) {
+            if (bDisabled && this.answerCardArray.contains(cardHand)) {
                 Log.d(TAG, "found card " + card.toString());
 
                 card.setAlpha(0.2f);
@@ -357,15 +431,17 @@ public class Math24 extends Activity implements SwipeInterface {
      * Call this when the data model changes
      */
     public Math24 refreshGameUI() {
-        this.numNW.setBackgroundResource(this.numberDrawables[game.hand[0].rank]);
-        this.numNE.setBackgroundResource(this.numberDrawables[game.hand[1].rank]);
-        this.numSW.setBackgroundResource(this.numberDrawables[game.hand[2].rank]);
-        this.numSE.setBackgroundResource(this.numberDrawables[game.hand[3].rank]);
+        cardHandArrayList.clear();
+        for (int i = 0; i < 4; i++) {
 
-        this.numNW.setTag(game.hand[0].rank);
-        this.numNE.setTag(game.hand[1].rank);
-        this.numSW.setTag(game.hand[2].rank);
-        this.numSE.setTag(game.hand[3].rank);
+            CardHand cardHand = new CardHand();
+            cardHand.card = game.hand[i];
+            cardHand.view = cards[i];
+            cardHandArrayList.add(i, cardHand);
+
+            cards[i].setTag(R.integer.card_tag, cardHandArrayList.get(i));
+            cards[i].setBackgroundResource(this.numberDrawables[game.hand[i].rank]);
+        }
 
         this.player1Timer.setText(String.valueOf(game.currentGameTime));
         this.player2Timer.setText(String.valueOf(game.currentGameTime));
@@ -443,6 +519,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
         //this.numSE.animate().translationX(0).withLayer();
 
+        // TODO: may not need this because the game is already multi-threaded dealing cards
         // the local Thread used for count-down
         class DealTask extends AsyncTask<Math24, Integer, Long> {
             int i = 0;
