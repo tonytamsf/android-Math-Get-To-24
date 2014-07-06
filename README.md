@@ -4,6 +4,10 @@ android-Math-Get-To-24
 
 Android version of Math Get To 24
 
+### Build
+- broken July 6, 2014
+   - https://github.com/travis-ci/travis-ci/issues/2470
+
 ### Troubleshooting
 
 ```
