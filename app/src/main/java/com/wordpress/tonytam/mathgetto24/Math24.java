@@ -95,6 +95,8 @@ public class Math24 extends Activity implements SwipeInterface {
             labelAnswer2
     ;
 
+    public ArrayList<TextView> labelAnswers;
+
     public int[] numberDrawables;
 
     Button numNW, numNE, numSE, numSW;
@@ -242,6 +244,10 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerOperatorStrings = new ArrayList<String>();
         this.answerOperators = new ArrayList<String>();
         this.cardHandArrayList = new ArrayList<CardHand>(4);
+        this.labelAnswers = new ArrayList<TextView>();
+
+        labelAnswers.add(this.labelAnswer1);
+        labelAnswers.add(this.labelAnswer2);
 
         this.easyLevel = (RadioButton) findViewById(R.id.easyLevel);
         this.mediumLevel = (RadioButton) findViewById(R.id.mediumLevel);
@@ -287,27 +293,27 @@ public class Math24 extends Activity implements SwipeInterface {
         CardHand cardHand = (CardHand) view.getTag(R.integer.card_tag);
 
         this.answerCardArray.add(cardHand);
+        this.answerArray.add(cardHand);
 
         this.disableOperators(false);
         this.disableCards(true);
 
-        this.labelAnswer1.setText(
-                this.labelAnswer1.getText() +
-                        String.valueOf(cardHand.card.rank)
-        );
+        // Keep the players informed about what has been selected, both players need to know
+        for (int i = 0; i < 2; i++) {
+            TextView labelAnswer = this.labelAnswers.get(i);
+            if (labelAnswer.getText().equals( getString (R.string.how_do_you_24))) {
+                labelAnswer.setText("");
+            }
+            labelAnswer.setText(
+                    labelAnswer.getText() +
+                            String.valueOf(cardHand.card.rank)
+            );
+        }
+
+
         Log.d(TAG, "cardsTouched " + this.answerCardArray.toString());
         /*
-    NSDecimalNumber *rightAnswer = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:24];
 
-    CardHand * cardHandArrayList = [self.hand objectAtIndex:sender.tag];
-
-    [sender setUserInteractionEnabled:FALSE];
-    sender.alpha = 0.2;
-
-    [self.answerArray addObject:sender];
-    [self.answerCardArray addObject:cardHandArrayList];
-
-    // Keep the players informed about what has been selected, both players need to know
     for (int i = 0; i < 2; i++) {
         UILabel *labelAnswer = [self.labelAnswers objectAtIndex:i];
         if ([labelAnswer.text compare:@"(How can you get to 24?)"] == NSOrderedSame) {
