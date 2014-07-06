@@ -63,9 +63,8 @@ public class Math24 extends Activity implements SwipeInterface {
     private int numAnswerOperators = 0;
     /**
      * List of cards selected
-     * TODO: really shouldn't be the list of buttons
      */
-    ArrayList<CardHand> answerCardArray;
+    ArrayList<PlayingCard> answerCardArray;
 
     /**
      * This will have cards and operators
@@ -239,7 +238,7 @@ public class Math24 extends Activity implements SwipeInterface {
                 this.numNW,
                 this.numNE
         };
-        this.answerCardArray = new ArrayList<CardHand>();
+        this.answerCardArray = new ArrayList<PlayingCard>();
         this.answerArray = new ArrayList<Object>();
         this.answerOperatorStrings = new ArrayList<String>();
         this.answerOperators = new ArrayList<String>();
@@ -292,7 +291,7 @@ public class Math24 extends Activity implements SwipeInterface {
     public void cardsTouched(View view) {
         CardHand cardHand = (CardHand) view.getTag(R.integer.card_tag);
 
-        this.answerCardArray.add(cardHand);
+        this.answerCardArray.add(cardHand.card);
         this.answerArray.add(cardHand);
 
         this.disableOperators(false);
@@ -312,17 +311,17 @@ public class Math24 extends Activity implements SwipeInterface {
 
 
         Log.d(TAG, "cardsTouched " + this.answerCardArray.toString());
+
+        if (answerArray.size() == 7) {
+            // TODO: current
+            AnswerPackage potentialAnswer = this.game.calculateHand(
+                    (PlayingCard []) answerCardArray.toArray(),
+                    (Method [])
+                    );
+
+        }
         /*
 
-    for (int i = 0; i < 2; i++) {
-        UILabel *labelAnswer = [self.labelAnswers objectAtIndex:i];
-        if ([labelAnswer.text compare:@"(How can you get to 24?)"] == NSOrderedSame) {
-            labelAnswer.text = @"";
-        }
-        labelAnswer.text = [NSString stringWithFormat:@"%@ %d",
-                                  (NSString *)labelAnswer.text,
-                                  (int)cardHandArrayList.card.rank];
-    }
 
     // We have 4 cards and 3 operators, we are done
     if ([self.answerArray count] == 7) {
@@ -352,9 +351,6 @@ public class Math24 extends Activity implements SwipeInterface {
         return;
     }
 
-    // Disable cards, enable operators
-    [self disableCards:TRUE];
-    [self disableOperators:FALSE];
 }
 
 

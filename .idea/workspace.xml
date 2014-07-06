@@ -34,7 +34,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -62,7 +61,7 @@
     <favorites_list name="android-MathGetTo24" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.72952384">
+    <splitter split-orientation="horizontal" split-proportion="0.53809524">
       <split-first>
         <leaf>
           <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
@@ -98,20 +97,21 @@
           <file leaf-file-name="Math24.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.29620853" vertical-offset="7675" max-vertical-offset="9555">
-                  <caret line="527" column="22" selection-start-line="527" selection-start-column="22" selection-end-line="527" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.35455862" vertical-offset="4495" max-vertical-offset="9585">
+                  <caret line="316" column="51" selection-start-line="316" selection-start-column="51" selection-end-line="316" selection-end-column="51" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#8528#8550#0" expanded="true" />
-                    <element signature="e#8623#8645#0" expanded="true" />
-                    <element signature="e#8723#8745#0" expanded="true" />
-                    <element signature="e#8824#8846#0" expanded="true" />
-                    <element signature="e#9562#9580#0" expanded="true" />
-                    <element signature="e#12541#12563#0" expanded="true" />
-                    <element signature="e#13634#13652#0" expanded="true" />
-                    <element signature="e#14788#14806#0" expanded="true" />
-                    <element signature="e#15836#16089#0" expanded="true" />
-                    <element signature="e#16082#16083#0" expanded="true" />
+                    <element signature="e#8673#8695#0" expanded="true" />
+                    <element signature="e#8768#8790#0" expanded="true" />
+                    <element signature="e#8868#8890#0" expanded="true" />
+                    <element signature="e#8969#8991#0" expanded="true" />
+                    <element signature="e#9707#9725#0" expanded="true" />
+                    <element signature="e#10129#10163#0" expanded="true" />
+                    <element signature="e#12383#12405#0" expanded="true" />
+                    <element signature="e#13476#13494#0" expanded="true" />
+                    <element signature="e#14630#14648#0" expanded="true" />
+                    <element signature="e#15678#15931#0" expanded="true" />
+                    <element signature="e#15924#15925#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -187,9 +187,11 @@
           <file leaf-file-name="Math24Game.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.5204545" vertical-offset="1144" max-vertical-offset="8805">
-                  <caret line="76" column="34" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="34" />
-                  <folding />
+                <state vertical-scroll-proportion="0.2894356" vertical-offset="1945" max-vertical-offset="9000">
+                  <caret line="145" column="38" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="38" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -207,8 +209,8 @@
           <file leaf-file-name="Math24.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="4635" max-vertical-offset="9195">
-                  <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="4665" max-vertical-offset="9225">
+                  <caret line="357" column="5" selection-start-line="357" selection-start-column="5" selection-end-line="357" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -933,10 +935,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/model/cards/Deck.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
         <option value="$PROJECT_DIR$/app/build/generated/source/r/debug/com/wordpress/tonytam/mathgetto24/R.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
       </list>
     </option>
@@ -1478,7 +1480,15 @@
       <created>1404420990461</created>
       <updated>1404420990461</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="- card dealing now works">
+      <created>1404487481227</created>
+      <updated>1404487481227</updated>
+    </task>
+    <task id="LOCAL-00035" summary="- card showing up at the playing">
+      <created>1404625423828</created>
+      <updated>1404625423828</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1518,7 +1528,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5031623" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24909747" sideWeight="0.500998" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33905014" sideWeight="0.49550226" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33113456" sideWeight="0.8088468" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33113456" sideWeight="0.8088468" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892704" sideWeight="0.499002" order="1" side_tool="false" content_ui="tabs" />
@@ -1581,8 +1591,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- finally got calculateSimple to return a correct combination for = 2&#10;- re-deal cards if there is no answer&#10;" />
-    <MESSAGE value="- add all 5 calculations" />
     <MESSAGE value="- put the paren in the right places for the answers" />
     <MESSAGE value="fix bug with calcualtion of a op (b op c) op d" />
     <MESSAGE value="- progress bar for slow thread&#10;- sizing of the numbers" />
@@ -1606,7 +1614,9 @@
     <MESSAGE value="- handle operator" />
     <MESSAGE value="- able to map the operator button pressed to the getTag() of the view, map it to a displayable string" />
     <MESSAGE value="- buildtools 20.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="- buildtools 20.0" />
+    <MESSAGE value="- card dealing now works" />
+    <MESSAGE value="- card showing up at the playing" />
+    <option name="LAST_COMMIT_MESSAGE" value="- card showing up at the playing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1983,28 +1993,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5204545" vertical-offset="1144" max-vertical-offset="8805">
-          <caret line="76" column="34" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="34" />
-          <folding />
+        <state vertical-scroll-proportion="0.2894356" vertical-offset="1945" max-vertical-offset="9000">
+          <caret line="145" column="38" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29620853" vertical-offset="7675" max-vertical-offset="9555">
-          <caret line="527" column="22" selection-start-line="527" selection-start-column="22" selection-end-line="527" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.35455862" vertical-offset="4495" max-vertical-offset="9585">
+          <caret line="316" column="51" selection-start-line="316" selection-start-column="51" selection-end-line="316" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8528#8550#0" expanded="true" />
-            <element signature="e#8623#8645#0" expanded="true" />
-            <element signature="e#8723#8745#0" expanded="true" />
-            <element signature="e#8824#8846#0" expanded="true" />
-            <element signature="e#9562#9580#0" expanded="true" />
-            <element signature="e#12541#12563#0" expanded="true" />
-            <element signature="e#13634#13652#0" expanded="true" />
-            <element signature="e#14788#14806#0" expanded="true" />
-            <element signature="e#15836#16089#0" expanded="true" />
-            <element signature="e#16082#16083#0" expanded="true" />
+            <element signature="e#8673#8695#0" expanded="true" />
+            <element signature="e#8768#8790#0" expanded="true" />
+            <element signature="e#8868#8890#0" expanded="true" />
+            <element signature="e#8969#8991#0" expanded="true" />
+            <element signature="e#9707#9725#0" expanded="true" />
+            <element signature="e#10129#10163#0" expanded="true" />
+            <element signature="e#12383#12405#0" expanded="true" />
+            <element signature="e#13476#13494#0" expanded="true" />
+            <element signature="e#14630#14648#0" expanded="true" />
+            <element signature="e#15678#15931#0" expanded="true" />
+            <element signature="e#15924#15925#0" expanded="true" />
           </folding>
         </state>
       </provider>
