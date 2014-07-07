@@ -45,6 +45,7 @@ public class Math24Game {
             player2Score;
 
     static public Method operators[];
+
     static public String operatorChars[] = {
             "+",
             "-",
@@ -66,14 +67,17 @@ public class Math24Game {
     }
 
     static public String operatorString(int op) {
-        // TODO verify this?
-
         return operatorChars[op];
+    }
+
+    static public Method operatorMethod(int op) {
+        return operators[op];
     }
 
     static public Method methodOf (int op ) {
         return operators[op];
     }
+
     public PlayingCard [] dealHand() {
         if (nextHand[0] == null) {
             for (int numHands = 0; numHands <= 50; numHands++) {
@@ -202,7 +206,10 @@ public class Math24Game {
                 storeAnswerPackage.answer.equals(rightAnswer)) {
             return storeAnswerPackage;
         }
-        
+
+        if (storeAnswerPackage != null ) {
+            Log.d("CalculateHand", storeAnswerPackage.toString());
+        }
         return null;
     }
     /*

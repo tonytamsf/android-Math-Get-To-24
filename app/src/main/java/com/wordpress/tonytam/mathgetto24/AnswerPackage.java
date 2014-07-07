@@ -22,4 +22,8 @@ public class AnswerPackage {
 
 // The final answer
     BigDecimal answer;
+
+    public String toString() {
+        return stringAnswer + " = " + String.valueOf(answer);
+    }
 }

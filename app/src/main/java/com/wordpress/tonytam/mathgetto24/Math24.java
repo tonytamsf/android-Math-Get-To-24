@@ -20,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import java.lang.reflect.Method;
+
 
 import java.util.ArrayList;
 
@@ -58,7 +60,7 @@ public class Math24 extends Activity implements SwipeInterface {
     private SystemUiHider mSystemUiHider;
 
     private ArrayList<String> answerOperatorStrings;
-    private ArrayList<String> answerOperators;
+    private ArrayList<Method> answerOperators;
 
     private int numAnswerOperators = 0;
     /**
@@ -241,7 +243,7 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerCardArray = new ArrayList<PlayingCard>();
         this.answerArray = new ArrayList<Object>();
         this.answerOperatorStrings = new ArrayList<String>();
-        this.answerOperators = new ArrayList<String>();
+        this.answerOperators = new ArrayList<Method>();
         this.cardHandArrayList = new ArrayList<CardHand>(4);
         this.labelAnswers = new ArrayList<TextView>();
 
@@ -315,10 +317,13 @@ public class Math24 extends Activity implements SwipeInterface {
         if (answerArray.size() == 7) {
             // TODO: current
             AnswerPackage potentialAnswer = this.game.calculateHand(
-                    (PlayingCard []) answerCardArray.toArray(),
-                    (Method [])
+                    (PlayingCard []) answerCardArray.toArray(new PlayingCard[0]),
+                    (Method []) answerOperators.toArray(new Method[0]),
+                    (String []) answerOperatorStrings.toArray(new String[0])
                     );
-
+            if (potentialAnswer != null) {
+                Log.d("cardsTouched", potentialAnswer.toString());
+            }
         }
         /*
 
@@ -359,8 +364,8 @@ public class Math24 extends Activity implements SwipeInterface {
 
     public void operatorsTouched(View view) {
         this.answerArray.add(view);
-        this.answerOperatorStrings.add((String) view.getTag());
-        this.answerOperators.add((String) view.getTag());
+        this.answerOperatorStrings.add(Math24Game.operatorString((Integer) view.getTag(R.integer.operator_tag)));
+        this.answerOperators.add((Method) Math24Game.operatorMethod ((Integer) view.getTag(R.integer.operator_tag)));
 
         this.labelAnswer1.setText(
                 this.labelAnswer1.getText() +
@@ -402,10 +407,10 @@ public class Math24 extends Activity implements SwipeInterface {
         for (Button card : this.cards) {
             CardHand cardHand = (CardHand) card.getTag(R.integer.card_tag);
 
-            if (!bDisabled && this.answerCardArray.contains(cardHand)) {
+            if (!bDisabled && this.answerArray.contains(cardHand)) {
                 continue;
             }
-            if (bDisabled && this.answerCardArray.contains(cardHand)) {
+            if (bDisabled && this.answerArray.contains(cardHand)) {
                 Log.d(TAG, "found card " + card.toString());
 
                 card.setAlpha(0.2f);
