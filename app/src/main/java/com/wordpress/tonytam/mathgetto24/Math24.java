@@ -23,6 +23,7 @@ import android.widget.TextView;
 import java.lang.reflect.Method;
 
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 
@@ -93,7 +94,8 @@ public class Math24 extends Activity implements SwipeInterface {
             player1ScoreLabel,
             player2ScoreLabel,
             labelAnswer1,
-            labelAnswer2
+            labelAnswer2,
+            labelMiddleInfo
     ;
 
     public ArrayList<TextView> labelAnswers;
@@ -103,6 +105,7 @@ public class Math24 extends Activity implements SwipeInterface {
     Button numNW, numNE, numSE, numSW;
 
     RadioButton easyLevel, mediumLevel, hardLevel;
+
 
     ImageButton operatorPlus,
             operatorDivide,
@@ -258,6 +261,8 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player1Got24 = (ImageButton) findViewById(R.id.player1Got24);
         this.player2Got24 = (ImageButton) findViewById(R.id.player2Got24);
 
+        this.labelMiddleInfo = (TextView) findViewById(R.id.labelMiddleInfo);
+
         /**
          * Tagging it for later when the user touches a card or operator
          */
@@ -290,7 +295,17 @@ public class Math24 extends Activity implements SwipeInterface {
 
     }
 
+    public void rightAnswer(int player) {
+
+    }
+
+    public void wrongAnswer(int player) {
+
+    }
+
     public void cardsTouched(View view) {
+        BigDecimal rightAnswer = Math24Game.getRightAnswer();
+
         CardHand cardHand = (CardHand) view.getTag(R.integer.card_tag);
 
         this.answerCardArray.add(cardHand.card);
@@ -324,35 +339,31 @@ public class Math24 extends Activity implements SwipeInterface {
             if (potentialAnswer != null) {
                 Log.d("cardsTouched", potentialAnswer.toString());
             }
+            String finalText = new String();
+            if (potentialAnswer != null &&
+                    potentialAnswer.equals(rightAnswer)) {
+                finalText = String.format(getString(R.string.fmt_you_got_right), potentialAnswer.stringAnswer);
+                rightAnswer(answerPlayer);
+
+            } else {
+                finalText = String.format(getString(R.string.fmt_sorry_wrong), game.thisAnswer.stringAnswer);
+                wrongAnswer(answerPlayer);
+            }
+            Log.d("4 cards selected", finalText);
+            labelMiddleInfo.setText(finalText);
+            labelMiddleInfo.setVisibility(View.VISIBLE);
+            if (answerPlayer == 1) {
+                labelMiddleInfo.setRotation(180);
+            }
         }
         /*
-
-
-    // We have 4 cards and 3 operators, we are done
-    if ([self.answerArray count] == 7) {
-        NSString * finalText = [[NSString alloc] init];
-
-        AnswerPackage *answer = [self calculateHand:self.answerCardArray
-                                  usingOperators:self.answerOperators
-                               withOperatorChars:self.operatorStrings];
-        if (answer != nil && [answer.answer compare:rightAnswer] == NSOrderedSame) {
-
-            // TODO: Internationalize these strings
-            DLog(@"Player got it right: %@", answer.stringAnswer);
-            finalText = [NSString stringWithFormat:@"Yay, You Got 24!!\n %@", answer.stringAnswer];
-            [self rightAnswer:self.answerPlayer];
-        } else {
-            finalText = [NSString stringWithFormat:@"Sorry, Get To 24 with: \n%@", self.storeAnswerPackage.stringAnswer];
-            [self wrongAnswer:self.answerPlayer];
-        }
 
         if (self.answerPlayer == 0) {
             [self.labelMiddleInfo setTransform:CGAffineTransformMakeRotation(-M_PI)];
         } else {
             [self.labelMiddleInfo setTransform:CGAffineTransformMakeRotation(0)];
         }
-        self.labelMiddleInfo.text = finalText;
-        self.labelMiddleInfo.hidden = FALSE;
+
         return;
     }
 

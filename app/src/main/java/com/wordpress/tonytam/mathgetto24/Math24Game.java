@@ -32,10 +32,12 @@ public class Math24Game {
     static public int MULTIPLY_OPERATOR = 2;
     static public int DIVIDE_OPERATOR = 3;
 
+    static public BigDecimal rightAnswer;
+
     public PlayingCard hand[];
     public PlayingCard nextHand[];
 
-    AnswerPackage answer;
+    AnswerPackage thisAnswer;
     AnswerPackage nextAnswer;
 
     public int currentGameTime;
@@ -66,6 +68,12 @@ public class Math24Game {
         }
     }
 
+    static public BigDecimal getRightAnswer () {
+        if (Math24Game.rightAnswer == null) {
+            Math24Game.rightAnswer = new BigDecimal(24);
+        }
+        return rightAnswer;
+    }
     static public String operatorString(int op) {
         return operatorChars[op];
     }
@@ -94,7 +102,7 @@ public class Math24Game {
             }
         } else {
             hand = nextHand;
-            answer = nextAnswer;
+            thisAnswer = nextAnswer;
             Log.d("dealHand", "Shortcut deal");
         }
 
@@ -107,13 +115,13 @@ public class Math24Game {
                         Log.d("Math24Game: card ", Math24Game.this.nextHand[i].description());
                     }
 
-                    nextAnswer = Math24Game.this.calculateAnswer();
-                    if (nextAnswer != null) {
+                    thisAnswer = Math24Game.this.calculateAnswer();
+                    if (thisAnswer != null) {
                         // TODO: Put the cards back into the hand
                         break;
                     }
                 }
-                if (nextAnswer == null) {
+                if (thisAnswer == null) {
                     // TODO: we got a problem, no answer for any cards
                 }
             }
@@ -150,7 +158,7 @@ public class Math24Game {
     public AnswerPackage calculateHand (PlayingCard cards[],
                                         Method operators[],
                                         String operatorStrs[]) {
-        BigDecimal rightAnswer = new BigDecimal(24.0);
+        BigDecimal rightAnswer = getRightAnswer();
         AnswerPackage storeAnswerPackage;
 
         storeAnswerPackage = calculateSimple (
@@ -220,7 +228,7 @@ public class Math24Game {
      * a op (b op c) op d
      */
     public AnswerPackage calculateHand (PlayingCard cards[]) {
-        BigDecimal rightAnswer = new BigDecimal(24.0);
+        BigDecimal rightAnswer = getRightAnswer();
         AnswerPackage storeAnswerPackage;
 
         for (int j = 0; j <= 3; ++j) {
@@ -563,7 +571,7 @@ public class Math24Game {
         this.hand = new PlayingCard[4];
         this.nextHand = new PlayingCard[4];
         nextAnswer = new AnswerPackage();
-        answer = new AnswerPackage();
+        thisAnswer = new AnswerPackage();
 
         this.dealHand();
 
