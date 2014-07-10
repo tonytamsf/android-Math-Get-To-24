@@ -91,17 +91,21 @@ public class Math24Game {
             for (int numHands = 0; numHands <= 50; numHands++) {
                 for (int i = 0; i <= 3; i++) {
                     this.hand[i] = Math24Game.this.deck.drawRandomCard();
-                    Log.d("Math24Game: card ", this.hand[i].description());
+                    Log.d("Math24Game: dealHand ", this.hand[i].description());
                 }
 
                 nextAnswer = this.calculateAnswer();
                 if (nextAnswer != null) {
-                    // TODO: Put the cards back into the hand
+                    Log.d("dealHand", "deal next hand");
                     break;
+                } else {
+                    Log.d("dealHand", "try again for another hand");
+                    returnHand();
                 }
             }
         } else {
-            hand = nextHand;
+            // TODO, this is a bug, need to deep clone
+            hand = nextHand.clone();
             thisAnswer = nextAnswer;
             Log.d("dealHand", "Shortcut deal");
         }
@@ -115,14 +119,16 @@ public class Math24Game {
                         Log.d("Math24Game: card ", Math24Game.this.nextHand[i].description());
                     }
 
-                    thisAnswer = Math24Game.this.calculateAnswer();
-                    if (thisAnswer != null) {
-                        // TODO: Put the cards back into the hand
+                    nextAnswer = Math24Game.this.calculateAnswer(Math24Game.this.nextHand);
+                    if (nextAnswer != null) {
                         break;
+                    } else {
+                        // Next hand should be returned
+                        returnHand(Math24Game.this.nextHand);
                     }
                 }
-                if (thisAnswer == null) {
-                    // TODO: we got a problem, no answer for any cards
+                if (nextAnswer == null) {
+                    Log.d("dealHand", "No winning hand");
                 }
             }
         }
@@ -130,8 +136,8 @@ public class Math24Game {
         return hand;
     }
 
-    public AnswerPackage calculateAnswer () {
-        Permute permute = new Permute(this.hand);
+    public AnswerPackage calculateAnswer (PlayingCard hand[]) {
+        Permute permute = new Permute(hand);
         AnswerPackage answer = null;
         for (Iterator i = permute; i.hasNext(); ) {
             PlayingCard [] a = (PlayingCard[]) i.next();
@@ -147,6 +153,10 @@ public class Math24Game {
             Log.d("calculateAnswer", "NO ANSWER");
         }
         return answer;
+    }
+
+    public AnswerPackage calculateAnswer () {
+        return calculateAnswer(this.hand);
     }
 
     // Using the cards in the given sequence and operators in the sequence
@@ -528,9 +538,12 @@ public class Math24Game {
     }
 
     public Math24Game returnHand () {
+        return returnHand(this.hand);
+    }
+
+    public Math24Game returnHand (PlayingCard hand[]) {
         for (PlayingCard card : hand) {
             deck.addCard(card);
-
         }
 
         for (int i = 0; i < hand.length; i++) {
@@ -538,6 +551,7 @@ public class Math24Game {
         }
         return this;
     }
+
     public String toString(PlayingCard []ar) {
         final int n = Array.getLength(ar);
         final StringBuffer sb = new StringBuffer("[");

@@ -348,7 +348,7 @@ public class Math24 extends Activity implements SwipeInterface {
             }
             String finalText = new String();
             if (potentialAnswer != null &&
-                    potentialAnswer.equals(rightAnswer)) {
+                    potentialAnswer.answer.equals(rightAnswer)) {
                 finalText = String.format(getString(R.string.fmt_you_got_right), potentialAnswer.stringAnswer);
                 rightAnswer(answerPlayer);
 
