@@ -32,6 +32,7 @@ public class ActivitySwipeDetector implements View.OnTouchListener {
     private float downX, downY, upX, upY;
 
     public ActivitySwipeDetector(SwipeInterface activity){
+
         this.activity = activity;
     }
 

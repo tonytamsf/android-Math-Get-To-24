@@ -28,10 +28,13 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="skip" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.wordpress.tonytam.mathgetto24" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -59,14 +62,14 @@
     <favorites_list name="android-MathGetTo24" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.58327276">
       <split-first>
         <leaf>
           <file leaf-file-name="Math24Game.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.2307692" vertical-offset="7896" max-vertical-offset="9210">
-                  <caret line="552" column="33" selection-start-line="552" selection-start-column="19" selection-end-line="552" selection-end-column="33" />
+                <state vertical-scroll-proportion="-7.4615383" vertical-offset="7891" max-vertical-offset="9210">
+                  <caret line="559" column="5" selection-start-line="559" selection-start-column="5" selection-end-line="559" selection-end-column="5" />
                   <folding>
                     <element signature="e#18983#18984#0" expanded="true" />
                     <element signature="e#19040#19041#0" expanded="true" />
@@ -105,43 +108,62 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Math24.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="Math24.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="6.6308722" vertical-offset="3651" max-vertical-offset="9540">
-                  <caret line="465" column="68" selection-start-line="465" selection-start-column="54" selection-end-line="465" selection-end-column="68" />
+                <state vertical-scroll-proportion="0.6689038" vertical-offset="9001" max-vertical-offset="9750">
+                  <caret line="620" column="31" selection-start-line="620" selection-start-column="31" selection-end-line="620" selection-end-column="31" />
                   <folding>
+                    <element signature="imports" expanded="true" />
                     <element signature="e#8845#8867#0" expanded="true" />
                     <element signature="e#8940#8962#0" expanded="true" />
                     <element signature="e#9040#9062#0" expanded="true" />
                     <element signature="e#9141#9163#0" expanded="true" />
-                    <element signature="e#9826#9827#0" expanded="true" />
-                    <element signature="e#9872#9873#0" expanded="true" />
-                    <element signature="e#9915#9916#0" expanded="true" />
-                    <element signature="e#9961#9962#0" expanded="true" />
-                    <element signature="e#10120#10138#0" expanded="true" />
-                    <element signature="e#12608#12630#0" expanded="true" />
-                    <element signature="e#12726#12748#0" expanded="true" />
-                    <element signature="e#12899#12921#0" expanded="true" />
-                    <element signature="e#13992#14010#0" expanded="true" />
-                    <element signature="e#15138#15156#0" expanded="true" />
-                    <element signature="e#16196#16449#0" expanded="true" />
-                    <element signature="e#16442#16443#0" expanded="true" />
-                    <element signature="e#16523#16636#0" expanded="true" />
-                    <element signature="e#16629#16630#0" expanded="true" />
+                    <element signature="e#10547#10565#0" expanded="true" />
+                    <element signature="e#10969#11003#0" expanded="true" />
+                    <element signature="e#12006#12043#0" expanded="true" />
+                    <element signature="e#12183#12218#0" expanded="true" />
+                    <element signature="e#12750#12772#0" expanded="true" />
+                    <element signature="e#12868#12890#0" expanded="true" />
+                    <element signature="e#13041#13063#0" expanded="true" />
+                    <element signature="e#13230#13252#0" expanded="true" />
+                    <element signature="e#14323#14341#0" expanded="true" />
+                    <element signature="e#15982#16000#0" expanded="true" />
+                    <element signature="e#17040#17293#0" expanded="true" />
+                    <element signature="e#17286#17287#0" expanded="true" />
+                    <element signature="e#17367#17480#0" expanded="true" />
+                    <element signature="e#17473#17474#0" expanded="true" />
+                    <element signature="e#17826#17827#0" expanded="true" />
+                    <element signature="e#17871#17872#0" expanded="true" />
+                    <element signature="e#17923#17924#0" expanded="true" />
+                    <element signature="e#17952#17953#0" expanded="true" />
+                    <element signature="e#18004#18005#0" expanded="true" />
+                    <element signature="e#18033#18034#0" expanded="true" />
+                    <element signature="e#19222#19223#0" expanded="true" />
+                    <element signature="e#19267#19268#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ActivitySwipeDetector.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1530">
+                  <caret line="38" column="34" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="34" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="activity_math24.xml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml">
-              <provider selected="true" editor-type-id="android-designer">
+              <provider editor-type-id="android-designer">
                 <state />
               </provider>
-              <provider editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6330">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-1.018868" vertical-offset="5721" max-vertical-offset="6330">
+                  <caret line="385" column="27" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -161,11 +183,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Math24Game.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Math24Game.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.28639618" vertical-offset="7860" max-vertical-offset="9210">
-                  <caret line="552" column="8" selection-start-line="552" selection-start-column="8" selection-end-line="552" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.3579952" vertical-offset="7860" max-vertical-offset="9210">
+                  <caret line="554" column="5" selection-start-line="554" selection-start-column="5" selection-end-line="554" selection-end-column="5" />
                   <folding>
                     <element signature="e#18983#18984#0" expanded="true" />
                     <element signature="e#19040#19041#0" expanded="true" />
@@ -879,7 +901,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingDeck.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingCardNoFace.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingCardMedium24.java" />
@@ -894,8 +915,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/AnswerPackage.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
       </list>
     </option>
   </component>
@@ -1133,6 +1155,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tonytam" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1600,7 +1626,11 @@
       <created>1404954220061</created>
       <updated>1404954220061</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="- player scoring">
+      <created>1404954240919</created>
+      <updated>1404954240919</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1630,8 +1660,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.49963897" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32544804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="850" y="115" width="454" height="742" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2278481" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.49963897" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3403694" sideWeight="0.49844882" order="3" side_tool="false" content_ui="tabs" x="718" y="22" width="692" height="264" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5037481" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26423487" sideWeight="0.4616896" order="4" side_tool="true" content_ui="tabs" />
@@ -1652,9 +1684,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2278481" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17810026" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1705,7 +1735,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- add sound files" />
     <MESSAGE value="- button callback" />
     <MESSAGE value="- no need for progressbar anymore, since we deal 2 hands" />
     <MESSAGE value="- added  operator buttons" />
@@ -1730,11 +1759,12 @@
     <MESSAGE value="- broken travis&#10;" />
     <MESSAGE value="- able to call calculateHand()" />
     <MESSAGE value="- able to display correct and in-correct answer" />
-    <option name="LAST_COMMIT_MESSAGE" value="- able to display correct and in-correct answer" />
+    <MESSAGE value="- player scoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="- player scoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1916,13 +1946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/model/cards/PlayingCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="915">
@@ -2089,17 +2112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6330">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/android/app/ActivityThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="30297" max-vertical-offset="72855">
@@ -2108,40 +2120,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/util/ActivitySwipeDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.6308722" vertical-offset="3651" max-vertical-offset="9540">
-          <caret line="465" column="68" selection-start-line="465" selection-start-column="54" selection-end-line="465" selection-end-column="68" />
-          <folding>
-            <element signature="e#8845#8867#0" expanded="true" />
-            <element signature="e#8940#8962#0" expanded="true" />
-            <element signature="e#9040#9062#0" expanded="true" />
-            <element signature="e#9141#9163#0" expanded="true" />
-            <element signature="e#9826#9827#0" expanded="true" />
-            <element signature="e#9872#9873#0" expanded="true" />
-            <element signature="e#9915#9916#0" expanded="true" />
-            <element signature="e#9961#9962#0" expanded="true" />
-            <element signature="e#10120#10138#0" expanded="true" />
-            <element signature="e#12608#12630#0" expanded="true" />
-            <element signature="e#12726#12748#0" expanded="true" />
-            <element signature="e#12899#12921#0" expanded="true" />
-            <element signature="e#13992#14010#0" expanded="true" />
-            <element signature="e#15138#15156#0" expanded="true" />
-            <element signature="e#16196#16449#0" expanded="true" />
-            <element signature="e#16442#16443#0" expanded="true" />
-            <element signature="e#16523#16636#0" expanded="true" />
-            <element signature="e#16629#16630#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1530">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28639618" vertical-offset="7860" max-vertical-offset="9210">
-          <caret line="552" column="8" selection-start-line="552" selection-start-column="8" selection-end-line="552" selection-end-column="8" />
+        <state vertical-scroll-proportion="-7.4615383" vertical-offset="7891" max-vertical-offset="9210">
+          <caret line="559" column="5" selection-start-line="559" selection-start-column="5" selection-end-line="559" selection-end-column="5" />
           <folding>
             <element signature="e#18983#18984#0" expanded="true" />
             <element signature="e#19040#19041#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.018868" vertical-offset="5721" max-vertical-offset="6330">
+          <caret line="385" column="27" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6689038" vertical-offset="9001" max-vertical-offset="9750">
+          <caret line="620" column="31" selection-start-line="620" selection-start-column="31" selection-end-line="620" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8845#8867#0" expanded="true" />
+            <element signature="e#8940#8962#0" expanded="true" />
+            <element signature="e#9040#9062#0" expanded="true" />
+            <element signature="e#9141#9163#0" expanded="true" />
+            <element signature="e#10547#10565#0" expanded="true" />
+            <element signature="e#10969#11003#0" expanded="true" />
+            <element signature="e#12006#12043#0" expanded="true" />
+            <element signature="e#12183#12218#0" expanded="true" />
+            <element signature="e#12750#12772#0" expanded="true" />
+            <element signature="e#12868#12890#0" expanded="true" />
+            <element signature="e#13041#13063#0" expanded="true" />
+            <element signature="e#13230#13252#0" expanded="true" />
+            <element signature="e#14323#14341#0" expanded="true" />
+            <element signature="e#15982#16000#0" expanded="true" />
+            <element signature="e#17040#17293#0" expanded="true" />
+            <element signature="e#17286#17287#0" expanded="true" />
+            <element signature="e#17367#17480#0" expanded="true" />
+            <element signature="e#17473#17474#0" expanded="true" />
+            <element signature="e#17826#17827#0" expanded="true" />
+            <element signature="e#17871#17872#0" expanded="true" />
+            <element signature="e#17923#17924#0" expanded="true" />
+            <element signature="e#17952#17953#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
+            <element signature="e#18033#18034#0" expanded="true" />
+            <element signature="e#19222#19223#0" expanded="true" />
+            <element signature="e#19267#19268#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -276,6 +276,8 @@ public class Math24 extends Activity implements SwipeInterface {
         ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
         RelativeLayout swipe_layout = (RelativeLayout) findViewById(R.id.overallLayout);
         swipe_layout.setOnTouchListener(swipe);
+        labelMiddleInfo.setOnTouchListener(swipe);
+
         return this;
     }
 
@@ -297,10 +299,15 @@ public class Math24 extends Activity implements SwipeInterface {
 
     public void rightAnswer(int player) {
         game.playerRightAnswer(player);
+        // TODO I don't like this, should just store the views in an array
+        this.player1Score.setText(String.valueOf(game.getPlayerScore(0)));
+        this.player2Score.setText(String.valueOf(game.getPlayerScore(1)));
     }
 
     public void wrongAnswer(int player) {
         game.playerWrongAnswer(player);
+        this.player1Score.setText(String.valueOf(game.getPlayerScore(0)));
+        this.player2Score.setText(String.valueOf(game.getPlayerScore(1)));
     }
 
     public void cardsTouched(View view) {
@@ -356,21 +363,6 @@ public class Math24 extends Activity implements SwipeInterface {
                 labelMiddleInfo.setRotation(180);
             }
         }
-        /*
-
-        if (self.answerPlayer == 0) {
-            [self.labelMiddleInfo setTransform:CGAffineTransformMakeRotation(-M_PI)];
-        } else {
-            [self.labelMiddleInfo setTransform:CGAffineTransformMakeRotation(0)];
-        }
-
-        return;
-    }
-
-}
-
-
-         */
     }
 
     public void operatorsTouched(View view) {
@@ -381,6 +373,10 @@ public class Math24 extends Activity implements SwipeInterface {
         this.labelAnswer1.setText(
                 this.labelAnswer1.getText() +
                 Math24Game.operatorString((Integer) view.getTag(R.integer.operator_tag))
+        );
+        this.labelAnswer2.setText(
+                this.labelAnswer2.getText() +
+                        Math24Game.operatorString((Integer) view.getTag(R.integer.operator_tag))
         );
 /*
         // Show the players where we are
@@ -419,6 +415,8 @@ public class Math24 extends Activity implements SwipeInterface {
             CardHand cardHand = (CardHand) card.getTag(R.integer.card_tag);
 
             if (!bDisabled && this.answerArray.contains(cardHand)) {
+                Log.d(TAG, "skip card " + card.toString());
+
                 continue;
             }
             if (bDisabled && this.answerArray.contains(cardHand)) {
@@ -429,6 +427,7 @@ public class Math24 extends Activity implements SwipeInterface {
                 Log.d(TAG, "not found card " + card.toString());
                 card.setAlpha(bDisabled ? 0.6f : 1.0f);
             }
+
             card.setEnabled(!bDisabled);
 
         }
@@ -444,6 +443,27 @@ public class Math24 extends Activity implements SwipeInterface {
         }
     }
 
+
+    public void clearAnswer() {
+        if (answerCardArray.size() == 4 ||
+                answerCardArray.size() == 0 ){
+            dealHand();
+            return;
+        }
+
+        labelAnswer1.setText("");
+        labelAnswer2.setText("");
+
+
+        answerArray.clear();
+        answerCardArray.clear();
+        answerOperators.clear();
+        answerOperatorStrings.clear();
+        numAnswerOperators = 0;
+
+        disableCards(false);
+
+    }
 
     /*
      * Call this when the data model changes
@@ -518,69 +538,36 @@ public class Math24 extends Activity implements SwipeInterface {
 
     @Override
     public void left2right(View v) {
-
-        dealHand();
-
+        clearAnswer();
     }
 
     @Override
     public void right2left(View v) {
-        dealHand();
-
+        clearAnswer();
     }
 
     public void dealHand() {
         final ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressBar);
 
-        // mProgress.setMax(100);
-        // mProgress.setVisibility(View.VISIBLE);
-
-        //this.numSE.animate().translationX(0).withLayer();
-
-        // TODO: may not need this because the game is already multi-threaded dealing cards
-        // the local Thread used for count-down
-        class DealTask extends AsyncTask<Math24, Integer, Long> {
-            int i = 0;
-
-            protected void onPreExecute() {
-                i = 0;
-                Math24.this.setCardVisibility(false);
-            }
-
-            protected Long doInBackground(Math24... o) {
-                Math24 mathGame = o[0];
-                mathGame.game.dealHand();
-                return 1L;
-            }
-
-            protected void onProgressUpdate(Integer... progress) {
-
-                // mProgress.setProgress(i++);
-                Log.d("DealTask:onProgressUpdate", progress.toString());
-            }
-
-            protected void onPostExecute(Long result) {
-                Math24.this.refreshGameUI();
-
-                // mProgress.setVisibility(View.INVISIBLE);
-
-                Math24.this.setCardVisibility(true);
-
-            }
-        }
-
-        new DealTask().execute(this);
-
-        this.answerPlayer = -1;
-        this.showAnswerControllers(false);
-        game.currentGameTime = 600;
-        game.returnHand();
         answerArray.clear();
         answerCardArray.clear();
         answerOperators.clear();
         answerOperatorStrings.clear();
         numAnswerOperators = 0;
 
+        setCardVisibility(false);
+
+        game.dealHand();
+        Math24.this.refreshGameUI();
+        Math24.this.setCardVisibility(true);
+
+        this.answerPlayer = 0;
+        this.showAnswerControllers(false);
+
+        game.currentGameTime = 600;
+        game.returnHand();
+
+        // refreshGameUI();
         /*
 
 
@@ -618,11 +605,9 @@ public class Math24 extends Activity implements SwipeInterface {
         int viewInvisible = visible ? View.INVISIBLE : View.VISIBLE;
         int viewVisible = visible ? View.VISIBLE : View.INVISIBLE;
 
-        if (visible) {
-            this.disableOperators(visible);
+        this.disableOperators(true);
+        this.disableCards(false);
 
-            this.disableCards(!visible);
-        }
         this.showSegmentLevels(!visible);
         this.player1Timer.setVisibility(viewInvisible);
         this.player2Timer.setVisibility(viewInvisible);
@@ -636,6 +621,7 @@ public class Math24 extends Activity implements SwipeInterface {
         this.labelAnswer2.setVisibility(viewVisible);
         this.player1Got24.setVisibility(viewInvisible);
         this.player2Got24.setVisibility(viewInvisible);
+        this.labelMiddleInfo.setVisibility(viewVisible);
 
 
 /*
