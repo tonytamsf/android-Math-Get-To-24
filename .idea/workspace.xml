@@ -32,8 +32,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -1598,7 +1596,11 @@
       <created>1404868801674</created>
       <updated>1404868801674</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="- able to display correct and in-correct answer">
+      <created>1404954220061</created>
+      <updated>1404954220061</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
