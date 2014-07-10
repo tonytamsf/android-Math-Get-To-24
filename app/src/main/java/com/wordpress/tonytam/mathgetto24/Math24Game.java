@@ -13,6 +13,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
@@ -42,9 +43,8 @@ public class Math24Game {
 
     public int currentGameTime;
 
-    public int
-            player1Score,
-            player2Score;
+    public ArrayList<Integer> playerScores;
+
 
     static public Method operators[];
 
@@ -549,11 +549,28 @@ public class Math24Game {
         return new String(sb);
     }
 
+    // validate playerNumber to be 0 or 1
+    public Integer getPlayerScore(int playerNumber) {
+            return playerScores.get(playerNumber);
+    }
+    public Integer playerRightAnswer(int playerNumber) {
+        this.playerScores.set(playerNumber,
+                playerScores.get(playerNumber).intValue() + 1);
+        return playerScores.get(playerNumber);
+    }
+
+    public Integer playerWrongAnswer (int playerNumber) {
+        this.playerScores.set(playerNumber,
+                playerScores.get(playerNumber).intValue() - 1);
+        return playerScores.get(playerNumber);
+    }
+
     public void startGame() {
 
         this.currentGameTime = 600;
-        this.player1Score = 0;
-        this.player2Score = 0;
+        this.playerScores = new ArrayList<Integer>(2);
+        this.playerScores.add(new Integer(0));
+        this.playerScores.add(new Integer(0));
 
         if (this._hardDeck == null) {
             this._hardDeck = new PlayingDeck (new PlayingCardNoFace());

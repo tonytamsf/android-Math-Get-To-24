@@ -296,11 +296,11 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     public void rightAnswer(int player) {
-
+        game.playerRightAnswer(player);
     }
 
     public void wrongAnswer(int player) {
-
+        game.playerWrongAnswer(player);
     }
 
     public void cardsTouched(View view) {
@@ -463,8 +463,8 @@ public class Math24 extends Activity implements SwipeInterface {
 
         this.player1Timer.setText(String.valueOf(game.currentGameTime));
         this.player2Timer.setText(String.valueOf(game.currentGameTime));
-        this.player1Score.setText(String.valueOf(game.player1Score));
-        this.player2Score.setText(String.valueOf(game.player2Score));
+        this.player1Score.setText(String.valueOf(game.getPlayerScore(0)));
+        this.player2Score.setText(String.valueOf(game.getPlayerScore(1)));
         return this;
     }
 
