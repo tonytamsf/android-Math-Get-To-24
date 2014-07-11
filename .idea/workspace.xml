@@ -28,11 +28,11 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="=24" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.wordpress.tonytam.mathgetto24" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="- sync">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
+    <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -61,43 +61,15 @@
     <favorites_list name="android-MathGetTo24" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48602796">
+    <splitter split-orientation="horizontal" split-proportion="0.55082214">
       <split-first>
         <leaf>
           <file leaf-file-name="Math24.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4180791" vertical-offset="5177" max-vertical-offset="9750">
-                  <caret line="355" column="94" selection-start-line="355" selection-start-column="84" selection-end-line="355" selection-end-column="94" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#8845#8867#0" expanded="true" />
-                    <element signature="e#8940#8962#0" expanded="true" />
-                    <element signature="e#9040#9062#0" expanded="true" />
-                    <element signature="e#9141#9163#0" expanded="true" />
-                    <element signature="e#10547#10565#0" expanded="true" />
-                    <element signature="e#10969#11003#0" expanded="true" />
-                    <element signature="e#12013#12050#0" expanded="true" />
-                    <element signature="e#12190#12225#0" expanded="true" />
-                    <element signature="e#12757#12779#0" expanded="true" />
-                    <element signature="e#12875#12897#0" expanded="true" />
-                    <element signature="e#13048#13070#0" expanded="true" />
-                    <element signature="e#13237#13259#0" expanded="true" />
-                    <element signature="e#14330#14348#0" expanded="true" />
-                    <element signature="e#15989#16007#0" expanded="true" />
-                    <element signature="e#17047#17300#0" expanded="true" />
-                    <element signature="e#17293#17294#0" expanded="true" />
-                    <element signature="e#17374#17487#0" expanded="true" />
-                    <element signature="e#17480#17481#0" expanded="true" />
-                    <element signature="e#17833#17834#0" expanded="true" />
-                    <element signature="e#17878#17879#0" expanded="true" />
-                    <element signature="e#17930#17931#0" expanded="true" />
-                    <element signature="e#17959#17960#0" expanded="true" />
-                    <element signature="e#18011#18012#0" expanded="true" />
-                    <element signature="e#18040#18041#0" expanded="true" />
-                    <element signature="e#19229#19230#0" expanded="true" />
-                    <element signature="e#19274#19275#0" expanded="true" />
-                  </folding>
+                <state vertical-scroll-proportion="7.240113" vertical-offset="2402" max-vertical-offset="9150">
+                  <caret line="355" column="70" selection-start-line="355" selection-start-column="65" selection-end-line="355" selection-end-column="70" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -105,11 +77,9 @@
           <file leaf-file-name="AnswerPackage.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/AnswerPackage.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+                <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="525">
                   <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#592#593#0" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -169,7 +139,7 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.018868" vertical-offset="5721" max-vertical-offset="6330">
+                <state vertical-scroll-proportion="0.0" vertical-offset="5721" max-vertical-offset="6330">
                   <caret line="385" column="27" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
                   <folding />
                 </state>
@@ -183,16 +153,9 @@
           <file leaf-file-name="Math24Game.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5762712" vertical-offset="1146" max-vertical-offset="9420">
-                  <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#4973#4974#0" expanded="true" />
-                    <element signature="e#5022#5023#0" expanded="true" />
-                    <element signature="e#18731#18732#0" expanded="true" />
-                    <element signature="e#18775#18776#0" expanded="true" />
-                    <element signature="e#19475#19476#0" expanded="true" />
-                    <element signature="e#19532#19533#0" expanded="true" />
-                  </folding>
+                <state vertical-scroll-proportion="0.460452" vertical-offset="1157" max-vertical-offset="9330">
+                  <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -200,7 +163,7 @@
           <file leaf-file-name="ActivityThread.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/android/app/ActivityThread.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="30297" max-vertical-offset="72855">
+                <state vertical-scroll-proportion="0.0" vertical-offset="32880" max-vertical-offset="75405">
                   <caret line="2192" column="0" selection-start-line="2192" selection-start-column="0" selection-end-line="2192" selection-end-column="0" />
                   <folding />
                 </state>
@@ -926,7 +889,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="92" />
+    <option name="x" value="32" />
     <option name="y" value="22" />
     <option name="width" value="1380" />
     <option name="height" value="874" />
@@ -985,6 +948,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1293,8 +1258,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1375,6 +1338,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1400,19 +1376,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1695,7 +1658,11 @@
       <created>1404965352010</created>
       <updated>1404965352010</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="- sync, commit with a bug in the 'nextHand'">
+      <created>1405009313262</created>
+      <updated>1405009313262</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1719,16 +1686,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="22" width="1380" height="874" extended-state="0" />
+    <frame x="32" y="22" width="1380" height="874" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.49963897" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32544804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="850" y="115" width="454" height="742" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2278481" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.49963897" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3403694" sideWeight="0.49844882" order="3" side_tool="false" content_ui="tabs" x="718" y="22" width="692" height="264" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5037481" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26423487" sideWeight="0.4616896" order="4" side_tool="true" content_ui="tabs" />
@@ -1750,19 +1715,21 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2278481" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17810026" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="122" width="1240" height="674" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.49963897" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5037481" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24909747" sideWeight="0.500998" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5031623" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5031623" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24909747" sideWeight="0.500998" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32072726" sideWeight="0.5363458" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31134564" sideWeight="0.50394946" order="2" side_tool="false" content_ui="tabs" />
@@ -1779,8 +1746,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33905014" sideWeight="0.49550226" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20184697" sideWeight="0.8088468" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892704" sideWeight="0.499002" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17810026" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1800,7 +1767,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- no need for progressbar anymore, since we deal 2 hands" />
     <MESSAGE value="- added  operator buttons" />
     <MESSAGE value="- switch to Android Studio beta&#10;- layout cleanup" />
     <MESSAGE value="- rotate the buttons for player 2" />
@@ -1825,7 +1791,8 @@
     <MESSAGE value="- able to display correct and in-correct answer" />
     <MESSAGE value="- player scoring" />
     <MESSAGE value="- able to answer and get validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="- able to answer and get validation" />
+    <MESSAGE value="- sync, commit with a bug in the 'nextHand'" />
+    <option name="LAST_COMMIT_MESSAGE" value="- sync, commit with a bug in the 'nextHand'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1924,13 +1891,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.navigation/raw/main.nvg.xml">
+      <provider selected="true" editor-type-id="navigationeditor">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="navigationeditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
@@ -2077,7 +2044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15957446" vertical-offset="0" max-vertical-offset="564">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2085,7 +2051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39893618" vertical-offset="0" max-vertical-offset="564">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2101,7 +2066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2117,7 +2081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="600">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2133,7 +2096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1530">
           <caret line="38" column="34" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2142,7 +2104,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.018868" vertical-offset="5721" max-vertical-offset="6330">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5721" max-vertical-offset="6330">
           <caret line="385" column="27" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
           <folding />
         </state>
@@ -2187,60 +2149,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <element signature="e#592#593#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4180791" vertical-offset="5177" max-vertical-offset="9750">
-          <caret line="355" column="94" selection-start-line="355" selection-start-column="84" selection-end-line="355" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8845#8867#0" expanded="true" />
-            <element signature="e#8940#8962#0" expanded="true" />
-            <element signature="e#9040#9062#0" expanded="true" />
-            <element signature="e#9141#9163#0" expanded="true" />
-            <element signature="e#10547#10565#0" expanded="true" />
-            <element signature="e#10969#11003#0" expanded="true" />
-            <element signature="e#12013#12050#0" expanded="true" />
-            <element signature="e#12190#12225#0" expanded="true" />
-            <element signature="e#12757#12779#0" expanded="true" />
-            <element signature="e#12875#12897#0" expanded="true" />
-            <element signature="e#13048#13070#0" expanded="true" />
-            <element signature="e#13237#13259#0" expanded="true" />
-            <element signature="e#14330#14348#0" expanded="true" />
-            <element signature="e#15989#16007#0" expanded="true" />
-            <element signature="e#17047#17300#0" expanded="true" />
-            <element signature="e#17293#17294#0" expanded="true" />
-            <element signature="e#17374#17487#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17833#17834#0" expanded="true" />
-            <element signature="e#17878#17879#0" expanded="true" />
-            <element signature="e#17930#17931#0" expanded="true" />
-            <element signature="e#17959#17960#0" expanded="true" />
-            <element signature="e#18011#18012#0" expanded="true" />
-            <element signature="e#18040#18041#0" expanded="true" />
-            <element signature="e#19229#19230#0" expanded="true" />
-            <element signature="e#19274#19275#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="7.240113" vertical-offset="2402" max-vertical-offset="9150">
+          <caret line="355" column="70" selection-start-line="355" selection-start-column="65" selection-end-line="355" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5762712" vertical-offset="1146" max-vertical-offset="9420">
-          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-          <folding>
-            <element signature="e#4973#4974#0" expanded="true" />
-            <element signature="e#5022#5023#0" expanded="true" />
-            <element signature="e#18731#18732#0" expanded="true" />
-            <element signature="e#18775#18776#0" expanded="true" />
-            <element signature="e#19475#19476#0" expanded="true" />
-            <element signature="e#19532#19533#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.460452" vertical-offset="1157" max-vertical-offset="9330">
+          <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

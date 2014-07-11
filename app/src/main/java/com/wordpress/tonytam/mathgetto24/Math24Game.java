@@ -94,8 +94,8 @@ public class Math24Game {
                     Log.d("Math24Game: dealHand ", this.hand[i].description());
                 }
 
-                nextAnswer = this.calculateAnswer();
-                if (nextAnswer != null) {
+                thisAnswer = this.calculateAnswer();
+                if (thisAnswer != null) {
                     Log.d("dealHand", "deal next hand");
                     break;
                 } else {
