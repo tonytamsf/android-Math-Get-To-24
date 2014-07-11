@@ -104,7 +104,6 @@ public class Math24Game {
                 }
             }
         } else {
-            // TODO, this is a bug, need to deep clone
             hand = nextHand.clone();
             thisAnswer = nextAnswer;
             Log.d("dealHand", "Shortcut deal");

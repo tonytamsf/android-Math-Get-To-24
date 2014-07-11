@@ -311,6 +311,11 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     public void cardsTouched(View view) {
+
+        if (answerArray.size() == 0) {
+            player1GotAnswer(view);
+        }
+
         BigDecimal rightAnswer = Math24Game.getRightAnswer();
 
         CardHand cardHand = (CardHand) view.getTag(R.integer.card_tag);
@@ -362,6 +367,7 @@ public class Math24 extends Activity implements SwipeInterface {
             if (answerPlayer == 1) {
                 labelMiddleInfo.setRotation(180);
             }
+            disableOperators(true);
         }
     }
 
@@ -378,22 +384,7 @@ public class Math24 extends Activity implements SwipeInterface {
                 this.labelAnswer2.getText() +
                         Math24Game.operatorString((Integer) view.getTag(R.integer.operator_tag))
         );
-/*
-        // Show the players where we are
-        //
-        for (int i = 0; i < 2; i++) {
-            UILabel * labelAnswer =[self.labelAnswers objectAtIndex:i];
 
-            if ([labelAnswer.text compare:@ "(How can you get to 24?)"]==NSOrderedSame){
-                labelAnswer.text = @ "";
-            }
-
-            labelAnswer.text =[NSString stringWithFormat:@ "%@ %@",
-                    labelAnswer.text,
-                    self.operatorChars[operator.tag]];
-
-        }
-*/
         Log.d(TAG, "operatorsTouched");
 
         // Enable cards, disable operators
@@ -567,11 +558,9 @@ public class Math24 extends Activity implements SwipeInterface {
         game.currentGameTime = 600;
         game.returnHand();
 
-        // refreshGameUI();
+        this.labelMiddleInfo.setVisibility(View.INVISIBLE);
+
         /*
-
-
-    self.labelMiddleInfo.hidden = TRUE;
 
     if (![self.timer isValid]) {
         // Start the countdown
@@ -621,7 +610,6 @@ public class Math24 extends Activity implements SwipeInterface {
         this.labelAnswer2.setVisibility(viewVisible);
         this.player1Got24.setVisibility(viewInvisible);
         this.player2Got24.setVisibility(viewInvisible);
-        this.labelMiddleInfo.setVisibility(viewVisible);
 
 
 /*
