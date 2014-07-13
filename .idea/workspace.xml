@@ -33,8 +33,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -1572,7 +1570,11 @@
       <created>1405232312061</created>
       <updated>1405232312061</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="- center text&#10;">
+      <created>1405281844699</created>
+      <updated>1405281844699</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1677,7 +1679,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- fix build tool version for travis" />
     <MESSAGE value="- intro video&#10;" />
     <MESSAGE value="- disable/enable cards and operators&#10;" />
     <MESSAGE value="- more logic to disable cards&#10;" />
@@ -1702,7 +1703,8 @@
     <MESSAGE value="fix race condition with currentAnswer and nextAnswer" />
     <MESSAGE value="- tighten up the game play when selecting" />
     <MESSAGE value="- show 'question' when user says he has it" />
-    <option name="LAST_COMMIT_MESSAGE" value="- show 'question' when user says he has it" />
+    <MESSAGE value="- center text&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- center text&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
