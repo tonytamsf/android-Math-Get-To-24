@@ -181,7 +181,8 @@
                     android:id="@+id/labelAnswer2"
                     android:layout_gravity="right|bottom"
                     android:rotation="180"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="#ffffffff" />
 
             </FrameLayout>
 
@@ -271,7 +272,8 @@
                     android:layout_height="fill_parent"
                     android:text="@string/how_do_you_24"
                     android:id="@+id/labelAnswer1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="#ffffffff" />
 
             </FrameLayout>
 

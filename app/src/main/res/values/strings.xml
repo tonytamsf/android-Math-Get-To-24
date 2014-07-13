@@ -11,4 +11,5 @@
     <string name="how_do_you_24">(How can you get to 24?)</string>
     <string name="fmt_you_got_right">Yay, you got 24!!\n%s</string>
     <string name="fmt_sorry_wrong">Sorry, Get to 24 with:\n%s</string>
+    <string name="how_do_you_get_24">How can you get to 24?</string>
 </resources>

@@ -611,23 +611,15 @@ public class Math24 extends Activity implements SwipeInterface {
         this.player1Got24.setVisibility(viewInvisible);
         this.player2Got24.setVisibility(viewInvisible);
 
-
-/*
-
-        self.labelBackground1.hidden = show;
-        self.labelBackground2.hidden = show;
-
-        [self.imageViewCenter setUserInteractionEnabled:!show];
         if (visible) {
-            if (self.answerPlayer == 0) {
-                self.labelAnswer.text = @"(How can you get to 24?)";
-                self.labelAnswer2.text = @"";
+            if (answerPlayer == 0) {
+                labelAnswer1.setText(R.string.how_do_you_get_24);
+                labelAnswer2.setText("");
             } else {
-                self.labelAnswer.text = @"";
-                self.labelAnswer2.text = @"(How can you get to 24?)";
+                labelAnswer2.setText(R.string.how_do_you_get_24);
+                labelAnswer1.setText("");
             }
         }
-        */
         return this;
     }
 }
