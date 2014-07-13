@@ -33,10 +33,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -1564,7 +1560,11 @@
       <created>1405088839113</created>
       <updated>1405088839113</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="- show 'question' when user says he has it">
+      <created>1405232279703</created>
+      <updated>1405232279703</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1669,7 +1669,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- rotate the buttons for player 2" />
     <MESSAGE value="- fix build tool version for travis" />
     <MESSAGE value="- intro video&#10;" />
     <MESSAGE value="- disable/enable cards and operators&#10;" />
@@ -1694,7 +1693,8 @@
     <MESSAGE value="- sync, commit with a bug in the 'nextHand'" />
     <MESSAGE value="fix race condition with currentAnswer and nextAnswer" />
     <MESSAGE value="- tighten up the game play when selecting" />
-    <option name="LAST_COMMIT_MESSAGE" value="- tighten up the game play when selecting" />
+    <MESSAGE value="- show 'question' when user says he has it" />
+    <option name="LAST_COMMIT_MESSAGE" value="- show 'question' when user says he has it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
