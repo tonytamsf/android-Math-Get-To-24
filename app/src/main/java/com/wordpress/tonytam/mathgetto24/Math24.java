@@ -314,6 +314,8 @@ public class Math24 extends Activity implements SwipeInterface {
 
         if (answerArray.size() == 0) {
             player1GotAnswer(view);
+            labelAnswer1.setText("");
+            labelAnswer2.setText("");
         }
 
         BigDecimal rightAnswer = Math24Game.getRightAnswer();
@@ -327,6 +329,7 @@ public class Math24 extends Activity implements SwipeInterface {
         this.disableCards(true);
 
         // Keep the players informed about what has been selected, both players need to know
+
         for (int i = 0; i < 2; i++) {
             TextView labelAnswer = this.labelAnswers.get(i);
             if (labelAnswer.getText().equals( getString (R.string.how_do_you_24))) {
@@ -337,7 +340,6 @@ public class Math24 extends Activity implements SwipeInterface {
                             String.valueOf(cardHand.card.rank)
             );
         }
-
 
         Log.d(TAG, "cardsTouched " + this.answerCardArray.toString());
 
