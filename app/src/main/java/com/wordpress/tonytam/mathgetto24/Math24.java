@@ -25,6 +25,8 @@ import java.lang.reflect.Method;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 // TODO swipe to re-deal card
@@ -104,6 +106,8 @@ public class Math24 extends Activity implements SwipeInterface {
 
     Button numNW, numNE, numSE, numSW;
 
+    Timer timer;
+
     RadioButton easyLevel, mediumLevel, hardLevel;
 
 
@@ -170,6 +174,10 @@ public class Math24 extends Activity implements SwipeInterface {
             game = new Math24Game();
         }
         game.startGame();
+
+        timer = new Timer(true);
+        timer.schedule(new CountdownTask(), 1000);
+
         return this;
     }
 
@@ -562,6 +570,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
         this.labelMiddleInfo.setVisibility(View.INVISIBLE);
 
+
         /*
 
     if (![self.timer isValid]) {
@@ -576,7 +585,18 @@ public class Math24 extends Activity implements SwipeInterface {
          */
     }
 
+    // TODO need to reimplement so UI update is in main thread
+    class CountdownTask extends TimerTask {
+        @Override
+        public void run() {
+            game.currentGameTime--;
+            //player1Timer.setText(game.currentGameTime);
+            //player2Timer.setText(game.currentGameTime);
 
+            Log.d("CoundownTask", String.valueOf(game.currentGameTime));
+        }
+
+    }
     @Override
     public void top2bottom(View v) {
         Log.d("Math24", "top2bottom");
