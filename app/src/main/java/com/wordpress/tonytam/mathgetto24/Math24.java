@@ -178,7 +178,7 @@ public class Math24 extends Activity implements SwipeInterface {
             game = new Math24Game();
         }
         game.startGame();
-        game.currentGameTime = 600;
+        game.currentGameTime = 10;
 
         startTimer();
 
@@ -194,9 +194,14 @@ public class Math24 extends Activity implements SwipeInterface {
             {
                 Log.d("CoundownTask", String.valueOf(game.currentGameTime));
                 game.currentGameTime--;
+
+                // TODO: when at zero, call the game over
                 player1Timer.setText(String.valueOf(game.currentGameTime));
                 player2Timer.setText(String.valueOf(game.currentGameTime));
 
+                if (game.currentGameTime <= 0) {
+                    timesUp();
+                }
             }
         };
 
@@ -205,7 +210,7 @@ public class Math24 extends Activity implements SwipeInterface {
             @Override
             public void run() {
                 try {
-                    while(true) {
+                    while(true && game.currentGameTime > 0) {
                         sleep(1000);
                         Math24.this.runOnUiThread(r);
                         //handler.post(r);
@@ -621,10 +626,23 @@ public class Math24 extends Activity implements SwipeInterface {
          */
     }
 
-    // TODO need to reimplement so UI update is in main thread
+    public void timesUp(){
+        // [self.util  playSound:@"whoosh" :@"wav"];
+        // Stop the previous timer
+
+        // [AudioUtil playSound:@"ray" :@"wav"];
+
+        labelMiddleInfo.setVisibility(View.VISIBLE);
+        labelMiddleInfo.setText(R.string.game_over);
+
+        showAnswerControllers(false);
+        player1Got24.setVisibility(View.VISIBLE);
+        player2Got24.setVisibility(View.VISIBLE);
+    }
 
     @Override
     public void top2bottom(View v) {
+
         Log.d("Math24", "top2bottom");
     }
 
