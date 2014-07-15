@@ -60,19 +60,48 @@
     <favorites_list name="android-MathGetTo24" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7322222">
+    <splitter split-orientation="horizontal" split-proportion="0.83538634">
       <split-first>
         <leaf>
           <file leaf-file-name="Math24.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5349887" vertical-offset="8358" max-vertical-offset="9570">
-                  <caret line="587" column="62" selection-start-line="587" selection-start-column="62" selection-end-line="587" selection-end-column="62" />
+                <state vertical-scroll-proportion="0.51693004" vertical-offset="3086" max-vertical-offset="11237">
+                  <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#19486#19487#0" expanded="true" />
-                    <element signature="e#19531#19532#0" expanded="true" />
+                    <element signature="e#4994#5356#0" expanded="true" />
+                    <element signature="e#5345#5346#0" expanded="true" />
+                    <element signature="e#5794#5795#0" expanded="true" />
+                    <element signature="e#9846#9868#0" expanded="true" />
+                    <element signature="e#9941#9963#0" expanded="true" />
+                    <element signature="e#10041#10063#0" expanded="true" />
+                    <element signature="e#10142#10164#0" expanded="true" />
+                    <element signature="e#11711#11729#0" expanded="true" />
+                    <element signature="e#12134#12168#0" expanded="true" />
+                    <element signature="e#13177#13214#0" expanded="true" />
+                    <element signature="e#13354#13389#0" expanded="true" />
+                    <element signature="e#13957#13979#0" expanded="true" />
+                    <element signature="e#14075#14097#0" expanded="true" />
+                    <element signature="e#14248#14270#0" expanded="true" />
+                    <element signature="e#14437#14459#0" expanded="true" />
+                    <element signature="e#15045#15063#0" expanded="true" />
+                    <element signature="e#16704#16722#0" expanded="true" />
+                    <element signature="e#19999#20000#0" expanded="true" />
+                    <element signature="e#20044#20045#0" expanded="true" />
+                    <element signature="e#21564#21590#0" expanded="true" />
+                    <element signature="e#21693#21719#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZygoteInit.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/com/android/internal/os/ZygoteInit.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="10866" max-vertical-offset="11325">
+                  <caret line="784" column="0" selection-start-line="784" selection-start-column="0" selection-end-line="784" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -94,13 +123,6 @@
                   <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
                   <folding />
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="num_3.png" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/num_3.png">
-              <provider selected="true" editor-type-id="images">
-                <state />
               </provider>
             </entry>
           </file>
@@ -895,6 +917,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="41" />
     <option name="y" value="22" />
     <option name="width" value="1380" />
     <option name="height" value="874" />
@@ -1563,7 +1586,11 @@
       <created>1405281854138</created>
       <updated>1405281854139</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="- start Timer code">
+      <created>1405438692462</created>
+      <updated>1405438692462</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1587,7 +1614,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1380" height="874" extended-state="0" />
+    <frame x="41" y="22" width="1380" height="874" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1668,7 +1695,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- intro video&#10;" />
     <MESSAGE value="- disable/enable cards and operators&#10;" />
     <MESSAGE value="- more logic to disable cards&#10;" />
     <MESSAGE value="- remove duplicate operators in layout&#10;- fixed on/off for cards vs operators" />
@@ -1693,22 +1719,15 @@
     <MESSAGE value="- tighten up the game play when selecting" />
     <MESSAGE value="- show 'question' when user says he has it" />
     <MESSAGE value="- center text&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- center text&#10;" />
+    <MESSAGE value="- start Timer code" />
+    <option name="LAST_COMMIT_MESSAGE" value="- start Timer code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="630">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/import-summary.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
@@ -2058,14 +2077,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/com/android/internal/os/ZygoteInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="10866" max-vertical-offset="11325">
+          <caret line="784" column="0" selection-start-line="784" selection-start-column="0" selection-end-line="784" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5349887" vertical-offset="8358" max-vertical-offset="9570">
-          <caret line="587" column="62" selection-start-line="587" selection-start-column="62" selection-end-line="587" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.51693004" vertical-offset="3086" max-vertical-offset="11237">
+          <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#19486#19487#0" expanded="true" />
-            <element signature="e#19531#19532#0" expanded="true" />
+            <element signature="e#4994#5356#0" expanded="true" />
+            <element signature="e#5345#5346#0" expanded="true" />
+            <element signature="e#5794#5795#0" expanded="true" />
+            <element signature="e#9846#9868#0" expanded="true" />
+            <element signature="e#9941#9963#0" expanded="true" />
+            <element signature="e#10041#10063#0" expanded="true" />
+            <element signature="e#10142#10164#0" expanded="true" />
+            <element signature="e#11711#11729#0" expanded="true" />
+            <element signature="e#12134#12168#0" expanded="true" />
+            <element signature="e#13177#13214#0" expanded="true" />
+            <element signature="e#13354#13389#0" expanded="true" />
+            <element signature="e#13957#13979#0" expanded="true" />
+            <element signature="e#14075#14097#0" expanded="true" />
+            <element signature="e#14248#14270#0" expanded="true" />
+            <element signature="e#14437#14459#0" expanded="true" />
+            <element signature="e#15045#15063#0" expanded="true" />
+            <element signature="e#16704#16722#0" expanded="true" />
+            <element signature="e#19999#20000#0" expanded="true" />
+            <element signature="e#20044#20045#0" expanded="true" />
+            <element signature="e#21564#21590#0" expanded="true" />
+            <element signature="e#21693#21719#0" expanded="true" />
           </folding>
         </state>
       </provider>

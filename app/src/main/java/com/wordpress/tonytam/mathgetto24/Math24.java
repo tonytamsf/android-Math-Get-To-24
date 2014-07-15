@@ -83,6 +83,10 @@ public class Math24 extends Activity implements SwipeInterface {
 
     private Math24Game game;
 
+    private Handler handler;
+
+    Runnable r;
+
     public ImageButton[] operators;
     public Button[] cards;
 
@@ -175,8 +179,37 @@ public class Math24 extends Activity implements SwipeInterface {
         }
         game.startGame();
 
-        timer = new Timer(true);
-        timer.schedule(new CountdownTask(), 1000);
+        handler=new Handler();
+
+        r = new Runnable()
+        {
+            public void run()
+            {
+                Log.d("CoundownTask", String.valueOf(game.currentGameTime));
+                game.currentGameTime--;
+                player1Timer.setText(String.valueOf(game.currentGameTime));
+                player2Timer.setText(String.valueOf(game.currentGameTime));
+
+            }
+        };
+
+        Thread thread = new Thread()
+        {
+            @Override
+            public void run() {
+                try {
+                    while(true) {
+                        sleep(1000);
+                        Math24.this.runOnUiThread(r);
+                        //handler.post(r);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        thread.start();
 
         return this;
     }
@@ -586,17 +619,7 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     // TODO need to reimplement so UI update is in main thread
-    class CountdownTask extends TimerTask {
-        @Override
-        public void run() {
-            game.currentGameTime--;
-            //player1Timer.setText(game.currentGameTime);
-            //player2Timer.setText(game.currentGameTime);
 
-            Log.d("CoundownTask", String.valueOf(game.currentGameTime));
-        }
-
-    }
     @Override
     public void top2bottom(View v) {
         Log.d("Math24", "top2bottom");
