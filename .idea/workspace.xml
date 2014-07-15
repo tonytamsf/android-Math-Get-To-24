@@ -66,27 +66,28 @@
           <file leaf-file-name="Math24.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.51693004" vertical-offset="3086" max-vertical-offset="11237">
-                  <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
+                <state vertical-scroll-proportion="0.7923251" vertical-offset="2760" max-vertical-offset="11237">
+                  <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#4994#5356#0" expanded="true" />
-                    <element signature="e#5345#5346#0" expanded="true" />
-                    <element signature="e#5794#5795#0" expanded="true" />
-                    <element signature="e#9846#9868#0" expanded="true" />
-                    <element signature="e#9941#9963#0" expanded="true" />
-                    <element signature="e#10041#10063#0" expanded="true" />
-                    <element signature="e#10142#10164#0" expanded="true" />
-                    <element signature="e#11711#11729#0" expanded="true" />
-                    <element signature="e#12134#12168#0" expanded="true" />
-                    <element signature="e#13177#13214#0" expanded="true" />
-                    <element signature="e#13354#13389#0" expanded="true" />
-                    <element signature="e#13957#13979#0" expanded="true" />
-                    <element signature="e#14075#14097#0" expanded="true" />
-                    <element signature="e#14248#14270#0" expanded="true" />
-                    <element signature="e#14437#14459#0" expanded="true" />
-                    <element signature="e#15045#15063#0" expanded="true" />
-                    <element signature="e#16704#16722#0" expanded="true" />
+                    <element signature="e#5030#5392#0" expanded="true" />
+                    <element signature="e#5381#5382#0" expanded="true" />
+                    <element signature="e#5419#5841#0" expanded="true" />
+                    <element signature="e#5830#5831#0" expanded="true" />
+                    <element signature="e#9882#9904#0" expanded="true" />
+                    <element signature="e#9977#9999#0" expanded="true" />
+                    <element signature="e#10077#10099#0" expanded="true" />
+                    <element signature="e#10178#10200#0" expanded="true" />
+                    <element signature="e#11747#11765#0" expanded="true" />
+                    <element signature="e#12170#12204#0" expanded="true" />
+                    <element signature="e#13213#13250#0" expanded="true" />
+                    <element signature="e#13390#13425#0" expanded="true" />
+                    <element signature="e#13993#14015#0" expanded="true" />
+                    <element signature="e#14111#14133#0" expanded="true" />
+                    <element signature="e#14284#14306#0" expanded="true" />
+                    <element signature="e#14473#14495#0" expanded="true" />
+                    <element signature="e#15081#15099#0" expanded="true" />
+                    <element signature="e#16740#16758#0" expanded="true" />
                     <element signature="e#19999#20000#0" expanded="true" />
                     <element signature="e#20044#20045#0" expanded="true" />
                     <element signature="e#21564#21590#0" expanded="true" />
@@ -1590,7 +1591,11 @@
       <created>1405438692462</created>
       <updated>1405438692462</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="- Timer works now using UIThreads&#10;">
+      <created>1405445959715</created>
+      <updated>1405445959715</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1695,7 +1700,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- disable/enable cards and operators&#10;" />
     <MESSAGE value="- more logic to disable cards&#10;" />
     <MESSAGE value="- remove duplicate operators in layout&#10;- fixed on/off for cards vs operators" />
     <MESSAGE value="- clean up warnings from Java" />
@@ -1720,7 +1724,8 @@
     <MESSAGE value="- show 'question' when user says he has it" />
     <MESSAGE value="- center text&#10;" />
     <MESSAGE value="- start Timer code" />
-    <option name="LAST_COMMIT_MESSAGE" value="- start Timer code" />
+    <MESSAGE value="- Timer works now using UIThreads&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Timer works now using UIThreads&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2087,27 +2092,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51693004" vertical-offset="3086" max-vertical-offset="11237">
-          <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.7923251" vertical-offset="2760" max-vertical-offset="11237">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4994#5356#0" expanded="true" />
-            <element signature="e#5345#5346#0" expanded="true" />
-            <element signature="e#5794#5795#0" expanded="true" />
-            <element signature="e#9846#9868#0" expanded="true" />
-            <element signature="e#9941#9963#0" expanded="true" />
-            <element signature="e#10041#10063#0" expanded="true" />
-            <element signature="e#10142#10164#0" expanded="true" />
-            <element signature="e#11711#11729#0" expanded="true" />
-            <element signature="e#12134#12168#0" expanded="true" />
-            <element signature="e#13177#13214#0" expanded="true" />
-            <element signature="e#13354#13389#0" expanded="true" />
-            <element signature="e#13957#13979#0" expanded="true" />
-            <element signature="e#14075#14097#0" expanded="true" />
-            <element signature="e#14248#14270#0" expanded="true" />
-            <element signature="e#14437#14459#0" expanded="true" />
-            <element signature="e#15045#15063#0" expanded="true" />
-            <element signature="e#16704#16722#0" expanded="true" />
+            <element signature="e#5030#5392#0" expanded="true" />
+            <element signature="e#5381#5382#0" expanded="true" />
+            <element signature="e#5419#5841#0" expanded="true" />
+            <element signature="e#5830#5831#0" expanded="true" />
+            <element signature="e#9882#9904#0" expanded="true" />
+            <element signature="e#9977#9999#0" expanded="true" />
+            <element signature="e#10077#10099#0" expanded="true" />
+            <element signature="e#10178#10200#0" expanded="true" />
+            <element signature="e#11747#11765#0" expanded="true" />
+            <element signature="e#12170#12204#0" expanded="true" />
+            <element signature="e#13213#13250#0" expanded="true" />
+            <element signature="e#13390#13425#0" expanded="true" />
+            <element signature="e#13993#14015#0" expanded="true" />
+            <element signature="e#14111#14133#0" expanded="true" />
+            <element signature="e#14284#14306#0" expanded="true" />
+            <element signature="e#14473#14495#0" expanded="true" />
+            <element signature="e#15081#15099#0" expanded="true" />
+            <element signature="e#16740#16758#0" expanded="true" />
             <element signature="e#19999#20000#0" expanded="true" />
             <element signature="e#20044#20045#0" expanded="true" />
             <element signature="e#21564#21590#0" expanded="true" />

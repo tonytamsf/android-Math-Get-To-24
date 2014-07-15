@@ -178,6 +178,7 @@ public class Math24 extends Activity implements SwipeInterface {
             game = new Math24Game();
         }
         game.startGame();
+        game.currentGameTime = 600;
 
         handler=new Handler();
 
@@ -598,7 +599,6 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerPlayer = 0;
         this.showAnswerControllers(false);
 
-        game.currentGameTime = 600;
         game.returnHand();
 
         this.labelMiddleInfo.setVisibility(View.INVISIBLE);
