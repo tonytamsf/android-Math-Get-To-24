@@ -180,6 +180,12 @@ public class Math24 extends Activity implements SwipeInterface {
         game.startGame();
         game.currentGameTime = 600;
 
+        startTimer();
+
+        return this;
+    }
+
+    void startTimer() {
         handler=new Handler();
 
         r = new Runnable()
@@ -211,10 +217,7 @@ public class Math24 extends Activity implements SwipeInterface {
         };
 
         thread.start();
-
-        return this;
     }
-
     Math24 setupViews () {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
