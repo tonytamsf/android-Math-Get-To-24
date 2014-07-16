@@ -210,7 +210,7 @@ public class Math24 extends Activity implements SwipeInterface {
             @Override
             public void run() {
                 try {
-                    while(true && game.currentGameTime > 0) {
+                    while(true && game.currentGameTime > 1) {
                         sleep(1000);
                         Math24.this.runOnUiThread(r);
                         //handler.post(r);
@@ -223,6 +223,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
         thread.start();
     }
+
     Math24 setupViews () {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -636,8 +637,8 @@ public class Math24 extends Activity implements SwipeInterface {
         labelMiddleInfo.setText(R.string.game_over);
 
         showAnswerControllers(false);
-        player1Got24.setVisibility(View.VISIBLE);
-        player2Got24.setVisibility(View.VISIBLE);
+        player1Got24.setVisibility(View.INVISIBLE);
+        player2Got24.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -649,8 +650,14 @@ public class Math24 extends Activity implements SwipeInterface {
     public void showSegmentLevels(Boolean visible) {
 
         this.easyLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        easyLevel.setTag(R.integer.choose_level, (Integer) 1);
+
         this.mediumLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        easyLevel.setTag(R.integer.choose_level, (Integer) 1);
+
         this.hardLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        easyLevel.setTag(R.integer.choose_level, (Integer) 1);
+
         this.soundToggle.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
 
         Log.d(TAG, "showSegmentLevels");

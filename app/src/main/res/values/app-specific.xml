@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="operator_tag">1</integer>
-    <integer name="card_tag">1</integer>
+    <integer name="card_tag">2</integer>
+    <integer name="choose_level">3</integer>
 </resources>

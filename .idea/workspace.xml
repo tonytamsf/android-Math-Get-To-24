@@ -33,7 +33,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8480369e-adc6-4478-a70d-7b30abf3f605" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-MathGetTo24.iws" />
@@ -67,16 +67,45 @@
           <file leaf-file-name="Math24.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6027088" vertical-offset="2808" max-vertical-offset="10230">
-                  <caret line="205" column="10" selection-start-line="205" selection-start-column="10" selection-end-line="205" selection-end-column="10" />
+                <state vertical-scroll-proportion="0.5011287" vertical-offset="9228" max-vertical-offset="10335">
+                  <caret line="644" column="27" selection-start-line="644" selection-start-column="27" selection-end-line="644" selection-end-column="27" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#5104#5623#0" expanded="true" />
                     <element signature="e#5612#5613#0" expanded="true" />
                     <element signature="e#5650#6100#0" expanded="true" />
                     <element signature="e#6089#6090#0" expanded="true" />
-                    <element signature="e#20373#20391#0" expanded="true" />
+                    <element signature="e#10119#10141#0" expanded="true" />
+                    <element signature="e#10214#10236#0" expanded="true" />
+                    <element signature="e#10314#10336#0" expanded="true" />
+                    <element signature="e#10415#10437#0" expanded="true" />
+                    <element signature="e#11984#12002#0" expanded="true" />
+                    <element signature="e#12407#12441#0" expanded="true" />
+                    <element signature="e#13450#13487#0" expanded="true" />
+                    <element signature="e#13627#13662#0" expanded="true" />
+                    <element signature="e#14230#14252#0" expanded="true" />
+                    <element signature="e#14348#14370#0" expanded="true" />
+                    <element signature="e#14521#14543#0" expanded="true" />
+                    <element signature="e#14710#14732#0" expanded="true" />
+                    <element signature="e#15318#15336#0" expanded="true" />
+                    <element signature="e#16977#16995#0" expanded="true" />
+                    <element signature="e#20374#20392#0" expanded="true" />
+                    <element signature="e#20801#20823#0" expanded="true" />
+                    <element signature="e#20946#20968#0" expanded="true" />
+                    <element signature="e#21089#21111#0" expanded="true" />
+                    <element signature="e#22352#22378#0" expanded="true" />
+                    <element signature="e#22481#22507#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app-specific.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/values/app-specific.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+                  <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -108,13 +137,6 @@
                   <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
                   <folding />
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="num_4.png" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/num_4.png">
-              <provider selected="true" editor-type-id="images">
-                <state />
               </provider>
             </entry>
           </file>
@@ -886,7 +908,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/model/cards/Deck.java" />
         <option value="$PROJECT_DIR$/app/build/generated/source/r/debug/com/wordpress/tonytam/mathgetto24/R.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/AnswerPackage.java" />
@@ -894,6 +915,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24Game.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_math24.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/app-specific.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java" />
       </list>
     </option>
@@ -1617,7 +1639,11 @@
       <created>1405446156970</created>
       <updated>1405446156970</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="- timer code and timesUp()">
+      <created>1405452223343</created>
+      <updated>1405452223343</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1722,7 +1748,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
-    <MESSAGE value="- clean up warnings from Java" />
     <MESSAGE value="- build tools up to 20" />
     <MESSAGE value="- start to build list of answer operators" />
     <MESSAGE value="- refactor into this.func().func().. so much prettier&#10;- showAnswerController()&#10;" />
@@ -1747,7 +1772,8 @@
     <MESSAGE value="- Timer works now using UIThreads&#10;" />
     <MESSAGE value="- do not reset time in dealHand()" />
     <MESSAGE value="- refactor Timer code&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- refactor Timer code&#10;" />
+    <MESSAGE value="- timer code and timesUp()" />
+    <option name="LAST_COMMIT_MESSAGE" value="- timer code and timesUp()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1961,14 +1987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/app-specific.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10273973" vertical-offset="0" max-vertical-offset="730">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20547946" vertical-offset="0" max-vertical-offset="730">
@@ -2112,17 +2130,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/app-specific.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wordpress/tonytam/mathgetto24/Math24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6027088" vertical-offset="2808" max-vertical-offset="10230">
-          <caret line="205" column="10" selection-start-line="205" selection-start-column="10" selection-end-line="205" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.5011287" vertical-offset="9228" max-vertical-offset="10335">
+          <caret line="644" column="27" selection-start-line="644" selection-start-column="27" selection-end-line="644" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5104#5623#0" expanded="true" />
             <element signature="e#5612#5613#0" expanded="true" />
             <element signature="e#5650#6100#0" expanded="true" />
             <element signature="e#6089#6090#0" expanded="true" />
-            <element signature="e#20373#20391#0" expanded="true" />
+            <element signature="e#10119#10141#0" expanded="true" />
+            <element signature="e#10214#10236#0" expanded="true" />
+            <element signature="e#10314#10336#0" expanded="true" />
+            <element signature="e#10415#10437#0" expanded="true" />
+            <element signature="e#11984#12002#0" expanded="true" />
+            <element signature="e#12407#12441#0" expanded="true" />
+            <element signature="e#13450#13487#0" expanded="true" />
+            <element signature="e#13627#13662#0" expanded="true" />
+            <element signature="e#14230#14252#0" expanded="true" />
+            <element signature="e#14348#14370#0" expanded="true" />
+            <element signature="e#14521#14543#0" expanded="true" />
+            <element signature="e#14710#14732#0" expanded="true" />
+            <element signature="e#15318#15336#0" expanded="true" />
+            <element signature="e#16977#16995#0" expanded="true" />
+            <element signature="e#20374#20392#0" expanded="true" />
+            <element signature="e#20801#20823#0" expanded="true" />
+            <element signature="e#20946#20968#0" expanded="true" />
+            <element signature="e#21089#21111#0" expanded="true" />
+            <element signature="e#22352#22378#0" expanded="true" />
+            <element signature="e#22481#22507#0" expanded="true" />
           </folding>
         </state>
       </provider>
