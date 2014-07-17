@@ -648,20 +648,21 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     public void levelChangeClick (View v) {
-        Log.d("levelChangeClick", "click");
+        Integer level = (Integer) v.getTag(R.integer.choose_level);
+        game.setLevel(level);
         this.dealHand();
     }
 
     public void showSegmentLevels(Boolean visible) {
 
         this.easyLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-        easyLevel.setTag(R.integer.choose_level, (Integer) 1);
+        easyLevel.setTag(R.integer.choose_level, (Integer) Math24Game.LEVEL_EASY);
 
         this.mediumLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-        easyLevel.setTag(R.integer.choose_level, (Integer) 1);
+        mediumLevel.setTag(R.integer.choose_level, (Integer) Math24Game.LEVEL_MEDIUM);
 
         this.hardLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-        easyLevel.setTag(R.integer.choose_level, (Integer) 1);
+        hardLevel.setTag(R.integer.choose_level, (Integer) Math24Game.LEVEL_HARD);
 
         this.soundToggle.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
 

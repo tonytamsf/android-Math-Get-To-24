@@ -28,10 +28,14 @@ public class Math24Game {
             _hardDeck,
             _mediumDeck;
 
-    static public int PLUS_OPERATOR = 0;
-    static public int MINUS_OPERATOR = 1;
-    static public int MULTIPLY_OPERATOR = 2;
-    static public int DIVIDE_OPERATOR = 3;
+    static final public int LEVEL_EASY = 1;
+    static final public int LEVEL_MEDIUM = 2;
+    static final public int LEVEL_HARD = 3;
+
+    static final public int PLUS_OPERATOR = 0;
+    static final public int MINUS_OPERATOR = 1;
+    static final public int MULTIPLY_OPERATOR = 2;
+    static final public int DIVIDE_OPERATOR = 3;
 
     static public BigDecimal rightAnswer;
 
@@ -155,9 +159,27 @@ public class Math24Game {
     }
 
     public AnswerPackage calculateAnswer () {
+
         return calculateAnswer(this.hand);
     }
 
+    public void setLevel (int level) {
+        Log.d("setLevel", String.valueOf(level));
+        switch (level) {
+            case LEVEL_EASY:
+                deck = _easyDeck;
+                break;
+            case LEVEL_MEDIUM:
+                deck = _mediumDeck;
+                break;
+            case LEVEL_HARD:
+                deck = _hardDeck;
+                break;
+            default:
+                Log.e("setLevel", "Invalid level " + String.valueOf(level));
+                break;
+        }
+    }
     // Using the cards in the given sequence and operators in the sequence
     // calculate whether there is an answer.  This can be used
     // to verify the human players answer
