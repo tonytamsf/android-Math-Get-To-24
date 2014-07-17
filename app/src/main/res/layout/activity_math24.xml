@@ -308,21 +308,24 @@
                     android:text="@string/level_easy"
                     android:id="@+id/easyLevel"
                     android:clickable="true"
-                    android:checked="false" />
+                    android:checked="false"
+                    android:onClick="levelChangeClick" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_medium"
                     android:id="@+id/mediumLevel"
-                    android:clickable="true" />
+                    android:clickable="true"
+                    android:onClick="levelChangeClick" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_hard"
                     android:id="@+id/hardLevel"
-                    android:clickable="true" />
+                    android:clickable="true"
+                    android:onClick="levelChangeClick" />
             </RadioGroup>
 
             <ImageButton

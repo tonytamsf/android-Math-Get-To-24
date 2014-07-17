@@ -178,7 +178,7 @@ public class Math24 extends Activity implements SwipeInterface {
             game = new Math24Game();
         }
         game.startGame();
-        game.currentGameTime = 10;
+        game.currentGameTime = 600;
 
         startTimer();
 
@@ -645,6 +645,11 @@ public class Math24 extends Activity implements SwipeInterface {
     public void top2bottom(View v) {
 
         Log.d("Math24", "top2bottom");
+    }
+
+    public void levelChangeClick (View v) {
+        Log.d("levelChangeClick", "click");
+        this.dealHand();
     }
 
     public void showSegmentLevels(Boolean visible) {
