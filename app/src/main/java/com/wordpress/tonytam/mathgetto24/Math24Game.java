@@ -627,7 +627,6 @@ public class Math24Game {
 
         this.dealHand();
 
-        // TODO handle operators in a method array
         /*
 
 

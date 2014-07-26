@@ -29,8 +29,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-// TODO swipe to re-deal card
-// http://bit.ly/android-code-swipe-gesture-detection
+// Copied code for swipe http://bit.ly/android-code-swipe-gesture-detection
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -224,6 +223,11 @@ public class Math24 extends Activity implements SwipeInterface {
         thread.start();
     }
 
+    /**
+     * Setup the UI of the game
+     *
+     * @return the Math24 object so this can be chained
+     */
     Math24 setupViews () {
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -332,6 +336,11 @@ public class Math24 extends Activity implements SwipeInterface {
         return this;
     }
 
+    /**
+     * Player1 wants to answer
+     *
+     * @param view : The button when the player taps
+     */
     public void player1GotAnswer(View view) {
 
         Log.d(TAG, "player1GotAnswer");
@@ -339,6 +348,11 @@ public class Math24 extends Activity implements SwipeInterface {
         showAnswerControllers(true);
     }
 
+    /**
+     * Player2 wants to answer
+     *
+     * @param view : The button when the player taps
+     */
     public void player2GotAnswer(View view) {
 
         this.answerPlayer = 1;
@@ -348,19 +362,36 @@ public class Math24 extends Activity implements SwipeInterface {
 
     }
 
+    /**
+     * The player got the right answer
+     * @param player : 0 or 1 for Player1 or Player2
+     */
     public void rightAnswer(int player) {
         game.playerRightAnswer(player);
-        // TODO I don't like this, should just store the views in an array
+
         this.player1Score.setText(String.valueOf(game.getPlayerScore(0)));
         this.player2Score.setText(String.valueOf(game.getPlayerScore(1)));
     }
 
+    /**
+     * Wrong answer
+     *
+     * @param player : : 0 or 1 for Player1 or Player2
+     */
     public void wrongAnswer(int player) {
         game.playerWrongAnswer(player);
         this.player1Score.setText(String.valueOf(game.getPlayerScore(0)));
         this.player2Score.setText(String.valueOf(game.getPlayerScore(1)));
     }
 
+    /**
+     * While trying to answer a card is selected
+     * The answers have 4 cards, 3 operators.  When 4 cards are selected, we
+     * are ready to check the answers
+     *
+     * @param view : The card that is touched, using getTag(R.integer.card_tag) to get the
+     *             CardHand object
+     */
     public void cardsTouched(View view) {
 
         if (answerArray.size() == 0) {
@@ -376,8 +407,8 @@ public class Math24 extends Activity implements SwipeInterface {
         this.answerCardArray.add(cardHand.card);
         this.answerArray.add(cardHand);
 
-        this.disableOperators(false);
-        this.disableCards(true);
+        this.disableOperators(false)
+            .disableCards(true);
 
         // Keep the players informed about what has been selected, both players need to know
 
@@ -395,7 +426,6 @@ public class Math24 extends Activity implements SwipeInterface {
         Log.d(TAG, "cardsTouched " + this.answerCardArray.toString());
 
         if (answerArray.size() == 7) {
-            // TODO: current
             AnswerPackage potentialAnswer = this.game.calculateHand(
                     (PlayingCard []) answerCardArray.toArray(new PlayingCard[0]),
                     (Method []) answerOperators.toArray(new Method[0]),
@@ -424,6 +454,11 @@ public class Math24 extends Activity implements SwipeInterface {
         }
     }
 
+    /**
+     * An operator is touched, at most 3 operators
+     *
+     * @param view: the view of the card, using getTag(R.integer.operator_tag) to find the Integer index
+     */
     public void operatorsTouched(View view) {
         this.answerArray.add(view);
         this.answerOperatorStrings.add(Math24Game.operatorString((Integer) view.getTag(R.integer.operator_tag)));
@@ -441,10 +476,16 @@ public class Math24 extends Activity implements SwipeInterface {
         Log.d(TAG, "operatorsTouched");
 
         // Enable cards, disable operators
-        this.disableOperators(true);
-        this.disableCards(false);
+        this.disableOperators(true)
+            .disableCards(false);
     }
 
+    /**
+     * Disable the visually show disable the operators, when cards should be picked
+     *
+     * @param bDisabled
+     * @return Math24 object so it can be chained
+     */
     Math24 disableOperators(Boolean bDisabled) {
         for (ImageButton b : this.operators) {
             Log.d(TAG, "disableOperators " + b);
@@ -454,7 +495,13 @@ public class Math24 extends Activity implements SwipeInterface {
         return this;
     }
 
-    void disableCards(Boolean bDisabled) {
+    /**
+     * Disable cards and select operators instead
+     *
+     * @param bDisabled
+     * @return Math24 object so it can be changed
+     */
+    Math24 disableCards(Boolean bDisabled) {
         for (Button card : this.cards) {
             CardHand cardHand = (CardHand) card.getTag(R.integer.card_tag);
 
@@ -488,6 +535,9 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
 
+    /**
+     * Clear the intermediate answers
+     */
     public void clearAnswer() {
         if (answerCardArray.size() == 4 ||
                 answerCardArray.size() == 0 ){
@@ -575,6 +625,9 @@ public class Math24 extends Activity implements SwipeInterface {
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 
+    /**
+     * Bottom to top swipe
+     */
     @Override
     public void bottom2top(View v) {
         Log.d("Math24", "bottom2top");
@@ -590,6 +643,9 @@ public class Math24 extends Activity implements SwipeInterface {
         clearAnswer();
     }
 
+    /**
+     * Deal a set of cards, clear any of the current answers
+     */
     public void dealHand() {
         final ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -627,6 +683,9 @@ public class Math24 extends Activity implements SwipeInterface {
          */
     }
 
+    /**
+     * Ran out of time
+     */
     public void timesUp(){
         // [self.util  playSound:@"whoosh" :@"wav"];
         // Stop the previous timer
@@ -673,8 +732,8 @@ public class Math24 extends Activity implements SwipeInterface {
         int viewInvisible = visible ? View.INVISIBLE : View.VISIBLE;
         int viewVisible = visible ? View.VISIBLE : View.INVISIBLE;
 
-        this.disableOperators(true);
-        this.disableCards(false);
+        this.disableOperators(true)
+                .disableCards(false);
 
         this.showSegmentLevels(!visible);
         this.player1Timer.setVisibility(viewInvisible);
