@@ -25,3 +25,5 @@ proguard/
 # editor
 .idea/
 .navigation/
+
+.idea/workspace.xml
