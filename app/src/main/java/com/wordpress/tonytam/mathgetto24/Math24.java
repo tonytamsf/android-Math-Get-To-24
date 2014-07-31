@@ -522,6 +522,7 @@ public class Math24 extends Activity implements SwipeInterface {
             card.setEnabled(!bDisabled);
 
         }
+        return this;
     }
 
     /*
