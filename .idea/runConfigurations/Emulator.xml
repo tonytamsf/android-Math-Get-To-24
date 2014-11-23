@@ -7,7 +7,7 @@
     <option name="ARTIFACT_NAME" value="" />
     <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
     <option name="USE_LAST_SELECTED_DEVICE" value="true" />
-    <option name="PREFERRED_AVD" value="android-1" />
+    <option name="PREFERRED_AVD" value="Nexus_7_2012_API_19" />
     <option name="USE_COMMAND_LINE" value="true" />
     <option name="COMMAND_LINE" value="" />
     <option name="WIPE_USER_DATA" value="false" />
