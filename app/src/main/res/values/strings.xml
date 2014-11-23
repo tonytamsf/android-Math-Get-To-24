@@ -13,4 +13,7 @@
     <string name="fmt_sorry_wrong">Sorry, Get to 24 with:\n%s</string>
     <string name="how_do_you_get_24">How can you get to 24?</string>
     <string name="game_over">Game Over...</string>
+    <string name="operatorMultiply">operator multiply</string>
+    <string name="operatorDivide">operator divide</string>
+    <string name="welcome">New Text\nhi\nthere</string>
 </resources>
