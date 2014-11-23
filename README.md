@@ -4,6 +4,10 @@ android-Math-Get-To-24
 
 Android version of Math Get To 24
 
+### TODO
+- tap to end the FYI screen
+- add sound
+
 ### Build
 - broken July 6, 2014
    - https://github.com/travis-ci/travis-ci/issues/2470
