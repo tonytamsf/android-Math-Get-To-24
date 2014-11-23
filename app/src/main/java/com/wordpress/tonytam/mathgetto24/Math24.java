@@ -9,13 +9,11 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -26,7 +24,6 @@ import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
 
 
 // Copied code for swipe http://bit.ly/android-code-swipe-gesture-detection
@@ -86,7 +83,7 @@ public class Math24 extends Activity implements SwipeInterface {
 
     Runnable r;
 
-    public ImageButton[] operators;
+    public Button[] operators;
     public Button[] cards;
 
     public TextView
@@ -109,12 +106,10 @@ public class Math24 extends Activity implements SwipeInterface {
 
     Button numNW, numNE, numSE, numSW;
 
-    Timer timer;
-
     RadioButton easyLevel, mediumLevel, hardLevel;
 
 
-    ImageButton operatorPlus,
+    Button operatorPlus,
             operatorDivide,
             operatorMinus,
             operatorMultiply,
@@ -209,7 +204,7 @@ public class Math24 extends Activity implements SwipeInterface {
             @Override
             public void run() {
                 try {
-                    while(true && game.currentGameTime > 1) {
+                    while(game.currentGameTime > 1) {
                         sleep(1000);
                         Math24.this.runOnUiThread(r);
                         //handler.post(r);
@@ -280,12 +275,12 @@ public class Math24 extends Activity implements SwipeInterface {
         this.numberDrawables[12] = R.drawable.num_10;
         this.numberDrawables[13] = R.drawable.num_10;
 
-        this.operatorPlus = (ImageButton) findViewById(R.id.operatorPlus);
-        this.operatorMinus = (ImageButton) findViewById(R.id.operatorMinus);
-        this.operatorMultiply = (ImageButton) findViewById(R.id.operatorMultiply);
-        this.operatorDivide = (ImageButton) findViewById(R.id.operatorDivide);
+        this.operatorPlus = (Button) findViewById(R.id.operatorPlus);
+        this.operatorMinus = (Button) findViewById(R.id.operatorMinus);
+        this.operatorMultiply = (Button) findViewById(R.id.operatorMultiply);
+        this.operatorDivide = (Button) findViewById(R.id.operatorDivide);
 
-        this.operators = new ImageButton[]{
+        this.operators = new Button[] {
                 this.operatorPlus,
                 this.operatorMinus,
                 this.operatorMultiply,
@@ -311,20 +306,20 @@ public class Math24 extends Activity implements SwipeInterface {
         this.easyLevel = (RadioButton) findViewById(R.id.easyLevel);
         this.mediumLevel = (RadioButton) findViewById(R.id.mediumLevel);
         this.hardLevel = (RadioButton) findViewById(R.id.hardLevel);
-        this.soundToggle = (ImageButton) findViewById(R.id.soundToggleButton);
+        this.soundToggle = (Button) findViewById(R.id.soundToggleButton);
 
-        this.player1Got24 = (ImageButton) findViewById(R.id.player1Got24);
-        this.player2Got24 = (ImageButton) findViewById(R.id.player2Got24);
+        this.player1Got24 = (Button) findViewById(R.id.player1Got24);
+        this.player2Got24 = (Button) findViewById(R.id.player2Got24);
 
         this.labelMiddleInfo = (TextView) findViewById(R.id.labelMiddleInfo);
 
         /**
          * Tagging it for later when the user touches a card or operator
          */
-        this.operatorPlus.setTag(R.integer.operator_tag, (Integer) Math24Game.PLUS_OPERATOR);
-        this.operatorMinus.setTag(R.integer.operator_tag, (Integer)  Math24Game.MINUS_OPERATOR);
-        this.operatorMultiply.setTag(R.integer.operator_tag, (Integer)  Math24Game.MULTIPLY_OPERATOR);
-        this.operatorDivide.setTag(R.integer.operator_tag, (Integer)  Math24Game.DIVIDE_OPERATOR);
+        this.operatorPlus.setTag(R.integer.operator_tag, Math24Game.PLUS_OPERATOR);
+        this.operatorMinus.setTag(R.integer.operator_tag,  Math24Game.MINUS_OPERATOR);
+        this.operatorMultiply.setTag(R.integer.operator_tag,   Math24Game.MULTIPLY_OPERATOR);
+        this.operatorDivide.setTag(R.integer.operator_tag, Math24Game.DIVIDE_OPERATOR);
 
 
         // Swipe
@@ -487,7 +482,7 @@ public class Math24 extends Activity implements SwipeInterface {
      * @return Math24 object so it can be chained
      */
     Math24 disableOperators(Boolean bDisabled) {
-        for (ImageButton b : this.operators) {
+        for (Button b : this.operators) {
             Log.d(TAG, "disableOperators " + b);
             b.setEnabled(!bDisabled);
             b.setAlpha(bDisabled ? 0.2f : 1.0f);
@@ -496,7 +491,7 @@ public class Math24 extends Activity implements SwipeInterface {
     }
 
     /**
-     * Disable cards and select operators instead
+     * @description Disable cards and select operators instead
      *
      * @param bDisabled
      * @return Math24 object so it can be changed
@@ -716,13 +711,13 @@ public class Math24 extends Activity implements SwipeInterface {
     public void showSegmentLevels(Boolean visible) {
 
         this.easyLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-        easyLevel.setTag(R.integer.choose_level, (Integer) Math24Game.LEVEL_EASY);
+        easyLevel.setTag(R.integer.choose_level, Math24Game.LEVEL_EASY);
 
         this.mediumLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-        mediumLevel.setTag(R.integer.choose_level, (Integer) Math24Game.LEVEL_MEDIUM);
+        mediumLevel.setTag(R.integer.choose_level,  Math24Game.LEVEL_MEDIUM);
 
         this.hardLevel.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
-        hardLevel.setTag(R.integer.choose_level, (Integer) Math24Game.LEVEL_HARD);
+        hardLevel.setTag(R.integer.choose_level,  Math24Game.LEVEL_HARD);
 
         this.soundToggle.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
 
