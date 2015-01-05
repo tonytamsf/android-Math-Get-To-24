@@ -45,8 +45,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
                 android:layout_margin="5dp"
-                android:id="@+id/numberLayout"
-                android:layout_toLeftOf="@+id/numberLayout">
+                android:id="@+id/numberLayout">
 
                 <Button
                     android:layout_width="wrap_content"
