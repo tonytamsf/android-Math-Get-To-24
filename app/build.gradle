@@ -2,7 +2,7 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "20.0"
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.wordpress.tonytam.mathgetto24"
@@ -18,5 +18,5 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19+'
+    implementation 'com.android.support:support-v4:19+'
 }
