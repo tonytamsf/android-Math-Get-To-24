@@ -2,12 +2,10 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.wordpress.tonytam.mathgetto24"
-        minSdkVersion 26
-        targetSdkVersion 26
     }
 
     buildTypes {
