@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -130,7 +132,11 @@ public class Math24 extends Activity implements SwipeInterface {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_math24);
+
 
         final View contentView = findViewById(R.id.fullscreen_content1);
         this.mainView = contentView;
@@ -143,10 +149,13 @@ public class Math24 extends Activity implements SwipeInterface {
 
         // http://developer.android.com/training/system-ui/status.html#41
         // http://developer.android.com/training/system-ui/immersive.html
+        // TODO: https://developer.android.com/training/system-ui/navigation
         View decorView = getWindow().getDecorView();
 
         // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE;
+        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
         // Remember that you should never show the action bar if the

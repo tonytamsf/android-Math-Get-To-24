@@ -4,8 +4,6 @@
     android:versionCode="3"
     android:versionName="1.2" >
 
-    <uses-sdk android:targetSdkVersion="26" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -27,9 +25,11 @@
             android:name="com.wordpress.tonytam.mathgetto24.IntroActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_intro"
-            android:theme="@style/FullscreenTheme" >
-
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
-    </application>
 
+    </application>
+    <uses-sdk android:minSdkVersion="19"
+        android:targetSdkVersion="19"
+        android:maxSdkVersion="28" />
 </manifest>
