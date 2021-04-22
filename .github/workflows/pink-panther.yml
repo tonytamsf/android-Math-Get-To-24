@@ -1,4 +1,7 @@
-biased_lang:
+name: Github Actions
+on: [push]
+jobs:
+  biased_lang:
     runs-on: ubuntu-latest
     name: Detecting Biased Language
     steps:
