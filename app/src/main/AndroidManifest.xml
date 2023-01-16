@@ -4,6 +4,7 @@
     android:versionCode="3"
     android:versionName="1.2" >
 
+    <uses-sdk android:minSdkVersion="30"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
